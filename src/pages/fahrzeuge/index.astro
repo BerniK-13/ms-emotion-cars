@@ -1,5 +1,24 @@
 ---
-import Base from '../../layouts/Base.astro';import CarCard from '../../components/CarCard.astro';import {cars} from '../../data/cars.js';
+import Base from '../../layouts/Base.astro';
+import CarCard from '../../components/CarCard.astro';
+import {cars} from '../../data/cars.js';
 ---
-<Base title="Fahrzeuge" description="Entdecken Sie ausgewählte Premiumfahrzeuge im MS EMotion Cars Demo-Showroom."><section class="page-head light-head inventory-page"><div class="shell"><span class="eyebrow eyebrow-dark">THE COLLECTION / DEMO</span><h1>Unsere <em>Fahrzeuge.</em></h1><p>Eine Auswahl außergewöhnlicher Automobile. Aktuell ausschließlich fiktive Demo-Angebote.</p></div></section><section class="section listing"><div class="shell"><div class="filter-bar"><div class="filter-buttons" aria-label="Fahrzeuge filtern"><button type="button" class="filter active" data-filter="Alle" aria-pressed="true">ALLE</button><button type="button" class="filter" data-filter="Sportwagen" aria-pressed="false">SPORTWAGEN</button><button type="button" class="filter" data-filter="SUV" aria-pressed="false">SUV</button><button type="button" class="filter" data-filter="Grand Tourer" aria-pressed="false">GRAND TOURER</button></div><label class="sort-label">SORTIEREN <select id="sort"><option value="default">Empfohlen</option><option value="price-asc">Preis aufsteigend</option><option value="price-desc">Preis absteigend</option><option value="year-desc">Baujahr neueste</option></select></label></div><p id="result-count" class="results" aria-live="polite">{cars.length} Demo-Fahrzeuge</p><div class="car-grid" id="inventory">{cars.map((car,i)=><div class="inventory-item" data-type={car.type} data-price={car.price} data-year={car.year} data-index={i}><CarCard car={car}/></div>)}</div><p id="empty-state" hidden>Keine Fahrzeuge in dieser Kategorie.</p></div></section></Base>
-<script>const items=[...document.querySelectorAll('.inventory-item')];const grid=document.querySelector('#inventory');const count=document.querySelector('#result-count');let active='Alle';let sort='default';function update(){let visible=items.filter(i=>active==='Alle'||i.dataset.type===active);visible.sort((a,b)=>sort==='price-asc'?+a.dataset.price-+b.dataset.price:sort==='price-desc'?+b.dataset.price-+a.dataset.price:sort==='year-desc'?+b.dataset.year-+a.dataset.year:+a.dataset.index-+b.dataset.index);items.forEach(i=>i.hidden=!visible.includes(i));visible.forEach(i=>grid.append(i));count.textContent=`${visible.length} Demo-Fahrzeuge`;document.querySelector('#empty-state').hidden=visible.length!==0;}document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});update();}));document.querySelector('#sort').addEventListener('change',e=>{sort=e.target.value;update();});</script>
+<Base title="Fahrzeuge" description="Entdecken Sie unsere Fahrzeugauswahl bei MS EMotion Cars.">
+  <section class="page-head light-head inventory-page"><div class="shell"><span class="eyebrow eyebrow-dark">THE COLLECTION</span><h1>Unsere <em>Fahrzeuge.</em></h1><p>Außergewöhnliche Automobile. Mit Liebe zum Detail präsentiert.</p></div></section>
+  <section class="section listing"><div class="shell">
+    <div class="filter-bar"><div class="filter-buttons" aria-label="Fahrzeuge filtern"><button type="button" class="filter active" data-filter="Alle" aria-pressed="true">ALLE</button><button type="button" class="filter" data-filter="Porsche" aria-pressed="false">PORSCHE</button><button type="button" class="filter" data-filter="BMW" aria-pressed="false">BMW</button></div></div>
+    <p id="result-count" class="results" aria-live="polite">{cars.length} Fahrzeuge</p>
+    <div class="car-grid" id="inventory">{cars.map(car=><div class="inventory-item" data-brand={car.brand}><CarCard car={car}/></div>)}</div>
+    <p id="empty-state" hidden>Keine Fahrzeuge in dieser Kategorie.</p>
+  </div></section>
+</Base>
+<script>
+const items=[...document.querySelectorAll('.inventory-item')];
+document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
+ const brand=button.dataset.filter;
+ document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});
+ let count=0;items.forEach(item=>{const show=brand==='Alle'||item.dataset.brand===brand;item.hidden=!show;if(show)count++;});
+ document.querySelector('#result-count').textContent=`${count} Fahrzeuge`;
+ document.querySelector('#empty-state').hidden=count!==0;
+}));
+</script>

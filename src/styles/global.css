@@ -120,3 +120,40 @@ body:has(.inventory-page) .nav-link:hover,
 body:has(.inventory-page) .header-contact:hover{color:#ffb0b7}
 body:has(.inventory-page) .light-head{background:#f5f4f1}
 body:has(.inventory-page) .listing{background:#f5f4f1}
+
+/* Original studio photography and editorial vehicle galleries. */
+.car-photo{aspect-ratio:1.55;background:#eee;display:grid;place-items:center}
+.car-photo img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain}
+.car-photo-pending{font-size:12px;letter-spacing:.24em;color:#8d8d8d}
+.real-detail .detail-title{align-items:end}
+.real-detail .detail-title strong{font-size:clamp(14px,1.4vw,19px);white-space:nowrap}
+.vehicle-gallery{margin-top:24px}
+.gallery-stage{position:relative;display:grid;place-items:center;background:#eaeaea;overflow:hidden}
+.gallery-main{display:block;width:100%;height:min(64vw,690px);object-fit:contain}
+.gallery-nav,.gallery-modal-prev,.gallery-modal-next{position:absolute;top:50%;transform:translateY(-50%);border:1px solid #ffffff90;background:#101112b8;color:#fff;width:48px;height:58px;font-size:34px;z-index:2}
+.gallery-prev,.gallery-modal-prev{left:18px}
+.gallery-next,.gallery-modal-next{right:18px}
+.gallery-count{position:absolute;bottom:20px;left:22px;background:#101112c9;color:white;font-size:11px;letter-spacing:.12em;padding:9px 13px}
+.gallery-fullscreen{position:absolute;bottom:20px;right:20px;border:0;background:#101112cf;color:white;font-size:10px;letter-spacing:.13em;padding:13px 18px}
+.gallery-thumbs{display:flex;gap:9px;overflow-x:auto;padding:14px 0 18px;scrollbar-width:thin}
+.gallery-thumb{flex:0 0 108px;width:108px;height:75px;padding:0;border:2px solid transparent;background:#e9e9e9;opacity:.65;overflow:hidden}
+.gallery-thumb.active{border-color:#a21d2a;opacity:1}
+.gallery-thumb img{width:100%;height:100%;object-fit:cover}
+.gallery-dialog{border:0;padding:0;max-width:100vw;max-height:100vh;width:100vw;height:100vh;background:#090a0b;color:white;overflow:hidden}
+.gallery-dialog::backdrop{background:#000}
+.gallery-modal-image{width:100%;height:100%;object-fit:contain}
+.gallery-close{position:absolute;top:20px;right:22px;z-index:4;border:0;background:#252629;color:white;padding:12px 16px}
+.gallery-modal-count{position:absolute;bottom:24px;left:24px;color:white;background:#171819d9;padding:10px 15px;font-size:12px}
+.gallery-pending{min-height:400px;display:grid;place-items:center;background:#e8e8e8;color:#777;text-align:center;padding:30px}
+body:has(.real-detail) .site-header{background:#0b0c0d;color:#fff;border-bottom:1px solid #ffffff25}
+body:has(.real-detail) .menu-toggle span{background:#fff}
+@media(max-width:760px){
+ .gallery-main{height:66vw;min-height:240px}
+ .gallery-nav{width:34px;height:45px;font-size:25px}
+ .gallery-prev,.gallery-modal-prev{left:7px}
+ .gallery-next,.gallery-modal-next{right:7px}
+ .gallery-thumb{flex-basis:80px;width:80px;height:58px}
+ .gallery-fullscreen{bottom:12px;right:12px;padding:10px;font-size:9px}
+ .gallery-count{bottom:12px;left:12px}
+ .real-detail .detail-title strong{white-space:normal}
+}
