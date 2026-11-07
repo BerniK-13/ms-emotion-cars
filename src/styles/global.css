@@ -189,3 +189,28 @@ body:has(.inventory-page) #empty-state{color:#b4b6b8}
   transform-origin:55% 50%;
  }
 }
+
+/* Desktop hero correction: fill the full hero height without a letterbox,
+   keep the car prominent on the right and preserve clear space for the headline. */
+@media(min-width:1101px){
+ .hero{overflow:hidden;background:#08090a}
+ .hero-art{inset:0;overflow:hidden}
+ .hero-art img{
+  position:absolute;
+  top:0;
+  left:5%;
+  right:auto;
+  bottom:auto;
+  width:110%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:right center;
+  transform:none;
+ }
+ .hero-art:after{
+  background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.57) 25%,rgba(0,0,0,.24) 45%,rgba(0,0,0,0) 70%),linear-gradient(0deg,rgba(0,0,0,.20),transparent 23%);
+ }
+ .hero h1{font-size:clamp(4.1rem,6vw,6.55rem);line-height:1.01;max-width:650px}
+ .hero-copy{max-width:650px}
+}
