@@ -83,3 +83,28 @@ body:has(.light-head) .nav-link:hover,body:has(.light-head) .header-contact:hove
 @media(max-width:760px){
  .collection .section-heading h2{font-size:clamp(2.55rem,9.2vw,4.7rem);letter-spacing:-.055em}
 }
+
+/* Unified editorial headline system across every page.
+   Preserve the deliberate all-serif cinematic homepage hero. */
+h1 em,h2 em{
+ font-family:inherit;
+ font-weight:inherit;
+ font-style:normal;
+ letter-spacing:inherit;
+ color:inherit;
+}
+.hero h1,.hero h1 em{
+ font-family:'Italiana',Georgia,serif;
+ font-weight:400;
+ letter-spacing:-.045em;
+}
+.hero h1 em{color:#c5c6c7}
+.page-head h1,.page-head h1 em,
+.section h2,.section h2 em,
+.buy-section h2,.buy-section h2 em{
+ font-family:'DM Sans',Arial,sans-serif;
+ font-style:normal;
+ font-weight:400;
+ letter-spacing:-.055em;
+}
+.page-head h1 em,.section h2 em,.buy-section h2 em{color:inherit}
