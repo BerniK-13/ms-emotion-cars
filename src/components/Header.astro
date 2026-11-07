@@ -1,7 +1,6 @@
 
 ---
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const withBase = (path) => `${base}${path}`;
+import {withBase} from '../utils/paths.js';
 
 const current = Astro.url.pathname.replace(/\/$/, '') || '/';
 

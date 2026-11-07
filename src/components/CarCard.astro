@@ -1,5 +1,6 @@
 ---
 import {euro,number} from '../data/cars.js';
+import {withBase} from '../utils/paths.js';
 const {car}=Astro.props;
 ---
-<a class="car-card" href={'/fahrzeuge/'+car.slug+'/'} aria-label={`${car.brand} ${car.model} – Details ansehen`}><div class="car-photo"><img src={car.image} alt={`Illustratives Platzhalterbild für ${car.brand} ${car.model}`} loading="lazy" width="900" height="550"/><span class="car-tag">{car.tag}</span><span class="demo-stamp">DEMO-BILD</span></div><div class="car-info"><div><span class="car-brand">{car.brand}</span><h3>{car.model}</h3></div><span class="car-arrow" aria-hidden="true">↗</span></div><div class="car-meta"><span>{car.year}</span><span>{number(car.km)} km</span><span>{car.power} PS</span></div><div class="car-price">{euro(car.price)} <span>inkl. MwSt. (Demo)</span></div></a>
+<a class="car-card" href={withBase('/fahrzeuge/'+car.slug+'/')} aria-label={`${car.brand} ${car.model} – Details ansehen`}><div class="car-photo"><img src={withBase(car.image)} alt={`Illustratives Platzhalterbild für ${car.brand} ${car.model}`} loading="lazy" width="900" height="550"/><span class="car-tag">{car.tag}</span><span class="demo-stamp">DEMO-BILD</span></div><div class="car-info"><div><span class="car-brand">{car.brand}</span><h3>{car.model}</h3></div><span class="car-arrow" aria-hidden="true">↗</span></div><div class="car-meta"><span>{car.year}</span><span>{number(car.km)} km</span><span>{car.power} PS</span></div><div class="car-price">{euro(car.price)} <span>inkl. MwSt. (Demo)</span></div></a>
