@@ -108,3 +108,15 @@ h1 em,h2 em{
  letter-spacing:-.055em;
 }
 .page-head h1 em,.section h2 em,.buy-section h2 em{color:inherit}
+
+/* Vehicle collection: same dark brand navigation as homepage, light gallery below. */
+body:has(.inventory-page) .site-header{
+ background:#0b0c0d;
+ color:#fff;
+ border-bottom:1px solid rgba(255,255,255,.14);
+}
+body:has(.inventory-page) .menu-toggle span{background:#fff}
+body:has(.inventory-page) .nav-link:hover,
+body:has(.inventory-page) .header-contact:hover{color:#ffb0b7}
+body:has(.inventory-page) .light-head{background:#f5f4f1}
+body:has(.inventory-page) .listing{background:#f5f4f1}
