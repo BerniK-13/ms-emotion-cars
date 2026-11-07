@@ -1,1 +1,16 @@
-{"name":"ms-emotion-cars","version":"0.1.0","private":true,"type":"module","scripts":{"dev":"astro dev","build":"astro build","preview":"astro preview"},"dependencies":{"astro":"^5.0.0"}}
+{
+  "name": "ms-emotion-cars",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:site": "node scripts/check-site.mjs",
+    "verify": "npm run build && npm run check:site"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}

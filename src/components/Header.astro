@@ -73,7 +73,7 @@ const nav = [
   const button = document.querySelector('.menu-toggle');
   const menu = document.querySelector('#mobile-menu');
 
-  button?.addEventListener('click', () => {
+  const closeMenu = () => {\n    if (!button || !menu) return;\n    menu.hidden = true;\n    button.setAttribute('aria-expanded', 'false');\n    button.setAttribute('aria-label', 'Menü öffnen');\n  };\n\n  menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));\n  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });\n  window.addEventListener('resize', () => { if (window.innerWidth > 760) closeMenu(); });\n\n  button?.addEventListener('click', () => {
     const opened = button.getAttribute('aria-expanded') === 'true';
 
     button.setAttribute('aria-expanded', String(!opened));

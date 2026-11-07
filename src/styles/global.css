@@ -21,3 +21,9 @@ body:has(.light-head) .nav-link:hover,body:has(.light-head) .header-contact:hove
   .listing{padding-top:0}
   .listing .results{margin:18px 0 22px}
 }
+
+/* Clear keyboard focus for interactive elements. */
+:where(a,button,input,textarea,select):focus-visible{outline:2px solid #b82b3b;outline-offset:4px}
+/* Avoid clipped image alternative text and preserve demo art proportions. */
+.car-photo{isolation:isolate}
+.car-photo img{aspect-ratio:1.58;object-fit:contain}

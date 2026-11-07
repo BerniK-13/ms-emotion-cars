@@ -31,7 +31,7 @@ jobs:
         run: npm install
 
       - name: Build website
-        run: npm run build
+        run: npm run verify
         env:
           ASTRO_SITE: https://bernik-13.github.io
           ASTRO_BASE: /ms-emotion-cars
