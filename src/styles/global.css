@@ -6,3 +6,18 @@ body:has(.light-head) .site-header{color:#171819;border-bottom-color:#1b1c1d22}
 body:has(.light-head) .menu-toggle span{background:#171819}
 body:has(.light-head) .nav-link:hover,body:has(.light-head) .header-contact:hover{color:#a21d2a}
 @media(max-width:760px){body:has(.light-head) .mobile-nav{color:#fff}}
+
+/* Refined collection page: balanced editorial heading, compact spacing and contained demo artwork. */
+.light-head{padding-top:clamp(145px,13vw,190px);padding-bottom:clamp(38px,4vw,60px)}
+.light-head h1{font-size:clamp(3.6rem,6.2vw,6.8rem);line-height:1.05;max-width:100%}
+.light-head p{margin-bottom:0}
+.listing{padding-top:8px}
+.listing .results{margin:22px 0 25px}
+.car-photo img{object-fit:contain}
+.car-card:hover .car-photo img{transform:scale(1.018)}
+@media(max-width:760px){
+  .light-head{padding-top:125px;padding-bottom:32px}
+  .light-head h1{font-size:clamp(3.25rem,10.8vw,5.5rem)}
+  .listing{padding-top:0}
+  .listing .results{margin:18px 0 22px}
+}
