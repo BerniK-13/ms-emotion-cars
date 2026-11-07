@@ -1,6 +1,88 @@
+
 ---
-const current = Astro.url.pathname;
-const nav=[['/fahrzeuge','Fahrzeuge'],['/ankauf','Ankauf'],['/ueber-uns','Über uns'],['/kontakt','Kontakt']];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const withBase = (path) => `${base}${path}`;
+
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const nav = [
+  ['/fahrzeuge', 'Fahrzeuge'],
+  ['/ankauf', 'Ankauf'],
+  ['/ueber-uns', 'Über uns'],
+  ['/kontakt', 'Kontakt']
+];
 ---
-<header class="site-header"><div class="shell header-inner"><a href="/" class="brand" aria-label="MS EMotion Cars – Startseite"><span class="brand-ms">MS<span class="brand-stroke"></span></span><span class="brand-sub">EMOTION CARS</span></a><nav class="desktop-nav" aria-label="Hauptnavigation">{nav.map(([href,label])=><a class:list={['nav-link',{active:current===href||current.startsWith(href+'/')}]} href={href}>{label}</a>)}</nav><a class="header-contact" href="/kontakt">ANFRAGE <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button></div><nav id="mobile-menu" class="mobile-nav" aria-label="Mobile Navigation" hidden>{nav.map(([href,label])=><a href={href}>{label}</a>)}</nav></header>
-<script>const b=document.querySelector('.menu-toggle');const m=document.querySelector('#mobile-menu');b?.addEventListener('click',()=>{const opened=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!opened));b.setAttribute('aria-label',opened?'Menü öffnen':'Menü schließen');m.hidden=opened;});</script>
+
+<header class="site-header">
+  <div class="shell header-inner">
+
+    <a href={withBase('/')} class="brand"
+       aria-label="MS EMotion Cars – Startseite">
+      <span class="brand-ms">
+        MS<span class="brand-stroke"></span>
+      </span>
+      <span class="brand-sub">EMOTION CARS</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Hauptnavigation">
+      {nav.map(([href, label]) => (
+        <a
+          class:list={[
+            'nav-link',
+            {
+              active:
+                current === withBase(href) ||
+                current.startsWith(withBase(href) + '/')
+            }
+          ]}
+          href={withBase(href)}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+
+    <a class="header-contact" href={withBase('/kontakt')}>
+      ANFRAGE <span aria-hidden="true">↗</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    class="mobile-nav"
+    aria-label="Mobile Navigation"
+    hidden
+  >
+    {nav.map(([href, label]) => (
+      <a href={withBase(href)}>{label}</a>
+    ))}
+  </nav>
+</header>
+
+<script>
+  const button = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('#mobile-menu');
+
+  button?.addEventListener('click', () => {
+    const opened = button.getAttribute('aria-expanded') === 'true';
+
+    button.setAttribute('aria-expanded', String(!opened));
+    button.setAttribute(
+      'aria-label',
+      opened ? 'Menü öffnen' : 'Menü schließen'
+    );
+
+    if (menu) menu.hidden = opened;
+  });
+</script>
