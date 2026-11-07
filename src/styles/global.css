@@ -27,3 +27,26 @@ body:has(.light-head) .nav-link:hover,body:has(.light-head) .header-contact:hove
 /* Avoid clipped image alternative text and preserve demo art proportions. */
 .car-photo{isolation:isolate}
 .car-photo img{aspect-ratio:1.58;object-fit:contain}
+
+/* Homepage photographic hero: original Porsche photo, no image alterations. */
+.hero{background:#08090a;min-height:680px;height:min(900px,100svh)}
+.hero-art{inset:0;overflow:hidden}
+.hero-art img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center center;filter:none}
+.hero-art:after{background:linear-gradient(90deg,rgba(0,0,0,.50) 0%,rgba(0,0,0,.20) 34%,transparent 65%),linear-gradient(0deg,rgba(0,0,0,.30),transparent 28%);pointer-events:none}
+.hero-copy{max-width:700px}
+.hero h1{font-size:clamp(4.5rem,8vw,8.4rem);text-wrap:balance;text-shadow:0 2px 22px rgba(0,0,0,.14)}
+.hero-copy .eyebrow,.hero-copy p{text-shadow:0 1px 12px rgba(0,0,0,.65)}
+@media(max-width:1100px){
+ .hero-art img{object-position:58% center}
+ .hero-art:after{background:linear-gradient(90deg,rgba(0,0,0,.65),rgba(0,0,0,.18) 72%)}
+ .hero h1{font-size:clamp(4rem,8.2vw,7rem)}
+}
+@media(max-width:760px){
+ .hero{min-height:680px;height:90svh}
+ .hero-art img{width:100%;height:100%;right:auto;bottom:auto;object-fit:cover;object-position:67% center}
+ .hero-art:after{background:linear-gradient(0deg,rgba(0,0,0,.93) 0%,rgba(0,0,0,.72) 29%,rgba(0,0,0,.08) 74%),linear-gradient(90deg,rgba(0,0,0,.22),transparent)}
+ .hero-content{justify-content:flex-end;padding-bottom:100px}
+ .hero-copy{padding-top:0}
+ .hero h1{font-size:clamp(3.7rem,12.5vw,5.8rem);line-height:.96}
+}
+@media(prefers-reduced-motion:reduce){.hero *{animation:none!important;transition:none!important}}
