@@ -68,3 +68,18 @@ body:has(.light-head) .nav-link:hover,body:has(.light-head) .header-contact:hove
  .hero h1{font-size:clamp(3.35rem,11.4vw,5.2rem);line-height:.99}
  .hero-copy{max-width:100%}
 }
+
+/* Consistent editorial typography for the collection: no mixed display serif. */
+.collection .section-heading h2,
+.collection .section-heading h2 em{
+ font-family:'DM Sans',Arial,sans-serif;
+ font-weight:400;
+ font-style:normal;
+ letter-spacing:-.055em;
+ line-height:1.07;
+}
+.collection .section-heading h2{font-size:clamp(2.8rem,5.4vw,5.9rem)}
+.collection .section-heading h2 em{color:inherit}
+@media(max-width:760px){
+ .collection .section-heading h2{font-size:clamp(2.55rem,9.2vw,4.7rem);letter-spacing:-.055em}
+}
