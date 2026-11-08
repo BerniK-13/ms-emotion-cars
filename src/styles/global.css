@@ -449,3 +449,38 @@ body:has(.real-detail) .site-header{background:transparent;color:#fff;border-bot
 .reference-demo{position:absolute;right:14px;bottom:14px;padding:7px 10px;background:#101112d9;color:#eee;font-size:9px;letter-spacing:.13em}
 .reference-card .car-info h3{color:#f4f4f2}
 .reference-card .car-meta{color:#b5b6b7}
+
+/* MS Collection individual product detail pages and variant selectors. */
+.ms-product-image{display:block;position:relative}
+.ms-product-detail{background:#101112;color:#f5f4f1;min-height:100vh;padding:155px 0 110px}
+.ms-detail-back{display:inline-block;color:#bfc0c1;font-size:11px;letter-spacing:.15em;margin-bottom:38px}
+.ms-detail-back:hover{color:#fff}
+.ms-detail-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(30px,5vw,90px);align-items:start}
+.ms-detail-main{position:relative;background:#242526}
+.ms-detail-main>img{display:block;width:100%;aspect-ratio:4/4.6;object-fit:cover}
+.ms-detail-thumbs{display:flex;gap:10px;margin-top:12px;overflow-x:auto}
+.ms-detail-thumb{border:1px solid transparent;background:transparent;padding:0;width:88px;flex-shrink:0}
+.ms-detail-thumb.active{border-color:#991B26}
+.ms-detail-thumb img{width:100%;aspect-ratio:1;object-fit:cover}
+.ms-detail-description h1{font-family:'Italiana',Georgia,serif;font-size:clamp(3.3rem,5vw,6.5rem);line-height:1.05;font-weight:400;margin:24px 0}
+.ms-detail-description>p{color:#bcbdbd;font-size:15px;max-width:520px}
+.ms-detail-description .collection-notice{margin:30px 0}
+.ms-variant-form fieldset{border:0;border-top:1px solid #393b3c;padding:22px 0;margin:0;min-width:0}
+.ms-variant-form legend{float:left;width:100%;font-size:11px;font-weight:600;letter-spacing:.15em;margin-bottom:17px}
+.ms-variant-options{clear:both;display:flex;gap:9px;flex-wrap:wrap}
+.ms-variant-options label{position:relative;cursor:pointer}
+.ms-variant-options input{position:absolute;opacity:0;width:1px;height:1px}
+.ms-variant-options span{display:block;min-width:48px;text-align:center;padding:12px;border:1px solid #57595a;font-size:12px}
+.ms-variant-options input:checked+span{background:#991B26;border-color:#991B26;color:#fff}
+.ms-variant-options input:focus-visible+span{outline:2px solid white;outline-offset:3px}
+.ms-variant-pending{clear:both;color:#aeb0b1;font-size:13px;margin:0}
+.ms-product-facts{border-top:1px solid #393b3c;padding:25px 0}
+.ms-product-facts h2{font-family:'DM Sans',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.15em;margin-bottom:20px}
+.ms-product-facts dl{margin:0}
+.ms-product-facts dl>div{display:flex;justify-content:space-between;gap:25px;border-bottom:1px solid #343536;padding:12px 0;font-size:13px}
+.ms-product-facts dt{color:#aeb0b1}
+.ms-product-facts dd{margin:0;text-align:right}
+.ms-variant-form>.button{border-color:#991B26;width:100%}
+.ms-variant-form>.button:hover{background:#991B26;color:#fff}
+.ms-detail-note{font-size:11px;color:#aeb0b1;margin-top:14px}
+@media(max-width:760px){.ms-product-detail{padding:120px 0 75px}.ms-detail-grid{grid-template-columns:1fr}.ms-detail-description h1{font-size:clamp(3rem,12vw,5rem)}}
