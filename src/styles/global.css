@@ -358,3 +358,7 @@ body:has(.hero) .buy-section{position:relative;background:#0d0e10;isolation:isol
 body:has(.hero) .buy-section::before{content:"";position:absolute;inset:0 0 0 43%;z-index:-1;background-image:linear-gradient(90deg,#0d0e10 0%,#0d0e10d9 18%,#0d0e1080 52%,#0d0e1059 100%),linear-gradient(0deg,#0d0e1099,#0d0e1026 50%,#0d0e1099),var(--carbon-url);background-size:cover;background-position:center;opacity:.65;pointer-events:none}
 body:has(.hero) .buy-art{background:transparent;border-left:1px solid #ffffff12}
 @media(max-width:760px){body:has(.hero) .buy-section::before{inset:0;opacity:.35;background-position:center}}
+
+/* Remove the distracting diagonal split; retain the carbon texture and smooth fade. */
+body:has(.hero) .buy-art{transform:none;skew:none;border-left:0;background:transparent}
+body:has(.hero) .buy-art span{transform:none}
