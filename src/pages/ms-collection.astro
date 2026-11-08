@@ -3,16 +3,17 @@ import Base from '../layouts/Base.astro';
 import {withBase} from '../utils/paths.js';
 import {products} from '../data/collection.js';
 const inquiry=(product)=>withBase('/kontakt')+'?topic=produkt&product='+encodeURIComponent(product.name)+'#anfrage';
+import copy from '../../content/pages/ms-collection.json';
 ---
-<Base title="MS Collection" description="MS EMotion Cars – die zukünftige Lifestyle Collection. Entdecken Sie erste Produktideen und senden Sie eine unverbindliche Anfrage.">
-  <section class="collection-hero ms-collection-hero" style={`--collection-hero-image: url("${withBase("/images/Premium MS Emotion Cars Merchandise.png")}")`}><div class="shell"><span class="eyebrow">03 / MS COLLECTION</span><h1>OFF THE<br/><em>TRACK.</em></h1><p>Eine Leidenschaft, die über die Straße hinausgeht.</p><a href="#produkte" class="button button-outline">COLLECTION ENTDECKEN <span aria-hidden="true">↗</span></a></div></section>
+<Base title={copy.text_017} description="MS EMotion Cars – die zukünftige Lifestyle Collection. Entdecken Sie erste Produktideen und senden Sie eine unverbindliche Anfrage.">
+  <section class="collection-hero ms-collection-hero" style={`--collection-hero-image: url("${withBase("/images/Premium MS Emotion Cars Merchandise.png")}")`}><div class="shell"><span class="eyebrow">{copy.text_001}</span><h1>{copy.text_002}<br/><em>{copy.text_003}</em></h1><p>{copy.text_004}</p><a href="#produkte" class="button button-outline">{copy.text_005} <span aria-hidden="true">↗</span></a></div></section>
   <section id="produkte" class="ms-shop section"><div class="shell">
-    <div class="section-heading"><div><span class="eyebrow">03 / THE MS COLLECTION</span><h2>Driven by passion.<br/><em>Defined by style.</em></h2></div><p>Entdecken Sie erste Ideen für unsere zukünftige Lifestyle-Kollektion – reduziert, charakterstark und mit Liebe zum Detail.</p></div>
-    <p class="collection-notice">KONZEPTVORSCHAU · Die gezeigten Fotos sind Beispielbilder und noch keine finalen MS EMotion Cars Produkte. Verfügbarkeit und Preise auf Anfrage.</p>
+    <div class="section-heading"><div><span class="eyebrow">{copy.text_006}</span><h2>{copy.text_007}<br/><em>{copy.text_008}</em></h2></div><p>{copy.text_009}</p></div>
+    <p class="collection-notice">{copy.text_010}</p>
     <div class="ms-product-grid">{products.map((product)=> <article class="ms-product" id={product.slug}>
       <a class="ms-product-image" href={withBase("/ms-collection/"+product.slug+"/")} aria-label={product.name+" – Produktdetails ansehen"}><img src={product.image} alt={product.alt} loading="lazy" referrerpolicy="no-referrer"/><span class="ms-product-label">KONZEPT / {product.category}</span></a>
-      <div class="ms-product-info"><div><span class="eyebrow">{product.category}</span><h3>{product.name}</h3><p>{product.description}</p></div><a class="button button-outline" href={withBase("/ms-collection/"+product.slug+"/")} aria-label={`Details zu ${product.name} ansehen`}>DETAILS ENTDECKEN <span aria-hidden="true">↗</span></a></div>
+      <div class="ms-product-info"><div><span class="eyebrow">{product.category}</span><h3>{product.name}</h3><p>{product.description}</p></div><a class="button button-outline" href={withBase("/ms-collection/"+product.slug+"/")} aria-label={`Details zu ${product.name} ansehen`}>{copy.text_011} <span aria-hidden="true">↗</span></a></div>
     </article>)}</div>
-    <div class="ms-shop-outro"><span class="eyebrow">BE PART OF THE JOURNEY</span><h2>Style is an<br/><em>attitude.</em></h2><p>Sie interessieren sich für die MS Collection oder möchten mehr über die geplanten Produkte erfahren?</p><a class="button button-outline" href={withBase('/kontakt')}>KONTAKT AUFNEHMEN <span aria-hidden="true">↗</span></a></div>
+    <div class="ms-shop-outro"><span class="eyebrow">{copy.text_012}</span><h2>{copy.text_013}<br/><em>{copy.text_014}</em></h2><p>{copy.text_015}</p><a class="button button-outline" href={withBase('/kontakt')}>{copy.text_016} <span aria-hidden="true">↗</span></a></div>
   </div></section>
 </Base>
