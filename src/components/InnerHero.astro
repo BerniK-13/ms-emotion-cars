@@ -6,7 +6,7 @@ const {eyebrow,title,accent='',description='',image='',position='center',classNa
  {image && <img class="inner-hero-photo" src={withBase(image)} alt="" loading="eager" decoding="async" aria-hidden="true"/>}
  <div class="shell inner-hero-content">
   <span class="eyebrow">{eyebrow}</span>
-  <h1>{title}{accent && <><br/><em>{accent}</em></>}</h1>
+  <h1 class="subpage-hero-title">{title}{accent && <><br/><em>{accent}</em></>}</h1>
   {description && <p>{description}</p>}
  </div>
 </section>
