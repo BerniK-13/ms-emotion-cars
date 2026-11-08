@@ -1,150 +1,33 @@
-// Fahrzeugmodelle und originale, unveränderte Studiobilder aus dem Repository.
-// Preise, Erstzulassung, Kilometerstand und Ausstattung werden erst nach Bestätigung ergänzt.
-export const cars = [
-  {
-    "slug": "porsche-992-2-gt3-weissach-silber",
-    "brand": "Porsche",
-    "model": "992.2 GT3 Weissach",
-    "type": "Sportwagen",
-    "tag": "IM SHOWROOM",
-    "images": [
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(01).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(02).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(03).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(04).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(05).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(06).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(07).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(08).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(09).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(10-1).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(10-2).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(10).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(11).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(12).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(13).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(14).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(15).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(16).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(17-1).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(17).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(18).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(19).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(20%20%20%20).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(20).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(21).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(22).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(23).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(24-1).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(24).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(25).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(26).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(027.jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(028).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(29).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(30).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(31).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(32).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(33)).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(34).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(35).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(36).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(37).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(38).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(39-1).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(39).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(40).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(41).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(42).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(43).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(44).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(45).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(46).jpg",
-      "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(47).jpg"
-    ],
-    "image": "/images/fahrzeuge/porsche-992-2-gt3-weissach-silber/Porsche%20992.2%20GT3%20weissach%20silber%20(01).jpg"
-  },
-  {
-    "slug": "bmw-m3-cs-touring",
-    "brand": "BMW",
-    "model": "M3 CS Touring",
-    "type": "Sportwagen",
-    "tag": "IM SHOWROOM",
-    "images": [
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08712.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08715.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08720.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08725.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08729.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08731.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08733.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08740.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08743.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08754.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08755.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08756.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08759.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08762.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08764.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08767.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08768.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08770.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08771.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08772.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08774.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08777.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08780.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08782.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08784.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08785.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08786.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08789.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08791.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08792.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08793.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08794.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08799.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08803.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08804.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08807.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08811.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08813.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08818.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08821.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08824.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08825.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08826.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08829.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08830.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08832.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08833.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08834.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08836.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08839.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08842.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08844.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08845.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08846.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08847.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08850.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08852.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08898.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08900.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08902.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08904.jpg",
-      "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08906.jpg"
-    ],
-    "image": "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08712.jpg"
-  },
-  {
-    "slug": "bmw-1er-m-coupe",
-    "brand": "BMW",
-    "model": "1er M Coupé",
-    "type": "Sportwagen",
-    "tag": "BILDER FOLGEN",
-    "images": [],
-    "image": null
-  }
-];
-export const euro = n => n == null ? 'Preis auf Anfrage' : new Intl.NumberFormat('de-AT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
+// Fahrzeugdaten kommen direkt aus den JSON-Dateien des CMS.
+// Astro baut die statische Website nach jedem Commit auf main automatisch neu.
+const entries = import.meta.glob('../../content/vehicles/*.json', { eager: true, import: 'default' });
+function assetPath(path) {
+  if (!path || typeof path !== 'string') return null;
+  const clean = path.trim();
+  if (!clean) return null;
+  if (/^https?:\/\//i.test(clean)) return clean;
+  // Decap liefert bei neuen Uploads den GitHub-Pages-Prefix, vorhandene Dateien nicht.
+  return clean.replace(/^\/ms-emotion-cars(?=\/)/, '');
+}
+function normalize(raw) {
+  const images = (Array.isArray(raw.images) ? raw.images : []).map(x => assetPath(typeof x === 'string' ? x : x?.image)).filter(Boolean);
+  const image = assetPath(raw.image) || images[0] || null;
+  if (image && !images.includes(image)) images.unshift(image);
+  return {
+    ...raw,
+    slug: String(raw.slug || '').trim(),
+    brand: String(raw.brand || '').trim(),
+    model: String(raw.model || '').trim(),
+    type: raw.type || 'Automobil',
+    tag: raw.tag || (raw.status === 'sold' ? 'SOLD' : 'IM SHOWROOM'),
+    image,
+    images,
+    facts: Array.isArray(raw.facts) ? raw.facts : [],
+    details: Array.isArray(raw.details) ? raw.details : [],
+    highlights: Array.isArray(raw.highlights) ? raw.highlights : [],
+  };
+}
+export const allCars = Object.values(entries).map(normalize).filter(car => car.slug && car.brand && car.model && car.published === true && car.status !== 'draft');
+export const cars = allCars.filter(car => car.status === 'in_stock');
+export const euro = n => n == null || n === '' ? 'Preis auf Anfrage' : new Intl.NumberFormat('de-AT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
 export const number = n => n == null ? 'Auf Anfrage' : new Intl.NumberFormat('de-AT').format(n);
