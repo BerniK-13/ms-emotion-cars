@@ -1,6 +1,8 @@
 ---
 import {withBase} from '../utils/paths.js';
+import {vehicleSpecs} from '../data/vehicleSpecs.js';
 const {car}=Astro.props;
+const specs=vehicleSpecs[car.slug];
 ---
 <a class="car-card" href={withBase('/fahrzeuge/'+car.slug+'/')} aria-label={`${car.brand} ${car.model} – Details ansehen`}>
   <div class="car-photo">
@@ -8,6 +10,6 @@ const {car}=Astro.props;
     <span class="car-tag">{car.tag}</span>
   </div>
   <div class="car-info"><div><span class="car-brand">{car.brand}</span><h3>{car.model}</h3></div><span class="car-arrow" aria-hidden="true">↗</span></div>
-  <div class="car-meta"><span>{car.images.length ? `${car.images.length} Fahrzeugfotos` : 'Fotos in Vorbereitung'}</span></div>
-  <div class="car-price">Preis auf Anfrage</div>
+  <div class="car-meta">{specs ? <><span>{specs.facts[0][1]}</span><span>{specs.facts[1][1]}</span><span>{specs.facts[2][1]}</span></> : <span>{car.images.length ? `${car.images.length} Fahrzeugfotos` : 'Fotos in Vorbereitung'}</span>}</div>
+  <div class="car-price">{specs ? new Intl.NumberFormat("de-AT",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(specs.price) : "Preis auf Anfrage"}</div>
 </a>
