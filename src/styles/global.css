@@ -269,3 +269,19 @@ body:has(.inner-hero) .detail-top.real-detail{padding-top:75px}
 .equipment-list li:before{content:'—';position:absolute;left:0;color:#a21d2a}
 .spec-disclaimer{font-size:12px;color:#858687;margin-top:35px}
 @media(max-width:760px){.spec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.spec-item{padding-right:10px}.equipment-list{grid-template-columns:1fr}.spec-summary{padding:42px 0}}
+
+/* Mobile overflow fix: keep the full footer headline within the viewport. */
+@media(max-width:760px){
+ .footer-visual{overflow:hidden}
+ .footer-visual h2{font-size:clamp(2.1rem,8.1vw,3.75rem);line-height:1.04;letter-spacing:-.045em;overflow-wrap:normal}
+ .footer-visual h2 em{font-size:1em}
+ .footer-visual .button{max-width:100%;gap:18px}
+ .footer-bottom,.footer-bottom>*{min-width:0}
+ .footer-bottom p,.footer-bottom small{overflow-wrap:anywhere}
+ .detail-title h1{font-size:clamp(2.8rem,10.5vw,4.6rem);overflow-wrap:break-word}
+ .detail-columns>*,.split-layout>*,.form-grid>*,.spec-grid>*{min-width:0}
+ .inner-hero h1{overflow-wrap:break-word}
+}
+@media(max-width:390px){
+ .footer-visual h2{font-size:clamp(1.9rem,7.7vw,2.8rem)}
+}
