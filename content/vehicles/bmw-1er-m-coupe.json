@@ -1,17 +1,19 @@
 {
-  "slug": "bmw-1er-m-coupe",
-  "brand": "BMW",
-  "model": "1er M Coupé",
-  "type": "Sportwagen",
-  "status": "in_stock",
-  "published": true,
-  "tag": "BILDER FOLGEN",
-  "image": "",
-  "images": [],
-  "price": null,
-  "reference": "",
-  "updated": "",
-  "facts": [],
   "details": [],
+  "brand": "BMW",
+  "facts": [],
+  "price": null,
+  "model": "1er M Coupé",
+  "slug": "bmw-1er-m-coupe",
+  "reference": "",
+  "published": true,
+  "status": "in_stock",
+  "images": [
+    "/ms-emotion-cars/images/fahrzeuge/bmw-1er-mcoupé-01-.jpg"
+  ],
+  "type": "Sportwagen",
+  "tag": "BILDER FOLGEN",
+  "updated": "",
+  "image": "",
   "highlights": []
 }
