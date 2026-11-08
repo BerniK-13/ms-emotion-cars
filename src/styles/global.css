@@ -487,3 +487,7 @@ body:has(.real-detail) .site-header{background:transparent;color:#fff;border-bot
 
 /* Keep premium reference vehicles centered and fully recognizable in image cards. */
 .reference-card .reference-photo img{object-fit:contain;object-position:center;background:#141516}
+
+/* Subtle carbon weave behind the Not for everyone statement. */
+.intro-strip{position:relative;isolation:isolate;background:#141516}
+.intro-strip::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(90deg,#121314d9,#171819c9 50%,#121314d9),var(--intro-carbon);background-size:cover;background-position:center;opacity:.55;pointer-events:none}
