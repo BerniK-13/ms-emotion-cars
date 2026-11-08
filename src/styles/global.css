@@ -365,3 +365,13 @@ body:has(.hero) .buy-art span{transform:none}
 
 /* Inventory hero: brand-red IN STOCK label. */
 .inventory-page .eyebrow{color:#991B26}
+
+/* Unified CTA treatment: all primary outline buttons and text links share the same solid racing-red frame. */
+.button-outline,.text-link{min-height:54px;padding:0 26px;display:inline-flex;align-items:center;justify-content:space-between;gap:40px;border:1px solid #991B26;background:transparent;color:inherit;font-size:11px;letter-spacing:.13em;font-weight:700;line-height:1.4;transition:background .2s,color .2s,border-color .2s;text-decoration:none}
+.button-outline:hover,.text-link:hover{background:#991B26;border-color:#991B26;color:#fff}
+.button-outline:hover span,.text-link:hover span{color:#fff}
+/* Override the previous underline-only homepage link rules. */
+body:has(.hero) .collection .text-link{border:1px solid #991B26;color:#f4f4f2}
+body:has(.hero) .collection .text-link:hover{background:#991B26;border-color:#991B26;color:#fff}
+/* Existing text-link placement is preserved; only its visual treatment changes. */
+@media(max-width:760px){.button-outline,.text-link{max-width:100%;gap:22px;padding:0 20px;text-align:left}}
