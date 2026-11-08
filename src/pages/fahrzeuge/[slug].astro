@@ -4,11 +4,11 @@ import Base from '../../layouts/Base.astro';
 import InnerHero from '../../components/InnerHero.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import {cars} from '../../data/cars.js';
-import {vehicleSpecs} from '../../data/vehicleSpecs.js';
+import {euro} from '../../data/cars.js';
 export function getStaticPaths(){return cars.map(car=>({params:{slug:car.slug},props:{car}}));}
 const {car}=Astro.props;
-const specs=vehicleSpecs[car.slug];
-const price=specs?new Intl.NumberFormat('de-AT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(specs.price):'Preis auf Anfrage';
+const specs=car.facts.length || car.details.length || car.highlights.length ? car : null;
+const price=euro(car.price);
 ---
 <Base title={`${car.brand} ${car.model}`} description={`${car.brand} ${car.model} – Bildergalerie bei MS EMotion Cars.`}>
 <InnerHero eyebrow={`${car.brand.toUpperCase()} / MS EMOTION CARS`} title="Never just" accent="a car." description={`${car.brand} ${car.model}`} image={car.images[0] || '/images/hero-porsche.png'} position="center 57%"/>
@@ -29,10 +29,10 @@ const price=specs?new Intl.NumberFormat('de-AT',{style:'currency',currency:'EUR'
     <dialog class="gallery-dialog" aria-label="Fahrzeugbilder in Vollbild"><button class="gallery-close" type="button" aria-label="Vollbild schließen">✕</button><button class="gallery-modal-prev" type="button" aria-label="Vorheriges Bild">‹</button><img class="gallery-modal-image" alt={`${car.brand} ${car.model} – vergrößerte Aufnahme`}/><button class="gallery-modal-next" type="button" aria-label="Nächstes Bild">›</button><span class="gallery-modal-count"></span></dialog>
   </div> : <div class="gallery-pending">Die Studioaufnahmen für dieses Fahrzeug folgen in Kürze.</div>}
 </div></section>
-{specs && <section class="spec-summary"><div class="shell"><span class="eyebrow eyebrow-dark">AT A GLANCE / FAHRZEUGDATEN</span><div class="spec-grid">{specs.facts.map(([label,value])=><div class="spec-item"><span>{label}</span><strong>{value}</strong></div>)}</div></div></section>}
+{specs && <section class="spec-summary"><div class="shell"><span class="eyebrow eyebrow-dark">AT A GLANCE / FAHRZEUGDATEN</span><div class="spec-grid">{specs.facts.map(({label,value})=><div class="spec-item"><span>{label}</span><strong>{value}</strong></div>)}</div></div></section>}
 <section class="section detail-body"><div class="shell detail-columns">
  <div><span class="eyebrow eyebrow-dark">THE DETAILS</span><h2>Außergewöhnlich.<br/><em>Bis ins Detail.</em></h2>
- {specs ? <><p>Der BMW M3 CS Touring verbindet die Fahrdynamik der M-Modelle mit der Vielseitigkeit eines Touring. Entdecken Sie die technischen Daten und Ausstattungsmerkmale dieses Fahrzeugs.</p><h3 class="spec-heading">Technische Details</h3><dl class="spec-table">{specs.details.map(([label,value])=><div><dt>{label}</dt><dd>{value}</dd></div>)}</dl><h3 class="spec-heading">Ausstattungshighlights</h3><ul class="equipment-list">{specs.highlights.map(item=><li>{item}</li>)}</ul><p class="spec-disclaimer">Fahrzeugdaten und Preis laut Händlerangebot, Stand {specs.updated}. Änderungen, Irrtümer und Zwischenverkauf vorbehalten. Angaben vor Vertragsabschluss bestätigen lassen.</p></> : <><p>Entdecken Sie {car.brand} {car.model} in unserer Fahrzeuggalerie.</p><p class="muted">Technische Daten, Ausstattung und Preis ergänzen wir nach Prüfung der Fahrzeugangaben. Bitte kontaktieren Sie uns für weitere Informationen.</p></>}
+ {specs ? <><p>Entdecken Sie die technischen Daten und Ausstattungsmerkmale dieses Fahrzeugs.</p><h3 class="spec-heading">Technische Details</h3><dl class="spec-table">{specs.details.map(({label,value})=><div><dt>{label}</dt><dd>{value}</dd></div>)}</dl><h3 class="spec-heading">Ausstattungshighlights</h3><ul class="equipment-list">{specs.highlights.map(item=><li>{item}</li>)}</ul><p class="spec-disclaimer">Fahrzeugdaten und Preis laut Händlerangebot, Stand {specs.updated || 'laut Fahrzeugangebot'}. Änderungen, Irrtümer und Zwischenverkauf vorbehalten. Angaben vor Vertragsabschluss bestätigen lassen.</p></> : <><p>Entdecken Sie {car.brand} {car.model} in unserer Fahrzeuggalerie.</p><p class="muted">Technische Daten, Ausstattung und Preis ergänzen wir nach Prüfung der Fahrzeugangaben. Bitte kontaktieren Sie uns für weitere Informationen.</p></>}
  </div>
  <div class="inquiry-panel"><h3>Interesse an diesem Fahrzeug?</h3><p>Fragen zu Ausstattung, Preis oder Verfügbarkeit? Wir freuen uns auf Ihre Anfrage.</p><a class="button button-dark" href={`mailto:info@ms-automobile.at?subject=${encodeURIComponent('MS EMotion Cars – Anfrage '+car.brand+' '+car.model)}`}>FAHRZEUG ANFRAGEN <span aria-hidden="true">↗</span></a><p class="muted">Die Anfrage öffnet Ihr E-Mail-Programm.</p></div>
 </div></section>
