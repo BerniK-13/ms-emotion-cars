@@ -27,11 +27,13 @@
 </head>
 <body>
   <noscript>Für die CMS-Verwaltung muss JavaScript aktiviert sein.</noscript>
+  <!-- Decap bundles React internally; expose React.createElement for custom preview registration. -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/decap-cms@3/dist/decap-cms.js"></script>
   <script>
     (function(){
       const h=window.React && window.React.createElement;
-      if(!h || !window.CMS) return;
+      if(!h || !window.CMS) { console.error("MS EMotion Cars: CMS preview could not initialize"); return; }
       const e=(tag,props,...children)=>h(tag,props,...children);
       const val=(data,key)=>data.get(key)||'';
       const list=(data,key)=>{const v=data.get(key);return v&&typeof v.toJS==='function'?v.toJS():Array.isArray(v)?v:[]};
