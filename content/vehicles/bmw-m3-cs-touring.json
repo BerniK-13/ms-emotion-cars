@@ -1,0 +1,165 @@
+{
+  "slug": "bmw-m3-cs-touring",
+  "brand": "BMW",
+  "model": "M3 CS Touring",
+  "type": "Sportwagen",
+  "status": "in_stock",
+  "published": true,
+  "tag": "IM SHOWROOM",
+  "image": "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08712.jpg",
+  "images": [
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08712.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08715.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08720.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08725.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08729.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08731.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08733.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08740.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08743.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08754.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08755.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08756.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08759.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08762.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08764.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08767.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08768.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08770.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08771.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08772.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08774.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08777.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08780.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08782.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08784.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08785.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08786.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08789.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08791.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08792.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08793.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08794.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08799.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08803.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08804.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08807.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08811.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08813.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08818.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08821.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08824.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08825.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08826.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08829.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08830.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08832.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08833.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08834.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08836.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08839.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08842.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08844.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08845.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08846.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08847.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08850.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08852.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08898.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08900.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08902.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08904.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08906.jpg"
+  ],
+  "price": 185999,
+  "reference": "GWR-26025",
+  "updated": "12.10.2026",
+  "facts": [
+    {
+      "label": "Kilometerstand",
+      "value": "5.251 km"
+    },
+    {
+      "label": "Erstzulassung",
+      "value": "06/2025"
+    },
+    {
+      "label": "Leistung",
+      "value": "405 kW / 551 PS"
+    },
+    {
+      "label": "Getriebe",
+      "value": "8-Gang Automatik"
+    },
+    {
+      "label": "Kraftstoff",
+      "value": "Benzin"
+    },
+    {
+      "label": "Antrieb",
+      "value": "M xDrive / Allrad"
+    }
+  ],
+  "details": [
+    {
+      "label": "Fahrzeugzustand",
+      "value": "Gebrauchtwagen"
+    },
+    {
+      "label": "Hubraum",
+      "value": "2.993 cm³"
+    },
+    {
+      "label": "Karosserie",
+      "value": "Touring / Kombi"
+    },
+    {
+      "label": "Sitzplätze",
+      "value": "5"
+    },
+    {
+      "label": "Türen",
+      "value": "5"
+    },
+    {
+      "label": "Außenfarbe",
+      "value": "Saphirschwarz Metallic"
+    },
+    {
+      "label": "Innenausstattung",
+      "value": "Vollleder Merino Anthrazit"
+    },
+    {
+      "label": "Abgasnorm",
+      "value": "Euro 6"
+    },
+    {
+      "label": "CO₂-Ausstoß",
+      "value": "238 g/km"
+    },
+    {
+      "label": "0–100 km/h",
+      "value": "3,5 Sekunden"
+    },
+    {
+      "label": "Höchstgeschwindigkeit",
+      "value": "300 km/h"
+    },
+    {
+      "label": "Servicehistorie",
+      "value": "Digitales BMW Serviceheft"
+    }
+  ],
+  "highlights": [
+    "M Carbon-Keramik-Bremse mit roten Bremssätteln",
+    "M Driver’s Package und M Drive Professional",
+    "M Sportdifferenzial und adaptives M Fahrwerk",
+    "19/20 Zoll M Leichtmetallräder in Goldbronze",
+    "M Interieurleisten Carbon Fibre und Alcantara-Lenkrad",
+    "Harman Kardon Surround Sound System",
+    "BMW Live Cockpit Professional",
+    "Adaptive LED-Scheinwerfer und Driving Assistant",
+    "Parking Assistant und Komfortzugang",
+    "Sitzheizung und elektrische Sitze mit Memory"
+  ]
+}
