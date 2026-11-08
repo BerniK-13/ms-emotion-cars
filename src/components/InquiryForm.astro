@@ -1,6 +1,41 @@
 ---
 import {withBase} from '../utils/paths.js';
+import {cars} from '../data/cars.js';
 const {kind='contact',vehicle=''}=Astro.props;
 ---
-<form class="inquiry-form" data-demo-form><div class="form-grid"><label>Vorname *<input name="firstName" autocomplete="given-name" required maxlength="80"/></label><label>Nachname *<input name="lastName" autocomplete="family-name" required maxlength="80"/></label><label>E-Mail *<input type="email" name="email" autocomplete="email" required maxlength="180"/></label><label>Telefon<input type="tel" name="phone" autocomplete="tel" maxlength="50"/></label>{kind==='purchase'&&<label class="full">Fahrzeug / Marke<input name="vehicle" placeholder="z. B. Porsche 911 GT3" maxlength="150"/></label>}<label class="full">Ihre Nachricht *<textarea name="message" rows="5" required maxlength="3000" placeholder={vehicle?`Ich interessiere mich für ${vehicle} …`:'Wie können wir Ihnen helfen?'}></textarea></label></div><label class="privacy-check"><input type="checkbox" required/> <span>Ich habe die <a href={withBase("/datenschutz")}>Datenschutzhinweise</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu. *</span></label><button class="button button-dark" type="submit">ANFRAGE VORBEREITEN <span>↗</span></button><p class="form-note" role="status">Demo-Modus: Es werden keine Daten gesendet oder gespeichert.</p></form>
-<script>document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const status=form.querySelector('.form-note');status.textContent='Demo erfolgreich geprüft. Es wurde KEINE Anfrage verschickt. Für den Livebetrieb muss ein sicherer Formularversand eingerichtet werden.';status.classList.add('notice');}));</script>
+{kind==='contact' ? (
+<form class="inquiry-form contact-inquiry" data-contact-inquiry>
+ <div class="form-grid">
+  <label class="full">Name *<input name="name" autocomplete="name" required maxlength="160" placeholder="Vor- und Nachname"/></label>
+  <label>E-Mail-Adresse *<input type="email" name="email" autocomplete="email" required maxlength="180" placeholder="name@beispiel.at"/></label>
+  <label>Telefonnummer *<input type="tel" name="phone" autocomplete="tel" required maxlength="50" placeholder="+43 …"/></label>
+  <label class="full">Worum geht es? *<select name="topic" required data-inquiry-topic><option value="">Bitte auswählen</option><option value="verkauf">Fahrzeugverkauf – Ich interessiere mich für ein Fahrzeug</option><option value="ankauf">Fahrzeugankauf – Ich möchte mein Fahrzeug anbieten</option></select></label>
+  <label class="full" data-vehicle-field hidden>Welches Fahrzeug interessiert Sie? *<select name="vehicle" data-inquiry-vehicle disabled><option value="">Bitte Fahrzeug auswählen</option>{cars.map(car=><option value={`${car.brand} ${car.model}`}>{car.brand} {car.model}</option>)}</select></label>
+  <label class="full">Bemerkungen<textarea name="message" rows="5" maxlength="3000" placeholder="Ihre Fragen oder weitere Informationen …"></textarea></label>
+ </div>
+ <label class="privacy-check"><input type="checkbox" required/> <span>Ich habe die <a href={withBase('/datenschutz')}>Datenschutzhinweise</a> gelesen. *</span></label>
+ <button class="button button-dark" type="submit">E-MAIL ZUM SENDEN ÖFFNEN <span aria-hidden="true">↗</span></button>
+ <p class="form-note" role="status">Nach dem Ausfüllen öffnet sich Ihr E-Mail-Programm mit der vorbereiteten Anfrage. Bitte senden Sie die Nachricht dort ab.</p>
+</form>
+) : (
+<form class="inquiry-form" data-demo-form><div class="form-grid"><label>Vorname *<input name="firstName" autocomplete="given-name" required maxlength="80"/></label><label>Nachname *<input name="lastName" autocomplete="family-name" required maxlength="80"/></label><label>E-Mail *<input type="email" name="email" autocomplete="email" required maxlength="180"/></label><label>Telefon<input type="tel" name="phone" autocomplete="tel" maxlength="50"/></label>{kind==='purchase'&&<label class="full">Fahrzeug / Marke<input name="vehicle" placeholder="z. B. Porsche 911 GT3" maxlength="150"/></label>}<label class="full">Ihre Nachricht *<textarea name="message" rows="5" required maxlength="3000" placeholder={vehicle?`Ich interessiere mich für ${vehicle} …`:'Wie können wir Ihnen helfen?'}></textarea></label></div><label class="privacy-check"><input type="checkbox" required/> <span>Ich habe die <a href={withBase('/datenschutz')}>Datenschutzhinweise</a> gelesen. *</span></label><button class="button button-dark" type="submit">ANFRAGE VORBEREITEN <span>↗</span></button><p class="form-note" role="status">Demo-Modus: Es werden keine Daten gesendet oder gespeichert.</p></form>
+)}
+<script>
+document.querySelectorAll('[data-contact-inquiry]').forEach(form=>{
+ const topic=form.querySelector('[data-inquiry-topic]');
+ const field=form.querySelector('[data-vehicle-field]');
+ const vehicle=form.querySelector('[data-inquiry-vehicle]');
+ function update(){const show=topic.value==='verkauf';field.hidden=!show;vehicle.disabled=!show;vehicle.required=show;if(!show)vehicle.value='';}
+ topic.addEventListener('change',update);update();
+ form.addEventListener('submit',e=>{
+  e.preventDefault();if(!form.reportValidity())return;
+  const data=new FormData(form);
+  const subject=data.get('topic')==='verkauf'?`MS EMotion Cars – Anfrage ${data.get('vehicle')}`:'MS EMotion Cars – Fahrzeugankauf';
+  const body=[`Anfrage: ${data.get('topic')==='verkauf'?'Fahrzeugverkauf / Kaufinteresse':'Fahrzeugankauf'}`,`Name: ${data.get('name')}`,`E-Mail: ${data.get('email')}`,`Telefon: ${data.get('phone')}`,...(data.get('topic')==='verkauf'?[`Fahrzeug: ${data.get('vehicle')}`]:[]),'','Bemerkungen:',String(data.get('message')||'')].join('\n');
+  const url=`mailto:info@ms-automobile.at?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  form.querySelector('.form-note').textContent='Ihr E-Mail-Programm wird geöffnet. Bitte senden Sie die vorbereitete Nachricht dort ab. Ohne E-Mail-Programm können Sie uns direkt unter info@ms-automobile.at kontaktieren.';
+  window.location.href=url;
+ });
+});
+document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const status=form.querySelector('.form-note');status.textContent='Demo erfolgreich geprüft. Es wurde KEINE Anfrage verschickt. Für den Livebetrieb muss ein sicherer Formularversand eingerichtet werden.';status.classList.add('notice');}));
+</script>
