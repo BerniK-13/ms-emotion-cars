@@ -1,9 +1,10 @@
 ---
+import InnerHero from '../components/InnerHero.astro';import {cars} from '../data/cars.js';
 import Base from '../layouts/Base.astro';
 import InquiryForm from '../components/InquiryForm.astro';
 ---
 <Base title="Kontakt" description="Kontaktieren Sie MS EMotion Cars, ein Markenauftritt der MS Automobile Roppen GmbH & Co. KG in Roppen, Tirol.">
-<section class="page-head light-head"><div class="shell"><span class="eyebrow eyebrow-dark">MS EMOTION CARS / GET IN TOUCH</span><h1>Let's <em>connect.</em></h1><p>Außergewöhnliche Fahrzeuge verdienen persönlichen Kontakt.</p></div></section>
+<InnerHero eyebrow="MS EMOTION CARS / GET IN TOUCH" title="Let's" accent="connect." description="Außergewöhnliche Fahrzeuge verdienen persönlichen Kontakt." image={cars[1]?.images[2]} position="center 58%"/>
 <section class="section"><div class="shell split-layout">
  <div><span class="eyebrow eyebrow-dark">MS EMOTION CARS</span><h2>Der direkte<br/><em>Weg zu uns.</em></h2>
  <p>Wir freuen uns auf Ihre Anfrage zu unseren Fahrzeugen oder zum Fahrzeugankauf.</p>

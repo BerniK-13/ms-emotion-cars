@@ -1,0 +1,12 @@
+---
+import {withBase} from '../utils/paths.js';
+const {eyebrow,title,accent='',description='',image='',position='center',className=''}=Astro.props;
+---
+<section class:list={["inner-hero",className]} style={`--inner-hero-position:${position}`}>
+ {image && <img class="inner-hero-photo" src={withBase(image)} alt="" loading="eager" decoding="async" aria-hidden="true"/>}
+ <div class="shell inner-hero-content">
+  <span class="eyebrow">{eyebrow}</span>
+  <h1>{title}{accent && <><br/><em>{accent}</em></>}</h1>
+  {description && <p>{description}</p>}
+ </div>
+</section>
