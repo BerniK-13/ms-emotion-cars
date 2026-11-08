@@ -1,12 +1,87 @@
 {
-  "slug": "bmw-m3-cs-touring",
+  "details": [
+    {
+      "label": "Fahrzeugzustand",
+      "value": "Gebrauchtwagen"
+    },
+    {
+      "label": "Hubraum",
+      "value": "2.993 cm³"
+    },
+    {
+      "label": "Karosserie",
+      "value": "Touring / Kombi"
+    },
+    {
+      "label": "Sitzplätze",
+      "value": "5"
+    },
+    {
+      "label": "Türen",
+      "value": "5"
+    },
+    {
+      "label": "Außenfarbe",
+      "value": "Saphirschwarz Metallic"
+    },
+    {
+      "label": "Innenausstattung",
+      "value": "Vollleder Merino Anthrazit"
+    },
+    {
+      "label": "Abgasnorm",
+      "value": "Euro 6"
+    },
+    {
+      "label": "CO₂-Ausstoß",
+      "value": "238 g/km"
+    },
+    {
+      "label": "0–100 km/h",
+      "value": "3,5 Sekunden"
+    },
+    {
+      "label": "Höchstgeschwindigkeit",
+      "value": "300 km/h"
+    },
+    {
+      "label": "Servicehistorie",
+      "value": "Digitales BMW Serviceheft"
+    }
+  ],
   "brand": "BMW",
-  "model": "M3 CS Touring",
-  "type": "Sportwagen",
-  "status": "in_stock",
+  "facts": [
+    {
+      "label": "Kilometerstand",
+      "value": "5.251 km"
+    },
+    {
+      "label": "Erstzulassung",
+      "value": "06/2025"
+    },
+    {
+      "label": "Leistung",
+      "value": "405 kW / 551 PS"
+    },
+    {
+      "label": "Getriebe",
+      "value": "8-Gang Automatik"
+    },
+    {
+      "label": "Kraftstoff",
+      "value": "Benzin"
+    },
+    {
+      "label": "Antrieb",
+      "value": "M xDrive / Allrad"
+    }
+  ],
+  "price": 185999,
+  "model": "M3 CS Touring TESSSST",
+  "slug": "bmw-m3-cs-touring",
+  "reference": "GWR-26025",
   "published": true,
-  "tag": "IM SHOWROOM",
-  "image": "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08712.jpg",
+  "status": "in_stock",
   "images": [
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08712.jpg",
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08715.jpg",
@@ -71,85 +146,10 @@
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08904.jpg",
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08906.jpg"
   ],
-  "price": 185999,
-  "reference": "GWR-26025",
+  "type": "Sportwagen",
+  "tag": "IM SHOWROOM",
   "updated": "12.10.2026",
-  "facts": [
-    {
-      "label": "Kilometerstand",
-      "value": "5.251 km"
-    },
-    {
-      "label": "Erstzulassung",
-      "value": "06/2025"
-    },
-    {
-      "label": "Leistung",
-      "value": "405 kW / 551 PS"
-    },
-    {
-      "label": "Getriebe",
-      "value": "8-Gang Automatik"
-    },
-    {
-      "label": "Kraftstoff",
-      "value": "Benzin"
-    },
-    {
-      "label": "Antrieb",
-      "value": "M xDrive / Allrad"
-    }
-  ],
-  "details": [
-    {
-      "label": "Fahrzeugzustand",
-      "value": "Gebrauchtwagen"
-    },
-    {
-      "label": "Hubraum",
-      "value": "2.993 cm³"
-    },
-    {
-      "label": "Karosserie",
-      "value": "Touring / Kombi"
-    },
-    {
-      "label": "Sitzplätze",
-      "value": "5"
-    },
-    {
-      "label": "Türen",
-      "value": "5"
-    },
-    {
-      "label": "Außenfarbe",
-      "value": "Saphirschwarz Metallic"
-    },
-    {
-      "label": "Innenausstattung",
-      "value": "Vollleder Merino Anthrazit"
-    },
-    {
-      "label": "Abgasnorm",
-      "value": "Euro 6"
-    },
-    {
-      "label": "CO₂-Ausstoß",
-      "value": "238 g/km"
-    },
-    {
-      "label": "0–100 km/h",
-      "value": "3,5 Sekunden"
-    },
-    {
-      "label": "Höchstgeschwindigkeit",
-      "value": "300 km/h"
-    },
-    {
-      "label": "Servicehistorie",
-      "value": "Digitales BMW Serviceheft"
-    }
-  ],
+  "image": "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08712.jpg",
   "highlights": [
     "M Carbon-Keramik-Bremse mit roten Bremssätteln",
     "M Driver’s Package und M Drive Professional",
