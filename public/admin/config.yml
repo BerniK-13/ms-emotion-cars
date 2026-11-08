@@ -138,7 +138,8 @@ collections:
           - {label: "KONTAKT AUFNEHMEN", name: text_031, widget: string, required: false}
           - {label: "DRIVEN BY EXPERTISE.", name: text_032, widget: string, required: false}
           - {label: "OUR PHILOSOPHY / SINCE 1983", name: text_033, widget: string, required: false}
-          - {label: "Über uns | Erfahrung seit 1983", name: text_034, widget: string, required: false}          - {label: "EXKLUSIVITÄT BEGINNT MIT", name: text_035, widget: string, required: false}
+          - {label: "Über uns | Erfahrung seit 1983", name: text_034, widget: string, required: false}
+          - {label: "EXKLUSIVITÄT BEGINNT MIT", name: text_035, widget: string, required: false}
           - {label: "ERFAHRUNG.", name: text_036, widget: string, required: false}
           - {label: "AUTOMOBILE KOMPETENZ SEIT 1983.", name: text_037, widget: string, required: false}
 
@@ -156,7 +157,8 @@ collections:
           - {label: "Fahrzeug anbieten", name: text_008, widget: string, required: false}
           - {label: "Unverbindliche Anfrage · Demo ohne Versand", name: text_009, widget: string, required: false}
           - {label: "04 / WE BUY EXCEPTIONAL CARS", name: text_010, widget: string, required: false}
-          - {label: "Fahrzeugankauf", name: text_011, widget: string, required: false}          - {label: "Ihr Fahrzeug.", name: text_012, widget: string, required: false}
+          - {label: "Fahrzeugankauf", name: text_011, widget: string, required: false}
+          - {label: "Ihr Fahrzeug.", name: text_012, widget: string, required: false}
           - {label: "Unser Interesse.", name: text_013, widget: string, required: false}
           - {label: "Exklusive Fahrzeuge verdienen einen besonderen Rahmen.", name: text_014, widget: string, required: false}
 
@@ -180,7 +182,8 @@ collections:
           - {label: "Ihre Anfrage", name: text_014, widget: string, required: false}
           - {label: "Ob Sie sich für eines unserer Fahrzeuge interessieren oder uns Ihr Fahrzeug anbieten möcht…", name: text_015, widget: text, required: false}
           - {label: "06 / GET IN TOUCH", name: text_016, widget: string, required: false}
-          - {label: "Kontakt", name: text_017, widget: string, required: false}          - {label: "Let's", name: text_018, widget: string, required: false}
+          - {label: "Kontakt", name: text_017, widget: string, required: false}
+          - {label: "Let's", name: text_018, widget: string, required: false}
           - {label: "connect.", name: text_019, widget: string, required: false}
           - {label: "Außergewöhnliche Fahrzeuge verdienen persönlichen Kontakt.", name: text_020, widget: string, required: false}
 
@@ -193,7 +196,8 @@ collections:
           - {label: "BMW", name: text_003, widget: string, required: false}
           - {label: "Keine Fahrzeuge in dieser Kategorie.", name: text_004, widget: string, required: false}
           - {label: "IN STOCK", name: text_005, widget: string, required: false}
-          - {label: "Fahrzeuge", name: text_006, widget: string, required: false}          - {label: "For those", name: text_007, widget: string, required: false}
+          - {label: "Fahrzeuge", name: text_006, widget: string, required: false}
+          - {label: "For those", name: text_007, widget: string, required: false}
           - {label: "who know.", name: text_008, widget: string, required: false}
           - {label: "Außergewöhnliche Automobile. Mit Liebe zum Detail präsentiert.", name: text_009, widget: string, required: false}
 
@@ -299,7 +303,8 @@ collections:
           - {label: "Hinweis zu Fahrzeugangeboten", name: text_028, widget: string, required: false}
           - {label: "Fahrzeugangaben und Verfügbarkeiten können sich ändern. Verbindliche Auskünfte zu Ausstatt…", name: text_029, widget: text, required: false}
           - {label: "MS EMOTION CARS / RECHTLICHES", name: text_030, widget: string, required: false}
-          - {label: "Impressum", name: text_031, widget: string, required: false}          - {label: "Impressum", name: text_032, widget: string, required: false}
+          - {label: "Impressum", name: text_031, widget: string, required: false}
+          - {label: "Impressum", name: text_032, widget: string, required: false}
           - {label: "Angaben zum rechtlichen Betreiber unseres Internetauftritts.", name: text_033, widget: string, required: false}
 
       - label: "Datenschutz"
