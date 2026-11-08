@@ -592,3 +592,33 @@ body:has(.references-hero) .ms-shop-outro h2 em{font-family:'Italiana',Georgia,s
   margin:0 0 26px;
 }
 @media(max-width:760px){.ms-collection-hero > .shell > p{font-size:16px;line-height:1.6;margin-bottom:22px}}
+
+/* All image-banner subtitles match the homepage hero's exact typography.
+   Target the actual DOM: InnerHero uses .inner-hero-content (not a child
+   .inner-hero-content element), while Collection/References use .shell. */
+.inner-hero .inner-hero-content > p,
+.collection-hero > .shell > p,
+.ms-collection-hero > .shell > p,
+.references-hero > .shell > p{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:400;
+  font-style:normal;
+  line-height:2.2;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#bfc1c2;
+  max-width:640px;
+  margin:0 0 35px;
+}
+.inner-hero .inner-hero-content > p{margin-bottom:0}
+@media(max-width:760px){
+  .inner-hero .inner-hero-content > p,
+  .collection-hero > .shell > p,
+  .ms-collection-hero > .shell > p,
+  .references-hero > .shell > p{
+    font-size:10px;
+    line-height:2.2;
+    letter-spacing:.2em;
+  }
+}
