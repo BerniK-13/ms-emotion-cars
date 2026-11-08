@@ -10,7 +10,7 @@ const gallery=[product.image,...(product.images||[])];
 <section class="ms-product-detail"><div class="shell">
   <a class="ms-detail-back" href={withBase('/ms-collection/')}>← ZUR MS COLLECTION</a>
   <div class="ms-detail-grid">
-    <div class="ms-detail-gallery"><div class="ms-detail-main"><img src={gallery[0]} alt={product.alt} referrerpolicy="no-referrer" data-product-main/><span class="ms-product-label">BEISPIELBILD</span></div>
+    <div class="ms-detail-gallery"><div class="ms-detail-main"><img src={gallery[0]} alt={product.alt} referrerpolicy="no-referrer" data-product-main/><span class="ms-product-label">{product.category}</span></div>
       {gallery.length>1&&<div class="ms-detail-thumbs">{gallery.map((img,i)=><button type="button" class:list={['ms-detail-thumb',{active:i===0}]} data-gallery-src={img} aria-label={'Produktfoto '+(i+1)+' anzeigen'} aria-pressed={i===0}><img src={img} alt="" loading="lazy" referrerpolicy="no-referrer"/></button>)}</div>}
     </div>
     <div class="ms-detail-description"><span class="eyebrow">MS COLLECTION / {product.category}</span><h1>{product.name}</h1><p>{product.description}</p>
