@@ -484,3 +484,6 @@ body:has(.real-detail) .site-header{background:transparent;color:#fff;border-bot
 .ms-variant-form>.button:hover{background:#991B26;color:#fff}
 .ms-detail-note{font-size:11px;color:#aeb0b1;margin-top:14px}
 @media(max-width:760px){.ms-product-detail{padding:120px 0 75px}.ms-detail-grid{grid-template-columns:1fr}.ms-detail-description h1{font-size:clamp(3rem,12vw,5rem)}}
+
+/* Keep premium reference vehicles centered and fully recognizable in image cards. */
+.reference-card .reference-photo img{object-fit:contain;object-position:center;background:#141516}
