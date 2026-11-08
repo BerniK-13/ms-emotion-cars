@@ -431,3 +431,8 @@ body:has(.hero) .value-link p{font-size:12px;line-height:1.5}
 /* Original merchandising artwork in MS Collection hero; protect text contrast on left. */
 .ms-collection-hero{background-image:linear-gradient(90deg,#090a0bf5 0%,#090a0bd9 30%,#090a0b5e 65%,#090a0b22 100%),var(--collection-hero-image);background-color:#090a0b;background-size:cover;background-position:center center}
 @media(max-width:760px){.ms-collection-hero{background-image:linear-gradient(90deg,#090a0bf0 0%,#090a0bb8 60%,#090a0b75 100%),var(--collection-hero-image);background-position:64% center}}
+
+/* Consistent overlay navigation: hero image runs behind the header on every image-led page. */
+body:has(.inner-hero) .site-header,
+body:has(.inner-hero.inventory-page) .site-header,
+body:has(.real-detail) .site-header{background:transparent;color:#fff;border-bottom:1px solid #ffffff2a}
