@@ -5,7 +5,7 @@ import {withBase} from '../utils/paths.js';
 const current = Astro.url.pathname.replace(/\/$/, '') || '/';
 
 const nav = [
-  ['/fahrzeuge', 'Fahrzeuge'],
+  ['/fahrzeuge', 'In Stock'],
   ['/referenzen', 'Referenzen'],
   ['/ms-collection', 'MS Collection'],
   ['/ankauf', 'Ankauf'],
@@ -35,14 +35,10 @@ const nav = [
           ]}
           href={withBase(href)}
         >
-          {label}
+          <span class="nav-index">{String(nav.findIndex(item => item[0] === href) + 1).padStart(2, '0')}</span> {label}
         </a>
       ))}
     </nav>
-
-    <a class="header-contact" href={withBase('/kontakt')}>
-      ANFRAGE <span aria-hidden="true">↗</span>
-    </a>
 
     <button
       class="menu-toggle"
@@ -63,7 +59,7 @@ const nav = [
     hidden
   >
     {nav.map(([href, label]) => (
-      <a href={withBase(href)}>{label}</a>
+      <a href={withBase(href)}><span class="nav-index">{String(nav.findIndex(item => item[0] === href) + 1).padStart(2, '0')}</span> {label}</a>
     ))}
   </nav>
 </header>
