@@ -554,3 +554,26 @@ body:has(.references-hero) .ms-shop-outro h2 em{font-family:'Italiana',Georgia,s
     font-size:clamp(3rem,10vw,4.6rem);
   }
 }
+
+/* Shared subtitle typography for all large image banners, including References,
+   Vehicle Purchase and MS Collection. No forced uppercase or tracking. */
+.inner-hero .inner-hero-content > p,
+.collection-hero > .shell > p{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:clamp(1rem,1.4vw,1.125rem);
+  font-weight:400;
+  font-style:normal;
+  line-height:1.65;
+  letter-spacing:0;
+  text-transform:none;
+  color:#d2d2d3;
+  max-width:640px;
+  margin:0;
+}
+@media(max-width:760px){
+  .inner-hero .inner-hero-content > p,
+  .collection-hero > .shell > p{
+    font-size:1rem;
+    line-height:1.6;
+  }
+}
