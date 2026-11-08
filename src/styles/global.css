@@ -362,3 +362,6 @@ body:has(.hero) .buy-art{background:transparent;border-left:1px solid #ffffff12}
 /* Remove the distracting diagonal split; retain the carbon texture and smooth fade. */
 body:has(.hero) .buy-art{transform:none;skew:none;border-left:0;background:transparent}
 body:has(.hero) .buy-art span{transform:none}
+
+/* Inventory hero: brand-red IN STOCK label. */
+.inventory-page .eyebrow{color:#991B26}
