@@ -522,3 +522,6 @@ body:has(.references-hero) .ms-shop-outro h2 em{font-family:'Italiana',Georgia,s
 
 /* Home quick-navigation is desktop-only; hide the entire section on tablets and phones. */
 @media (max-width: 1100px){body:has(.hero) > .values,body:has(.hero) .values{display:none!important}}
+
+/* MS Collection closing statement: same elegant typeface for both lines. */
+.ms-shop-outro h2,.ms-shop-outro h2 em{font-family:'Italiana',Georgia,serif;font-weight:400;font-style:normal}
