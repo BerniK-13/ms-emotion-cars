@@ -496,3 +496,6 @@ body:has(.real-detail) .site-header{background:transparent;color:#fff;border-bot
 body:has(.hero) .intro-strip{border-top:1px solid rgba(255,255,255,.75)}
 body:has(.hero) .intro-strip .strip-inner>span{color:#b83b46;font-weight:700;text-transform:uppercase;letter-spacing:.16em}
 @media(max-width:760px){body:has(.hero) .intro-strip .strip-inner{flex-wrap:wrap;justify-content:space-between;gap:12px 18px;padding-block:22px}body:has(.hero) .intro-strip .strip-inner>span:last-child{display:inline}body:has(.hero) .intro-strip .strip-inner>p{order:-1;flex-basis:100%;text-align:center}body:has(.hero) .intro-strip .strip-inner>span{font-size:9px}}
+
+/* In Stock hero: enforce the approved deep racing red, including mobile rendering. */
+.inner-hero.inventory-page .subpage-hero-title em{color:#991B26!important;-webkit-text-fill-color:#991B26!important}
