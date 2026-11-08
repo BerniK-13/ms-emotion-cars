@@ -20,13 +20,13 @@ function callbackHtml(payload){
     const payload=${json};
     const origin=${origin};
     if(window.opener){
-      window.opener.postMessage('authorizing:github',origin);
       window.addEventListener('message',function handler(e){
-        if(e.origin!==origin || e.source!==window.opener || e.data!=='authorization:github')return;
+        if(e.origin!==origin || e.source!==window.opener || e.data!=='authorizing:github')return;
         window.removeEventListener('message',handler);
         window.opener.postMessage('authorization:github:'+payload.status+':'+JSON.stringify(payload.data),origin);
         window.close();
       });
+      window.opener.postMessage('authorizing:github',origin);
     }else{document.body.textContent='Bitte die Anmeldung über den CMS-Login starten.';}
   <\/script></body></html>`;
 }
