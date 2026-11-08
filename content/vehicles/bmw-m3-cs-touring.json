@@ -83,7 +83,6 @@
   "published": true,
   "status": "in_stock",
   "images": [
-    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08712.jpg",
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08715.jpg",
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08720.jpg",
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08725.jpg",
@@ -91,6 +90,7 @@
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08731.jpg",
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08733.jpg",
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08740.jpg",
+    "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08712.jpg",
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08743.jpg",
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08754.jpg",
     "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08755.jpg",
@@ -149,7 +149,7 @@
   "type": "Sportwagen",
   "tag": "IM SHOWROOM",
   "updated": "12.10.2026",
-  "image": "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08712.jpg",
+  "image": "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08715.jpg",
   "highlights": [
     "M Carbon-Keramik-Bremse mit roten Bremssätteln",
     "M Driver’s Package und M Drive Professional",
