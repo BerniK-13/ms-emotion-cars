@@ -560,7 +560,7 @@ body:has(.references-hero) .ms-shop-outro h2 em{font-family:'Italiana',Georgia,s
 .inner-hero .inner-hero-content > p,
 .collection-hero > .shell > p{
   font-family:'DM Sans',Arial,sans-serif;
-  font-size:clamp(1rem,1.4vw,1.125rem);
+  font-size:16px;
   font-weight:400;
   font-style:normal;
   line-height:1.65;
@@ -577,3 +577,18 @@ body:has(.references-hero) .ms-shop-outro h2 em{font-family:'Italiana',Georgia,s
     line-height:1.6;
   }
 }
+
+/* MS Collection banner: match the other subpage subtitles precisely,
+   while keeping breathing room before the collection CTA. */
+.ms-collection-hero > .shell > p{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:16px;
+  font-weight:400;
+  line-height:1.65;
+  letter-spacing:0;
+  text-transform:none;
+  color:#d2d2d3;
+  max-width:640px;
+  margin:0 0 26px;
+}
+@media(max-width:760px){.ms-collection-hero > .shell > p{font-size:16px;line-height:1.6;margin-bottom:22px}}
