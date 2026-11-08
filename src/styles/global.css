@@ -499,3 +499,7 @@ body:has(.hero) .intro-strip .strip-inner>span{color:#b83b46;font-weight:700;tex
 
 /* In Stock hero: enforce the approved deep racing red, including mobile rendering. */
 .inner-hero.inventory-page .subpage-hero-title em{color:#991B26!important;-webkit-text-fill-color:#991B26!important}
+
+/* References closing statement: keep both lines in the same elegant Italiana typography. */
+body:has(.references-hero) .ms-shop-outro h2,
+body:has(.references-hero) .ms-shop-outro h2 em{font-family:'Italiana',Georgia,serif;font-weight:400;font-style:normal}
