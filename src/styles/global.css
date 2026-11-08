@@ -345,3 +345,10 @@ body:has(.hero) .collection .text-link:hover{border-bottom-color:#991B26}
 .ms-shop-outro p{color:#b9bbbd;margin:0 auto 30px;max-width:530px}
 @media(max-width:1100px){.ms-product-info{display:block}.ms-product-info .button{margin-top:22px}}
 @media(max-width:760px){.collection-hero{min-height:500px;padding:155px 0 75px}.collection-hero h1{font-size:clamp(3.9rem,13vw,6.5rem)}.ms-product-grid{grid-template-columns:1fr;gap:55px}.ms-product-image img{aspect-ratio:4/4.2}.ms-shop-outro{margin-top:75px;padding-top:65px}.ms-product-info .button{width:100%}}
+
+/* Official MS EMotion Cars logo: preserve source image, proportions and effects. */
+.brand{width:clamp(155px,15vw,215px);line-height:normal}
+.brand-logo{display:block;width:100%;height:auto;object-fit:contain}
+.footer-brand{display:block;width:clamp(175px,20vw,270px);letter-spacing:normal}
+.footer-logo{display:block;width:100%;height:auto;object-fit:contain}
+@media(max-width:760px){.brand{width:155px}.footer-brand{width:210px}}
