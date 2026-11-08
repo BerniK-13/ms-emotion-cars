@@ -30,6 +30,7 @@ document.querySelectorAll('[data-contact-inquiry]').forEach(form=>{
  const product=form.querySelector('[data-inquiry-product]');
  function update(){const show=topic.value==='verkauf';const isProduct=topic.value==='produkt';field.hidden=!show;vehicle.disabled=!show;vehicle.required=show;if(!show)vehicle.value='';productField.hidden=!isProduct;product.disabled=!isProduct;product.required=isProduct;if(!isProduct)product.value='';}
  const params=new URLSearchParams(window.location.search);
+ if(params.get('topic')==='verkauf'){topic.value='verkauf';const requested=(params.get('vehicle')||'').trim();if([...vehicle.options].some(option=>option.value===requested))vehicle.value=requested;}
  if(params.get('topic')==='produkt'){topic.value='produkt';product.value=(params.get('product')||'').slice(0,180);const selections=[params.get('size')?'Größe: '+params.get('size'):'',params.get('color')?'Farbe: '+params.get('color'):''].filter(Boolean);if(selections.length)form.querySelector('textarea[name="message"]').value='Gewünschte Ausführung: '+selections.join(', ');}
  topic.addEventListener('change',update);update();
  form.addEventListener('submit',e=>{
