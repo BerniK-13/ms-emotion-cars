@@ -17,7 +17,7 @@ import copy from '../../content/pages/kontakt.json';
  <strong>{copy.text_012}</strong><span>{copy.text_013}</span>
  </div>
  <div class="contact-person">
-  <img class="contact-person-photo" src={withBase('/images/portrait.png')} alt="Portrait des persönlichen Ansprechpartners von MS EMotion Cars" loading="lazy" width="600" height="800"/>
+  <div class="contact-person-photo-frame"><img class="contact-person-photo" src={withBase('/images/portrait.png')} alt="Portrait des persönlichen Ansprechpartners von MS EMotion Cars" loading="lazy"/></div>
   <div class="contact-person-info">
    <span class="contact-person-kicker">IHR PERSÖNLICHER KONTAKT</span>
    <h3>Vorname Nachname</h3>
@@ -31,7 +31,8 @@ import copy from '../../content/pages/kontakt.json';
 </Base>
 <style>
 .contact-person{display:grid;grid-template-columns:minmax(130px,40%) minmax(0,1fr);gap:clamp(18px,2.2vw,34px);align-items:center;margin-top:clamp(44px,5vw,78px);padding-top:clamp(28px,3vw,42px);border-top:1px solid #d7d8d6}
-.contact-person-photo{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;background:#e2e2df}
+.contact-person-photo-frame{width:100%;aspect-ratio:3/4;overflow:hidden;background:#e2e2df}
+.contact-person-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
 .contact-person-info{min-width:0}
 .contact-person-kicker{display:block;color:#991B26;font-size:10px;font-weight:700;letter-spacing:.17em;line-height:1.5}
 .contact-person-info h3{font-family:'DM Sans',Arial,sans-serif;font-weight:500;font-size:clamp(19px,2vw,28px);line-height:1.2;letter-spacing:-.035em;margin:16px 0 8px}
