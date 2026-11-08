@@ -2,7 +2,7 @@
 import {withBase} from '../utils/paths.js';
 ---
 <footer class="footer">
-  <div class="footer-visual"><div class="shell"><span class="eyebrow">DRIVEN BY PASSION</span><h2>THE EXTRAORDINARY<br/><em>AWAITS.</em></h2><a href={withBase("/kontakt")} class="button button-outline">KONTAKT AUFNEHMEN <span>↗</span></a></div></div>
+  <div class="footer-visual" style={`--footer-carbon: url("${withBase("/images/carbon.jpeg")}")`}><div class="shell"><span class="eyebrow">DRIVEN BY PASSION</span><h2>THE EXTRAORDINARY<br/><em>AWAITS.</em></h2><a href={withBase("/kontakt")} class="button button-outline">KONTAKT AUFNEHMEN <span>↗</span></a></div></div>
   <div class="shell footer-bottom">
     <a class="footer-brand" href={withBase("/")} aria-label="MS EMotion Cars – Startseite"><img class="footer-logo" src={withBase("/images/Logo_1.png")} alt="MS EMotion Cars" loading="lazy"/></a>
     <div class="footer-legal"><span class="copyright">© {new Date().getFullYear()} MS EMotion Cars</span><nav class="footer-links" aria-label="Rechtliches und Kontakt"><a href={withBase("/impressum")}>Impressum</a><a href={withBase("/datenschutz")}>Datenschutz</a><a href={withBase("/kontakt")}>Kontakt</a></nav></div>
