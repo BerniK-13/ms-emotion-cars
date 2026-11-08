@@ -318,3 +318,30 @@ body:has(.hero) .collection .car-price{color:#f4f4f2}
 body:has(.hero) .collection .car-photo{background:#222426}
 body:has(.hero) .collection .text-link{border-bottom-color:#66696a;color:#f4f4f2}
 body:has(.hero) .collection .text-link:hover{border-bottom-color:#991B26}
+
+/* MS Collection: separate, editable product catalog without checkout or online payments. */
+.collection-hero{min-height:clamp(480px,65svh,750px);padding:180px 0 110px;display:flex;align-items:center;background:radial-gradient(ellipse at 85% 50%,#303235 0%,#111214 52%,#090a0b 100%);color:#fff;overflow:hidden}
+.collection-hero h1{font-family:'Italiana',Georgia,serif;font-size:clamp(4.5rem,11vw,11rem);line-height:.93;letter-spacing:-.05em;margin:30px 0}
+.collection-hero h1 em{color:#991B26}
+.collection-hero p{color:#b9bbbd;font-size:clamp(14px,1.7vw,20px);margin-bottom:35px}
+.ms-shop{background:#101112;color:#f5f4f1}
+.ms-shop .section-heading>p{color:#b9bbbd}
+.ms-shop .section-heading h2 em{color:#f5f4f1}
+.collection-notice{padding:16px 20px;border-left:2px solid #991B26;background:#1b1c1d;color:#b9bbbd;font-size:11px;letter-spacing:.1em;line-height:1.8;margin-bottom:45px}
+.ms-product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:70px 28px}
+.ms-product{min-width:0}
+.ms-product-image{position:relative;overflow:hidden;background:#27292b}
+.ms-product-image img{width:100%;aspect-ratio:4/4.4;object-fit:cover;filter:saturate(.65);transition:transform .4s}
+.ms-product:hover .ms-product-image img{transform:scale(1.025)}
+.ms-product-label{position:absolute;left:20px;top:20px;background:#101112;color:#fff;padding:10px 13px;font-size:10px;letter-spacing:.13em}
+.ms-product-info{display:flex;justify-content:space-between;align-items:end;gap:22px;padding-top:25px}
+.ms-product-info h3{font-size:clamp(24px,2.7vw,38px);font-weight:500;letter-spacing:-.04em;margin:9px 0 12px}
+.ms-product-info p{font-size:13px;color:#b9bbbd;max-width:390px;margin:0}
+.ms-product-info .button{flex-shrink:0;min-height:49px;gap:16px;padding:0 16px;white-space:nowrap;border-color:#991B26}
+.ms-product-info .button:hover{background:#991B26;color:white}
+.ms-product-info .button:hover span{color:#fff}
+.ms-shop-outro{border-top:1px solid #3a3b3c;margin-top:110px;padding-top:90px;text-align:center}
+.ms-shop-outro h2{font-family:'Italiana',Georgia,serif;margin:22px 0}
+.ms-shop-outro p{color:#b9bbbd;margin:0 auto 30px;max-width:530px}
+@media(max-width:1100px){.ms-product-info{display:block}.ms-product-info .button{margin-top:22px}}
+@media(max-width:760px){.collection-hero{min-height:500px;padding:155px 0 75px}.collection-hero h1{font-size:clamp(3.9rem,13vw,6.5rem)}.ms-product-grid{grid-template-columns:1fr;gap:55px}.ms-product-image img{aspect-ratio:4/4.2}.ms-shop-outro{margin-top:75px;padding-top:65px}.ms-product-info .button{width:100%}}

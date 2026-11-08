@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import {withBase} from '../utils/paths.js';
+import {products} from '../data/collection.js';
+const mail='info@ms-automobile.at';
+const inquiry=(product)=>'mailto:'+mail+'?subject='+encodeURIComponent('MS Collection – Anfrage: '+product.name)+'&body='+encodeURIComponent('Guten Tag,\n\nich interessiere mich für '+product.name+' aus der MS Collection.\n\nBitte informieren Sie mich über Verfügbarkeit, Ausführungen und Preise.\n\nName:\nTelefon (optional):\n\nVielen Dank!');
+---
+<Base title="MS Collection" description="MS EMotion Cars – die zukünftige Lifestyle Collection. Entdecken Sie erste Produktideen und senden Sie eine unverbindliche Anfrage.">
+  <section class="collection-hero"><div class="shell"><span class="eyebrow">MS EMOTION CARS / LIFESTYLE</span><h1>MORE THAN<br/><em>DRIVING.</em></h1><p>Eine Leidenschaft, die über die Straße hinausgeht.</p><a href="#produkte" class="button button-outline">COLLECTION ENTDECKEN <span aria-hidden="true">↗</span></a></div></section>
+  <section id="produkte" class="ms-shop section"><div class="shell">
+    <div class="section-heading"><div><span class="eyebrow">01 / THE MS COLLECTION</span><h2>Driven by passion.<br/><em>Defined by style.</em></h2></div><p>Entdecken Sie erste Ideen für unsere zukünftige Lifestyle-Kollektion – reduziert, charakterstark und mit Liebe zum Detail.</p></div>
+    <p class="collection-notice">KONZEPTVORSCHAU · Die gezeigten Fotos sind Beispielbilder und noch keine finalen MS EMotion Cars Produkte. Verfügbarkeit und Preise auf Anfrage.</p>
+    <div class="ms-product-grid">{products.map((product)=> <article class="ms-product" id={product.slug}>
+      <div class="ms-product-image"><img src={product.image} alt={product.alt} loading="lazy" referrerpolicy="no-referrer"/><span class="ms-product-label">KONZEPT / {product.category}</span></div>
+      <div class="ms-product-info"><div><span class="eyebrow">{product.category}</span><h3>{product.name}</h3><p>{product.description}</p></div><a class="button button-outline" href={inquiry(product)} aria-label={`Anfrage zu ${product.name} per E-Mail senden`}>PRODUKT ANFRAGEN <span aria-hidden="true">↗</span></a></div>
+    </article>)}</div>
+    <div class="ms-shop-outro"><span class="eyebrow">BE PART OF THE JOURNEY</span><h2>Style is an<br/><em>attitude.</em></h2><p>Sie interessieren sich für die MS Collection oder möchten mehr über die geplanten Produkte erfahren?</p><a class="button button-outline" href={withBase('/kontakt')}>KONTAKT AUFNEHMEN <span aria-hidden="true">↗</span></a></div>
+  </div></section>
+</Base>
