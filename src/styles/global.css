@@ -427,3 +427,7 @@ body:has(.hero) .value-link p{font-size:12px;line-height:1.5}
 .footer{position:relative;isolation:isolate;background:#101112}
 .footer::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(90deg,#101112d9,#101112ba),var(--footer-carbon);background-position:center;background-size:cover;pointer-events:none}
 .footer-bottom{position:relative}
+
+/* Original merchandising artwork in MS Collection hero; protect text contrast on left. */
+.ms-collection-hero{background-image:linear-gradient(90deg,#090a0bf5 0%,#090a0bd9 30%,#090a0b5e 65%,#090a0b22 100%),var(--collection-hero-image);background-color:#090a0b;background-size:cover;background-position:center center}
+@media(max-width:760px){.ms-collection-hero{background-image:linear-gradient(90deg,#090a0bf0 0%,#090a0bb8 60%,#090a0b75 100%),var(--collection-hero-image);background-position:64% center}}
