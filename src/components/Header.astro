@@ -35,7 +35,7 @@ const nav = [
           ]}
           href={withBase(href)}
         >
-          <span class="nav-index">{String(nav.findIndex(item => item[0] === href) + 1).padStart(2, '0')}</span> {label}
+          {label}
         </a>
       ))}
     </nav>
@@ -59,7 +59,7 @@ const nav = [
     hidden
   >
     {nav.map(([href, label]) => (
-      <a href={withBase(href)}><span class="nav-index">{String(nav.findIndex(item => item[0] === href) + 1).padStart(2, '0')}</span> {label}</a>
+      <a href={withBase(href)}>{label}</a>
     ))}
   </nav>
 </header>
