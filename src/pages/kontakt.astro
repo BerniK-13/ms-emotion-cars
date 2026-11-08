@@ -1,4 +1,5 @@
 ---
+import {withBase} from '../utils/paths.js';
 import InnerHero from '../components/InnerHero.astro';import {cars} from '../data/cars.js';
 import Base from '../layouts/Base.astro';
 import InquiryForm from '../components/InquiryForm.astro';
@@ -15,7 +16,29 @@ import copy from '../../content/pages/kontakt.json';
  <strong>{copy.text_009}</strong><span>{copy.text_010}<br/>{copy.text_011}</span>
  <strong>{copy.text_012}</strong><span>{copy.text_013}</span>
  </div>
+ <div class="contact-person">
+  <img class="contact-person-photo" src={withBase('/images/portrait.png')} alt="Portrait des persönlichen Ansprechpartners von MS EMotion Cars" loading="lazy" width="600" height="800"/>
+  <div class="contact-person-info">
+   <span class="contact-person-kicker">IHR PERSÖNLICHER KONTAKT</span>
+   <h3>Vorname Nachname</h3>
+   <p>Ihr Ansprechpartner für exklusive Automobile</p>
+   <div class="contact-person-details"><span>Telefon</span><span>+43 …</span><span>E-Mail</span><span>name@beispiel.at</span></div>
+  </div>
+ </div>
  </div>
  <div class="inquiry-panel"><h3>{copy.text_014}</h3><p>{copy.text_015}</p><InquiryForm kind="contact"/></div>
 </div></section>
 </Base>
+<style>
+.contact-person{display:grid;grid-template-columns:minmax(130px,40%) minmax(0,1fr);gap:clamp(18px,2.2vw,34px);align-items:center;margin-top:clamp(44px,5vw,78px);padding-top:clamp(28px,3vw,42px);border-top:1px solid #d7d8d6}
+.contact-person-photo{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center;background:#e2e2df}
+.contact-person-info{min-width:0}
+.contact-person-kicker{display:block;color:#991B26;font-size:10px;font-weight:700;letter-spacing:.17em;line-height:1.5}
+.contact-person-info h3{font-family:'DM Sans',Arial,sans-serif;font-weight:500;font-size:clamp(19px,2vw,28px);line-height:1.2;letter-spacing:-.035em;margin:16px 0 8px}
+.contact-person-info p{color:#777;font-size:13px;line-height:1.6;margin:0 0 22px}
+.contact-person-details{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 15px;font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+.contact-person-details span:nth-child(odd){font-weight:600;color:#242424}
+.contact-person-details span:nth-child(even){color:#777}
+@media(max-width:1100px){.contact-person{grid-template-columns:minmax(120px,38%) minmax(0,1fr)}}
+@media(max-width:480px){.contact-person{grid-template-columns:minmax(110px,40%) minmax(0,1fr);gap:16px}.contact-person-info h3{font-size:19px}.contact-person-info p{font-size:12px}.contact-person-details{grid-template-columns:1fr;gap:3px}.contact-person-details span:nth-child(even){margin-bottom:8px}}
+</style>
