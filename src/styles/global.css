@@ -302,3 +302,19 @@ body:has(.hero) .buy-section .button-outline:hover span{color:#fff}
 @media(max-width:760px){body:has(.hero) .hero h1 em{color:#991B26}}
 
 /* Brand color policy: all red UI accents use solid Deep Racing Red #991B26; no pink, faded red or red translucency. */
+
+/* Homepage collection: restore the dark premium showroom treatment.
+   Scoped to homepage; preserve original vehicle photos and other pages. */
+body:has(.hero) .collection{background:#101112;color:#f4f4f2}
+body:has(.hero) .collection .section-heading h2,
+body:has(.hero) .collection .section-heading h2 em{color:#f4f4f2}
+body:has(.hero) .collection .section-heading>p{color:#b5b6b7}
+body:has(.hero) .collection .eyebrow-dark{color:#b5b6b7}
+body:has(.hero) .collection .car-brand,
+body:has(.hero) .collection .car-meta,
+body:has(.hero) .collection .car-price span{color:#b5b6b7}
+body:has(.hero) .collection .car-info h3,
+body:has(.hero) .collection .car-price{color:#f4f4f2}
+body:has(.hero) .collection .car-photo{background:#222426}
+body:has(.hero) .collection .text-link{border-bottom-color:#66696a;color:#f4f4f2}
+body:has(.hero) .collection .text-link:hover{border-bottom-color:#991B26}
