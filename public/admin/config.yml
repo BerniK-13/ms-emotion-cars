@@ -1,0 +1,54 @@
+# MS EMotion Cars CMS - staging only. Changes are saved to cms-staging, NOT main.
+backend:
+  name: github
+  repo: BerniK-13/ms-emotion-cars
+  branch: cms-staging
+  base_url: https://ms-emotion-cms-auth.bwalser13.workers.dev
+  auth_endpoint: auth
+media_folder: public/images/fahrzeuge
+public_folder: /ms-emotion-cars/images/fahrzeuge
+publish: false
+collections:
+  - name: vehicles
+    label: Fahrzeuge
+    label_singular: Fahrzeug
+    folder: content/vehicles
+    create: true
+    delete: false
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: model
+    summary: "{{brand}} {{model}} — {{status}}"
+    fields:
+      - {label: Slug, name: slug, widget: string, hint: "Stabiler URL-Name; nach Veröffentlichung nicht ändern."}
+      - {label: Marke, name: brand, widget: string}
+      - {label: Modell, name: model, widget: string}
+      - {label: Kategorie, name: type, widget: string, required: false}
+      - {label: Status, name: status, widget: select, options: [draft, in_stock, sold], default: draft}
+      - {label: Veröffentlicht, name: published, widget: boolean, default: false}
+      - {label: Kurzlabel, name: tag, widget: string, required: false}
+      - {label: Hauptfoto, name: image, widget: image, required: false}
+      - label: Bildergalerie
+        name: images
+        widget: list
+        required: false
+        field: {label: Fahrzeugfoto, name: image, widget: image}
+      - {label: Preis in EUR, name: price, widget: number, value_type: int, required: false, hint: "Nur bei In Stock sichtbar, niemals bei Sold."}
+      - {label: Interne Referenz, name: reference, widget: string, required: false}
+      - {label: Datenstand, name: updated, widget: string, required: false}
+      - label: Fahrzeugdaten
+        name: facts
+        widget: list
+        required: false
+        fields:
+          - {label: Eigenschaft, name: label, widget: string}
+          - {label: Wert, name: value, widget: string}
+      - label: Weitere technische Details
+        name: details
+        widget: list
+        required: false
+        fields:
+          - {label: Eigenschaft, name: label, widget: string}
+          - {label: Wert, name: value, widget: string}
+      - {label: Ausstattung / Highlights, name: highlights, widget: list, required: false, field: {label: Highlight, name: highlight, widget: string}}
