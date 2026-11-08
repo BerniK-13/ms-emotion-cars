@@ -422,3 +422,8 @@ body:has(.hero) .value-link p{font-size:12px;line-height:1.5}
 @media(min-width:1500px){body:has(.hero) .values-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:0}}
 @media(max-width:760px){body:has(.hero) .values-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 0}body:has(.hero) .value-link{padding:10px 12px 12px 17px}body:has(.hero) .value-link h3{font-size:15px}body:has(.hero) .value-link p{font-size:11px}}
 @media(max-width:420px){body:has(.hero) .values-grid{grid-template-columns:1fr}}
+
+/* Remove large promotional CTA; carbon belongs behind the compact legal footer. */
+.footer{position:relative;isolation:isolate;background:#101112}
+.footer::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(90deg,#101112d9,#101112ba),var(--footer-carbon);background-position:center;background-size:cover;pointer-events:none}
+.footer-bottom{position:relative}
