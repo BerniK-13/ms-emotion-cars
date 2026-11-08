@@ -9,8 +9,9 @@ const {kind='contact',vehicle=''}=Astro.props;
   <label class="full">Name *<input name="name" autocomplete="name" required maxlength="160" placeholder="Vor- und Nachname"/></label>
   <label>E-Mail-Adresse *<input type="email" name="email" autocomplete="email" required maxlength="180" placeholder="name@beispiel.at"/></label>
   <label>Telefonnummer *<input type="tel" name="phone" autocomplete="tel" required maxlength="50" placeholder="+43 …"/></label>
-  <label class="full">Worum geht es? *<select name="topic" required data-inquiry-topic><option value="">Bitte auswählen</option><option value="verkauf">Fahrzeugverkauf – Ich interessiere mich für ein Fahrzeug</option><option value="ankauf">Fahrzeugankauf – Ich möchte mein Fahrzeug anbieten</option></select></label>
+  <label class="full">Worum geht es? *<select name="topic" required data-inquiry-topic><option value="">Bitte auswählen</option><option value="verkauf">Fahrzeugverkauf – Ich interessiere mich für ein Fahrzeug</option><option value="ankauf">Fahrzeugankauf – Ich möchte mein Fahrzeug anbieten</option><option value="produkt">Produktanfrage – MS Collection</option></select></label>
   <label class="full" data-vehicle-field hidden>Welches Fahrzeug interessiert Sie? *<select name="vehicle" data-inquiry-vehicle disabled><option value="">Bitte Fahrzeug auswählen</option>{cars.map(car=><option value={`${car.brand} ${car.model}`}>{car.brand} {car.model}</option>)}</select></label>
+  <label class="full" data-product-field hidden>Welches Produkt interessiert Sie? *<input name="product" data-inquiry-product maxlength="180" disabled placeholder="Produkt aus der MS Collection"/></label>
   <label class="full">Bemerkungen<textarea name="message" rows="5" maxlength="3000" placeholder="Ihre Fragen oder weitere Informationen …"></textarea></label>
  </div>
  <label class="privacy-check"><input type="checkbox" required/> <span>Ich habe die <a href={withBase('/datenschutz')}>Datenschutzhinweise</a> gelesen. *</span></label>
@@ -25,13 +26,17 @@ document.querySelectorAll('[data-contact-inquiry]').forEach(form=>{
  const topic=form.querySelector('[data-inquiry-topic]');
  const field=form.querySelector('[data-vehicle-field]');
  const vehicle=form.querySelector('[data-inquiry-vehicle]');
- function update(){const show=topic.value==='verkauf';field.hidden=!show;vehicle.disabled=!show;vehicle.required=show;if(!show)vehicle.value='';}
+ const productField=form.querySelector('[data-product-field]');
+ const product=form.querySelector('[data-inquiry-product]');
+ function update(){const show=topic.value==='verkauf';const isProduct=topic.value==='produkt';field.hidden=!show;vehicle.disabled=!show;vehicle.required=show;if(!show)vehicle.value='';productField.hidden=!isProduct;product.disabled=!isProduct;product.required=isProduct;if(!isProduct)product.value='';}
+ const params=new URLSearchParams(window.location.search);
+ if(params.get('topic')==='produkt'){topic.value='produkt';product.value=(params.get('product')||'').slice(0,180);}
  topic.addEventListener('change',update);update();
  form.addEventListener('submit',e=>{
   e.preventDefault();if(!form.reportValidity())return;
   const data=new FormData(form);
-  const subject=data.get('topic')==='verkauf'?`MS EMotion Cars – Anfrage ${data.get('vehicle')}`:'MS EMotion Cars – Fahrzeugankauf';
-  const body=[`Anfrage: ${data.get('topic')==='verkauf'?'Fahrzeugverkauf / Kaufinteresse':'Fahrzeugankauf'}`,`Name: ${data.get('name')}`,`E-Mail: ${data.get('email')}`,`Telefon: ${data.get('phone')}`,...(data.get('topic')==='verkauf'?[`Fahrzeug: ${data.get('vehicle')}`]:[]),'','Bemerkungen:',String(data.get('message')||'')].join('\n');
+  const subject=data.get('topic')==='verkauf'?`MS EMotion Cars – Anfrage ${data.get('vehicle')}`:data.get('topic')==='produkt'?`MS Collection – Produktanfrage: ${data.get('product')}`:'MS EMotion Cars – Fahrzeugankauf';
+  const body=[`Anfrage: ${data.get('topic')==='verkauf'?'Fahrzeugverkauf / Kaufinteresse':data.get('topic')==='produkt'?'Produktanfrage – MS Collection':'Fahrzeugankauf'}`,`Name: ${data.get('name')}`,`E-Mail: ${data.get('email')}`,`Telefon: ${data.get('phone')}`,...(data.get('topic')==='verkauf'?[`Fahrzeug: ${data.get('vehicle')}`]:[]),...(data.get('topic')==='produkt'?[`Produkt: ${data.get('product')}`]:[]),'','Bemerkungen:',String(data.get('message')||'')].join('\n');
   const url=`mailto:info@ms-automobile.at?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   form.querySelector('.form-note').textContent='Ihr E-Mail-Programm wird geöffnet. Bitte senden Sie die vorbereitete Nachricht dort ab. Ohne E-Mail-Programm können Sie uns direkt unter info@ms-automobile.at kontaktieren.';
   window.location.href=url;
