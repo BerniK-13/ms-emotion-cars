@@ -3,14 +3,15 @@ import InnerHero from '../../components/InnerHero.astro';
 import Base from '../../layouts/Base.astro';
 import CarCard from '../../components/CarCard.astro';
 import {cars} from '../../data/cars.js';
+import copy from '../../../content/pages/in-stock.json';
 ---
-<Base title="Fahrzeuge" description="Entdecken Sie unsere Fahrzeugauswahl bei MS EMotion Cars.">
-  <InnerHero eyebrow="IN STOCK" title="For those" accent="who know." description="Außergewöhnliche Automobile. Mit Liebe zum Detail präsentiert." image="/images/hecks.png" position="center 58%" className="inventory-page"/>
+<Base title={copy.text_006} description="Entdecken Sie unsere Fahrzeugauswahl bei MS EMotion Cars.">
+  <InnerHero eyebrow={copy.text_005} title={copy.text_007} accent={copy.text_008} description={copy.text_009} image="/images/hecks.png" position="center 58%" className="inventory-page"/>
   <section class="section listing"><div class="shell">
-    <div class="filter-bar"><div class="filter-buttons" aria-label="Fahrzeuge filtern"><button type="button" class="filter active" data-filter="Alle" aria-pressed="true">ALLE</button><button type="button" class="filter" data-filter="Porsche" aria-pressed="false">PORSCHE</button><button type="button" class="filter" data-filter="BMW" aria-pressed="false">BMW</button></div></div>
+    <div class="filter-bar"><div class="filter-buttons" aria-label="Fahrzeuge filtern"><button type="button" class="filter active" data-filter="Alle" aria-pressed="true">{copy.text_001}</button><button type="button" class="filter" data-filter="Porsche" aria-pressed="false">{copy.text_002}</button><button type="button" class="filter" data-filter="BMW" aria-pressed="false">{copy.text_003}</button></div></div>
     <p id="result-count" class="results" aria-live="polite">{cars.length} Fahrzeuge</p>
     <div class="car-grid" id="inventory">{cars.map(car=><div class="inventory-item" data-brand={car.brand}><CarCard car={car}/></div>)}</div>
-    <p id="empty-state" hidden>Keine Fahrzeuge in dieser Kategorie.</p>
+    <p id="empty-state" hidden>{copy.text_004}</p>
   </div></section>
 </Base>
 <script>

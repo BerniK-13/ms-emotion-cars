@@ -52,3 +52,293 @@ collections:
           - {label: Eigenschaft, name: label, widget: string}
           - {label: Wert, name: value, widget: string}
       - {label: Ausstattung / Highlights, name: highlights, widget: list, required: false, field: {label: Highlight, name: highlight, widget: string}}
+
+  - name: website_pages
+    label: Website-Texte
+    label_singular: Unterseite
+    description: Überschriften und Texte der einzelnen Website-Seiten.
+    files:
+      - label: "Startseite"
+        name: "startseite"
+        file: "content/pages/startseite.json"
+        fields:
+          - {label: "EXCLUSIVE AUTOMOBILES", name: text_001, widget: string, required: false}
+          - {label: "BEYOND", name: text_002, widget: string, required: false}
+          - {label: "THE", name: text_003, widget: string, required: false}
+          - {label: "ORDINARY.", name: text_004, widget: string, required: false}
+          - {label: "Außergewöhnliche Automobile für pure Leidenschaft.", name: text_005, widget: string, required: false}
+          - {label: "FAHRZEUGE ENTDECKEN", name: text_006, widget: string, required: false}
+          - {label: "EXCLUSIVITY", name: text_007, widget: string, required: false}
+          - {label: "Not for everyone. Rare for a reason.", name: text_008, widget: string, required: false}
+          - {label: "CURATED WITH PASSION ↗", name: text_009, widget: string, required: false}
+          - {label: "01 / IN STOCK", name: text_010, widget: string, required: false}
+          - {label: "Handverlesen.", name: text_011, widget: string, required: false}
+          - {label: "Außergewöhnlich.", name: text_012, widget: string, required: false}
+          - {label: "Eine bewusst ausgewählte Kollektion besonderer Automobile. Für Menschen, die mehr suchen a…", name: text_013, widget: string, required: false}
+          - {label: "ALLE FAHRZEUGE ENTDECKEN", name: text_014, widget: string, required: false}
+          - {label: "04 / WE BUY EXCEPTIONAL CARS", name: text_015, widget: string, required: false}
+          - {label: "Ihr Fahrzeug.", name: text_016, widget: string, required: false}
+          - {label: "Unser Anspruch.", name: text_017, widget: string, required: false}
+          - {label: "Sie möchten ein exklusives Fahrzeug verkaufen? Wir freuen uns auf Ihre unverbindliche Anfrage.", name: text_018, widget: string, required: false}
+          - {label: "FAHRZEUG ANBIETEN", name: text_019, widget: string, required: false}
+          - {label: "GOOD TASTE. BAD HABITS.", name: text_020, widget: string, required: false}
+          - {label: "Erfahrung", name: text_021, widget: string, required: false}
+          - {label: "ist", name: text_022, widget: string, required: false}
+          - {label: "unser Fundament.", name: text_023, widget: string, required: false}
+          - {label: "Exklusive Automobile sind unsere Welt. Durch unseren Partnerbetrieb MS Design reicht unser…", name: text_024, widget: text, required: false}
+          - {label: "Technisches Know-how, fundierte Marktkenntnis und persönliche Beratung. Eine Verbindung, d…", name: text_025, widget: text, required: false}
+          - {label: "MEHR ÜBER UNS", name: text_026, widget: string, required: false}
+          - {label: "In Stock", name: text_027, widget: string, required: false}
+          - {label: "Exklusive Automobile.", name: text_028, widget: string, required: false}
+          - {label: "Referenzen", name: text_029, widget: string, required: false}
+          - {label: "Besondere Geschichten.", name: text_030, widget: string, required: false}
+          - {label: "MS Collection", name: text_031, widget: string, required: false}
+          - {label: "Off the track.", name: text_032, widget: string, required: false}
+          - {label: "Ankauf", name: text_033, widget: string, required: false}
+          - {label: "Ihr Fahrzeug. Unser Anspruch.", name: text_034, widget: string, required: false}
+          - {label: "Über uns", name: text_035, widget: string, required: false}
+          - {label: "Was uns antreibt.", name: text_036, widget: string, required: false}
+          - {label: "Kontakt", name: text_037, widget: string, required: false}
+          - {label: "Persönlich. Direkt.", name: text_038, widget: string, required: false}
+          - {label: "Exceptional Cars. Exceptional Passion.", name: text_039, widget: string, required: false}
+      - label: "Über uns / Philosophie"
+        name: "ueber-uns"
+        file: "content/pages/ueber-uns.json"
+        fields:
+          - {label: "UNSER HINTERGRUND", name: text_001, widget: string, required: false}
+          - {label: "WIR KENNEN AUTOMOBILE.", name: text_002, widget: string, required: false}
+          - {label: "VON GRUND AUF.", name: text_003, widget: string, required: false}
+          - {label: "Außergewöhnliche Automobile verlangen außergewöhnliches Fachwissen. Mit Wurzeln in der Aut…", name: text_004, widget: text, required: false}
+          - {label: "Unsere besondere Stärke liegt in der Verbindung zum Partnerbetrieb MS Design. Als Systemli…", name: text_005, widget: text, required: false}
+          - {label: "Dadurch reicht unser Blick weit über den klassischen Fahrzeughandel hinaus. Wir verstehen …", name: text_006, widget: text, required: false}
+          - {label: "UNSERE PHILOSOPHIE", name: text_007, widget: string, required: false}
+          - {label: "VERTRAUEN IST", name: text_008, widget: string, required: false}
+          - {label: "UNSER ANSPRUCH.", name: text_009, widget: string, required: false}
+          - {label: "Wer sich für ein exklusives Automobil entscheidet, erwartet zu Recht mehr als ein außergew…", name: text_010, widget: text, required: false}
+          - {label: "Wir setzen auf persönliche Beratung, fundierte Marktkenntnis und einen offenen, verlässlic…", name: text_011, widget: text, required: false}
+          - {label: "Unser Ziel ist nicht der schnelle Abschluss, sondern eine langfristige Kundenbeziehung, di…", name: text_012, widget: text, required: false}
+          - {label: "Denn wahre Exklusivität zeigt sich nicht nur im Fahrzeug. Sondern auch darin, wie man mite…", name: text_013, widget: string, required: false}
+          - {label: "WAS UNS AUSZEICHNET", name: text_014, widget: string, required: false}
+          - {label: "MEHR ALS EIN", name: text_015, widget: string, required: false}
+          - {label: "AUTOHAUS.", name: text_016, widget: string, required: false}
+          - {label: "Erfahrung, die über den Handel hinausgeht. Und ein Anspruch, den man im persönlichen Kontakt spürt.", name: text_017, widget: string, required: false}
+          - {label: "AUTOMOBILE EXPERTISE SEIT 1983", name: text_018, widget: string, required: false}
+          - {label: "Über vier Jahrzehnte Erfahrung in der Automobilindustrie prägen unser Verständnis für Tech…", name: text_019, widget: text, required: false}
+          - {label: "NÄHE ZUR AUTOMOBILENTWICKLUNG", name: text_020, widget: string, required: false}
+          - {label: "Durch MS Design verfügen wir über eine besondere Verbindung zur Entwicklung und Fertigung …", name: text_021, widget: text, required: false}
+          - {label: "FUNDIERTE MARKTKENNTNIS", name: text_022, widget: string, required: false}
+          - {label: "Von Ausstattung und Historie bis zur marktgerechten Bewertung: Wir verbinden technisches V…", name: text_023, widget: text, required: false}
+          - {label: "PERSÖNLICH. DISKRET. VERLÄSSLICH.", name: text_024, widget: string, required: false}
+          - {label: "Individuelle Betreuung, klare Kommunikation und eine professionelle Abwicklung stehen bei …", name: text_025, widget: string, required: false}
+          - {label: "MS EMOTION CARS", name: text_026, widget: string, required: false}
+          - {label: "BESONDERE AUTOMOBILE.", name: text_027, widget: string, required: false}
+          - {label: "BESONDERE PARTNER.", name: text_028, widget: string, required: false}
+          - {label: "Ob exklusiver Sportwagen, Supersportwagen oder luxuriöses Fahrzeug der Oberklasse – bei MS…", name: text_029, widget: text, required: false}
+          - {label: "Wir freuen uns darauf, Sie kennenzulernen.", name: text_030, widget: string, required: false}
+          - {label: "KONTAKT AUFNEHMEN", name: text_031, widget: string, required: false}
+          - {label: "DRIVEN BY EXPERTISE.", name: text_032, widget: string, required: false}
+          - {label: "OUR PHILOSOPHY / SINCE 1983", name: text_033, widget: string, required: false}
+          - {label: "Über uns | Erfahrung seit 1983", name: text_034, widget: string, required: false}          - {label: "EXKLUSIVITÄT BEGINNT MIT", name: text_035, widget: string, required: false}
+          - {label: "ERFAHRUNG.", name: text_036, widget: string, required: false}
+          - {label: "AUTOMOBILE KOMPETENZ SEIT 1983.", name: text_037, widget: string, required: false}
+
+      - label: "Fahrzeugankauf"
+        name: "ankauf"
+        file: "content/pages/ankauf.json"
+        fields:
+          - {label: "04 / FAHRZEUGANKAUF", name: text_001, widget: string, required: false}
+          - {label: "Einfach.", name: text_002, widget: string, required: false}
+          - {label: "Persönlich.", name: text_003, widget: string, required: false}
+          - {label: "Wir freuen uns auf Angebote hochwertiger Sportwagen, Performance-Modelle und besonderer Pr…", name: text_004, widget: string, required: false}
+          - {label: "Anfrage mit Fahrzeugdaten senden", name: text_005, widget: string, required: false}
+          - {label: "Persönliche Rückmeldung", name: text_006, widget: string, required: false}
+          - {label: "Weitere Schritte gemeinsam abstimmen", name: text_007, widget: string, required: false}
+          - {label: "Fahrzeug anbieten", name: text_008, widget: string, required: false}
+          - {label: "Unverbindliche Anfrage · Demo ohne Versand", name: text_009, widget: string, required: false}
+          - {label: "04 / WE BUY EXCEPTIONAL CARS", name: text_010, widget: string, required: false}
+          - {label: "Fahrzeugankauf", name: text_011, widget: string, required: false}          - {label: "Ihr Fahrzeug.", name: text_012, widget: string, required: false}
+          - {label: "Unser Interesse.", name: text_013, widget: string, required: false}
+          - {label: "Exklusive Fahrzeuge verdienen einen besonderen Rahmen.", name: text_014, widget: string, required: false}
+
+      - label: "Kontakt"
+        name: "kontakt"
+        file: "content/pages/kontakt.json"
+        fields:
+          - {label: "06 / CONTACT", name: text_001, widget: string, required: false}
+          - {label: "Der direkte", name: text_002, widget: string, required: false}
+          - {label: "Weg zu uns.", name: text_003, widget: string, required: false}
+          - {label: "Wir freuen uns auf Ihre Anfrage zu unseren Fahrzeugen oder zu Produkten aus der MS Collection.", name: text_004, widget: string, required: false}
+          - {label: "Telefon", name: text_005, widget: string, required: false}
+          - {label: "+43 5417 6363-0", name: text_006, widget: string, required: false}
+          - {label: "E-Mail", name: text_007, widget: string, required: false}
+          - {label: "info@ms-automobile.at", name: text_008, widget: string, required: false}
+          - {label: "Standort", name: text_009, widget: string, required: false}
+          - {label: "MS-Design-Straße 1", name: text_010, widget: string, required: false}
+          - {label: "6426 Roppen, Tirol, Österreich", name: text_011, widget: string, required: false}
+          - {label: "Unternehmen", name: text_012, widget: string, required: false}
+          - {label: "MS Automobile Roppen GmbH &amp; Co. KG", name: text_013, widget: string, required: false}
+          - {label: "Ihre Anfrage", name: text_014, widget: string, required: false}
+          - {label: "Ob Sie sich für eines unserer Fahrzeuge interessieren oder uns Ihr Fahrzeug anbieten möcht…", name: text_015, widget: text, required: false}
+          - {label: "06 / GET IN TOUCH", name: text_016, widget: string, required: false}
+          - {label: "Kontakt", name: text_017, widget: string, required: false}          - {label: "Let's", name: text_018, widget: string, required: false}
+          - {label: "connect.", name: text_019, widget: string, required: false}
+          - {label: "Außergewöhnliche Fahrzeuge verdienen persönlichen Kontakt.", name: text_020, widget: string, required: false}
+
+      - label: "In Stock"
+        name: "in-stock"
+        file: "content/pages/in-stock.json"
+        fields:
+          - {label: "ALLE", name: text_001, widget: string, required: false}
+          - {label: "PORSCHE", name: text_002, widget: string, required: false}
+          - {label: "BMW", name: text_003, widget: string, required: false}
+          - {label: "Keine Fahrzeuge in dieser Kategorie.", name: text_004, widget: string, required: false}
+          - {label: "IN STOCK", name: text_005, widget: string, required: false}
+          - {label: "Fahrzeuge", name: text_006, widget: string, required: false}          - {label: "For those", name: text_007, widget: string, required: false}
+          - {label: "who know.", name: text_008, widget: string, required: false}
+          - {label: "Außergewöhnliche Automobile. Mit Liebe zum Detail präsentiert.", name: text_009, widget: string, required: false}
+
+      - label: "Referenzen"
+        name: "referenzen"
+        file: "content/pages/referenzen.json"
+        fields:
+          - {label: "02 / REFERENZEN", name: text_001, widget: string, required: false}
+          - {label: "GONE.", name: text_002, widget: string, required: false}
+          - {label: "NOT FORGOTTEN.", name: text_003, widget: string, required: false}
+          - {label: "Besondere Automobile. Persönliche Geschichten.", name: text_004, widget: string, required: false}
+          - {label: "02 / UNSERE REFERENZEN", name: text_005, widget: string, required: false}
+          - {label: "Erfolgreich vermittelt.", name: text_006, widget: string, required: false}
+          - {label: "Mit Leidenschaft.", name: text_007, widget: string, required: false}
+          - {label: "Hier präsentieren wir künftig eine Auswahl tatsächlich verkaufter Fahrzeuge – mit Bildern,…", name: text_008, widget: text, required: false}
+          - {label: "LAYOUTVORSCHAU · Diese sechs Fahrzeuge sind reine Platzhalter mit Beispielbildern und kein…", name: text_009, widget: text, required: false}
+          - {label: "SOLD", name: text_010, widget: string, required: false}
+          - {label: "BEISPIELBILD", name: text_011, widget: string, required: false}
+          - {label: "REFERENZ / 01", name: text_012, widget: string, required: false}
+          - {label: "Referenz 01", name: text_013, widget: string, required: false}
+          - {label: "Fahrzeugdaten und Fotogalerie folgen", name: text_014, widget: string, required: false}
+          - {label: "SOLD", name: text_015, widget: string, required: false}
+          - {label: "BEISPIELBILD", name: text_016, widget: string, required: false}
+          - {label: "REFERENZ / 02", name: text_017, widget: string, required: false}
+          - {label: "Referenz 02", name: text_018, widget: string, required: false}
+          - {label: "Fahrzeugdaten und Fotogalerie folgen", name: text_019, widget: string, required: false}
+          - {label: "SOLD", name: text_020, widget: string, required: false}
+          - {label: "BEISPIELBILD", name: text_021, widget: string, required: false}
+          - {label: "REFERENZ / 03", name: text_022, widget: string, required: false}
+          - {label: "Referenz 03", name: text_023, widget: string, required: false}
+          - {label: "Fahrzeugdaten und Fotogalerie folgen", name: text_024, widget: string, required: false}
+          - {label: "SOLD", name: text_025, widget: string, required: false}
+          - {label: "BEISPIELBILD", name: text_026, widget: string, required: false}
+          - {label: "REFERENZ / 04", name: text_027, widget: string, required: false}
+          - {label: "Referenz 04", name: text_028, widget: string, required: false}
+          - {label: "Fahrzeugdaten und Fotogalerie folgen", name: text_029, widget: string, required: false}
+          - {label: "SOLD", name: text_030, widget: string, required: false}
+          - {label: "BEISPIELBILD", name: text_031, widget: string, required: false}
+          - {label: "REFERENZ / 05", name: text_032, widget: string, required: false}
+          - {label: "Referenz 05", name: text_033, widget: string, required: false}
+          - {label: "Fahrzeugdaten und Fotogalerie folgen", name: text_034, widget: string, required: false}
+          - {label: "SOLD", name: text_035, widget: string, required: false}
+          - {label: "BEISPIELBILD", name: text_036, widget: string, required: false}
+          - {label: "REFERENZ / 06", name: text_037, widget: string, required: false}
+          - {label: "Referenz 06", name: text_038, widget: string, required: false}
+          - {label: "Fahrzeugdaten und Fotogalerie folgen", name: text_039, widget: string, required: false}
+          - {label: "Ihre Leidenschaft.", name: text_040, widget: string, required: false}
+          - {label: "Unser Antrieb.", name: text_041, widget: string, required: false}
+          - {label: "KONTAKT AUFNEHMEN", name: text_042, widget: string, required: false}
+          - {label: "Referenzen", name: text_043, widget: string, required: false}
+      - label: "MS Collection"
+        name: "ms-collection"
+        file: "content/pages/ms-collection.json"
+        fields:
+          - {label: "03 / MS COLLECTION", name: text_001, widget: string, required: false}
+          - {label: "OFF THE", name: text_002, widget: string, required: false}
+          - {label: "TRACK.", name: text_003, widget: string, required: false}
+          - {label: "Eine Leidenschaft, die über die Straße hinausgeht.", name: text_004, widget: string, required: false}
+          - {label: "COLLECTION ENTDECKEN", name: text_005, widget: string, required: false}
+          - {label: "03 / THE MS COLLECTION", name: text_006, widget: string, required: false}
+          - {label: "Driven by passion.", name: text_007, widget: string, required: false}
+          - {label: "Defined by style.", name: text_008, widget: string, required: false}
+          - {label: "Entdecken Sie erste Ideen für unsere zukünftige Lifestyle-Kollektion – reduziert, charakte…", name: text_009, widget: text, required: false}
+          - {label: "KONZEPTVORSCHAU · Die gezeigten Fotos sind Beispielbilder und noch keine finalen MS EMotio…", name: text_010, widget: text, required: false}
+          - {label: "DETAILS ENTDECKEN", name: text_011, widget: string, required: false}
+          - {label: "BE PART OF THE JOURNEY", name: text_012, widget: string, required: false}
+          - {label: "Style is an", name: text_013, widget: string, required: false}
+          - {label: "attitude.", name: text_014, widget: string, required: false}
+          - {label: "Sie interessieren sich für die MS Collection oder möchten mehr über die geplanten Produkte erfahren?", name: text_015, widget: string, required: false}
+          - {label: "KONTAKT AUFNEHMEN", name: text_016, widget: string, required: false}
+          - {label: "MS Collection", name: text_017, widget: string, required: false}
+      - label: "Impressum"
+        name: "impressum"
+        file: "content/pages/impressum.json"
+        fields:
+          - {label: "Entwurf zur internen Prüfung:", name: text_001, widget: string, required: false}
+          - {label: "Bitte die nachstehenden Angaben, insbesondere UID, Gewerbeberechtigungen, zuständige Behör…", name: text_002, widget: text, required: false}
+          - {label: "Medieninhaber und Diensteanbieter", name: text_003, widget: string, required: false}
+          - {label: "MS EMotion Cars", name: text_004, widget: string, required: false}
+          - {label: "Ein Markenauftritt der", name: text_005, widget: string, required: false}
+          - {label: "MS Automobile Roppen GmbH &amp; Co. KG", name: text_006, widget: string, required: false}
+          - {label: "MS-Design-Straße 1", name: text_007, widget: string, required: false}
+          - {label: "6426 Roppen", name: text_008, widget: string, required: false}
+          - {label: "Österreich", name: text_009, widget: string, required: false}
+          - {label: "Telefon:", name: text_010, widget: string, required: false}
+          - {label: "+43 5417 6363-0", name: text_011, widget: string, required: false}
+          - {label: "E-Mail:", name: text_012, widget: string, required: false}
+          - {label: "info@ms-automobile.at", name: text_013, widget: string, required: false}
+          - {label: "Unternehmensangaben", name: text_014, widget: string, required: false}
+          - {label: "Rechtsform: GmbH &amp; Co. KG (Kommanditgesellschaft)", name: text_015, widget: string, required: false}
+          - {label: "Firmenbuchnummer: FN 88312x", name: text_016, widget: string, required: false}
+          - {label: "Firmenbuchgericht: Landesgericht Innsbruck", name: text_017, widget: string, required: false}
+          - {label: "Sitz: Roppen, Österreich", name: text_018, widget: string, required: false}
+          - {label: "Unbeschränkt haftende Gesellschafterin: MS Automobile GmbH", name: text_019, widget: string, required: false}
+          - {label: "Mitglied der Wirtschaftskammer Tirol. Zuständige Gewerbebehörde und konkrete Gewerbeberech…", name: text_020, widget: text, required: false}
+          - {label: "Grundlegende Richtung", name: text_021, widget: string, required: false}
+          - {label: "Diese Website informiert über die Marke MS EMotion Cars, das Unternehmen, ausgewählte Auto…", name: text_022, widget: text, required: false}
+          - {label: "Urheberrecht und Bildrechte", name: text_023, widget: string, required: false}
+          - {label: "Die auf dieser Website veröffentlichten Texte, Fotografien, Grafiken, Gestaltungselemente …", name: text_024, widget: text, required: false}
+          - {label: "Die Nennung oder Abbildung von Fahrzeugmarken und Markenzeichen begründet keine Rechte an …", name: text_025, widget: text, required: false}
+          - {label: "Haftung für Inhalte und Links", name: text_026, widget: string, required: false}
+          - {label: "Die Inhalte dieser Website werden mit Sorgfalt erstellt und laufend geprüft. Dennoch könne…", name: text_027, widget: text, required: false}
+          - {label: "Hinweis zu Fahrzeugangeboten", name: text_028, widget: string, required: false}
+          - {label: "Fahrzeugangaben und Verfügbarkeiten können sich ändern. Verbindliche Auskünfte zu Ausstatt…", name: text_029, widget: text, required: false}
+          - {label: "MS EMOTION CARS / RECHTLICHES", name: text_030, widget: string, required: false}
+          - {label: "Impressum", name: text_031, widget: string, required: false}          - {label: "Impressum", name: text_032, widget: string, required: false}
+          - {label: "Angaben zum rechtlichen Betreiber unseres Internetauftritts.", name: text_033, widget: string, required: false}
+
+      - label: "Datenschutz"
+        name: "datenschutz"
+        file: "content/pages/datenschutz.json"
+        fields:
+          - {label: "Entwurf zur internen Prüfung:", name: text_001, widget: string, required: false}
+          - {label: "Diese Datenschutzhinweise sind auf den aktuellen Website-Prototyp abgestimmt. Vor dem Live…", name: text_002, widget: text, required: false}
+          - {label: "1. Verantwortlicher", name: text_003, widget: string, required: false}
+          - {label: "MS EMotion Cars", name: text_004, widget: string, required: false}
+          - {label: "– ein Markenauftritt der", name: text_005, widget: string, required: false}
+          - {label: "MS Automobile Roppen GmbH &amp; Co. KG", name: text_006, widget: string, required: false}
+          - {label: "MS-Design-Straße 1, 6426 Roppen, Österreich", name: text_007, widget: string, required: false}
+          - {label: "Telefon:", name: text_008, widget: string, required: false}
+          - {label: "+43 5417 6363-0", name: text_009, widget: string, required: false}
+          - {label: "E-Mail:", name: text_010, widget: string, required: false}
+          - {label: "info@ms-automobile.at", name: text_011, widget: string, required: false}
+          - {label: "2. Allgemeines", name: text_012, widget: string, required: false}
+          - {label: "Wir verarbeiten personenbezogene Daten nur, soweit dies für den Betrieb unserer Website, d…", name: text_013, widget: text, required: false}
+          - {label: "3. Besuch unserer Website und Serverprotokolle", name: text_014, widget: string, required: false}
+          - {label: "Beim Aufruf einer Website können durch den Hostinganbieter technisch erforderliche Daten v…", name: text_015, widget: text, required: false}
+          - {label: "4. Kontaktaufnahme", name: text_016, widget: string, required: false}
+          - {label: "Wenn Sie uns telefonisch oder per E-Mail kontaktieren, verarbeiten wir Ihre mitgeteilten K…", name: text_017, widget: text, required: false}
+          - {label: "Das derzeit auf einzelnen Seiten vorhandene Testformular versendet keine Angaben an uns un…", name: text_018, widget: text, required: false}
+          - {label: "5. Cookies und externe Inhalte", name: text_019, widget: string, required: false}
+          - {label: "Für den aktuellen Prototyp ist kein eigenes Analyse- oder Werbetracking eingerichtet. Die …", name: text_020, widget: text, required: false}
+          - {label: "Sollten künftig weitere Cookies, Analysewerkzeuge, Karten, Videos oder eingebettete Inhalt…", name: text_021, widget: text, required: false}
+          - {label: "6. Empfänger und Auftragsverarbeiter", name: text_022, widget: string, required: false}
+          - {label: "Im Rahmen des technischen Betriebs können IT- und Hostingdienstleister personenbezogene Da…", name: text_023, widget: text, required: false}
+          - {label: "7. Ihre Rechte", name: text_024, widget: string, required: false}
+          - {label: "Sie haben nach Maßgabe der gesetzlichen Voraussetzungen das Recht auf Auskunft (Art. 15 DS…", name: text_025, widget: text, required: false}
+          - {label: "Zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte unter", name: text_026, widget: string, required: false}
+          - {label: "info@ms-automobile.at", name: text_027, widget: string, required: false}
+          - {label: "8. Beschwerderecht", name: text_028, widget: string, required: false}
+          - {label: "Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen Daten…", name: text_029, widget: text, required: false}
+          - {label: "www.dsb.gv.at", name: text_030, widget: string, required: false}
+          - {label: "9. Änderungen", name: text_031, widget: string, required: false}
+          - {label: "Wir passen diese Datenschutzhinweise an, wenn sich unsere Website, die eingesetzten Dienst…", name: text_032, widget: text, required: false}
+          - {label: "MS EMOTION CARS / RECHTLICHES", name: text_033, widget: string, required: false}
+          - {label: "Datenschutz", name: text_034, widget: string, required: false}
+          - {label: "Datenschutz", name: text_035, widget: string, required: false}
+          - {label: "Informationen zum Umgang mit personenbezogenen Daten.", name: text_036, widget: string, required: false}
