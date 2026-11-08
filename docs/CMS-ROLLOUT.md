@@ -27,3 +27,11 @@
 - Decap-Bilderpfade müssen für Astro/GitHub-Pages-Base normalisiert werden; vorhandene URL-encodierte Dateinamen nicht blind umschreiben.
 - Für Sold-Referenzen nur bestätigte tatsächliche Verkäufe übernehmen.
 - Datenformat und Build-Skripte vor dem Live-Umschalten automatisiert validieren.
+
+## Phase 2a — vorbereitet, noch nicht live
+- `cms/admin-template/index.html` ist die spätere Decap-Verwaltungsoberfläche. Sie liegt bewusst **nicht** unter `public/` und wird deshalb nicht mit Astro veröffentlicht.
+- `node scripts/check-cms-vehicles.mjs` prüft die drei exportierten Datensätze gegen die weiterhin aktiven Fahrzeugdaten (einschließlich 115 Originalbildpfaden und Reihenfolge).
+- Vor Aktivierung: GitHub-OAuth-App mit passender Callback-URL erstellen und einen sicheren OAuth-Dienst betreiben/auswählen. Client-Secret nur in dessen Secret-Store, niemals im Repository oder Browser.
+- Decap-Konfiguration muss erst nach Einrichtung des OAuth-Dienstes mit korrekter `base_url` und `auth_endpoint` bereitgestellt werden. Eine öffentlich erreichbare Login-Seite ist ohne funktionsfähige Authentifizierung nicht sinnvoll.
+- Die vorhandenen Bildpfade in `content/vehicles` sind Bestandsdaten. Neue Uploads brauchen vor Aktivierung eine geprüfte GitHub-Pages-Base-Pfad-Lösung.
+- Ein erstes CMS-Testfahrzeug soll zunächst auf einem separaten Testbranch bearbeitet werden, nicht direkt in der Live-Datenquelle.
