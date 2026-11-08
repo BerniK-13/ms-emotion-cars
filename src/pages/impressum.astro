@@ -1,8 +1,9 @@
 ---
+import InnerHero from '../components/InnerHero.astro';import {cars} from '../data/cars.js';
 import Base from '../layouts/Base.astro';
 ---
 <Base title="Impressum" description="Impressum und Anbieterkennzeichnung von MS EMotion Cars.">
-<section class="page-head light-head"><div class="shell"><span class="eyebrow eyebrow-dark">MS EMOTION CARS / RECHTLICHES</span><h1>Impressum</h1><p>Angaben zum rechtlichen Betreiber unseres Internetauftritts.</p></div></section>
+<InnerHero eyebrow="MS EMOTION CARS / RECHTLICHES" title="Impressum" description="Angaben zum rechtlichen Betreiber unseres Internetauftritts." image={cars[0]?.images[1]} position="center 58%"/>
 <section class="section"><div class="shell legal legal-readable">
  <p class="legal-review"><strong>Entwurf zur internen Prüfung:</strong> Bitte die nachstehenden Angaben, insbesondere UID, Gewerbeberechtigungen, zuständige Behörde und Rechtekette der Fotos, vor dem endgültigen Livegang bestätigen.</p>
  <h2>Medieninhaber und Diensteanbieter</h2>
