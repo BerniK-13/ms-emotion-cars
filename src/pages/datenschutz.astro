@@ -1,8 +1,9 @@
 ---
+import InnerHero from '../components/InnerHero.astro';import {cars} from '../data/cars.js';
 import Base from '../layouts/Base.astro';
 ---
 <Base title="Datenschutz" description="Datenschutzhinweise von MS EMotion Cars zur Verarbeitung personenbezogener Daten.">
-<section class="page-head light-head"><div class="shell"><span class="eyebrow eyebrow-dark">MS EMOTION CARS / RECHTLICHES</span><h1>Datenschutz</h1><p>Informationen zum Umgang mit personenbezogenen Daten.</p></div></section>
+<InnerHero eyebrow="MS EMOTION CARS / RECHTLICHES" title="Datenschutz" description="Informationen zum Umgang mit personenbezogenen Daten." image={cars[1]?.images[1]} position="center 58%"/>
 <section class="section"><div class="shell legal legal-readable">
  <p class="legal-review"><strong>Entwurf zur internen Prüfung:</strong> Diese Datenschutzhinweise sind auf den aktuellen Website-Prototyp abgestimmt. Vor dem Livegang sind Hosting, Serverprotokolle, tatsächlicher Formularversand, externe Dienste und gegebenenfalls Cookies zu überprüfen und der Text entsprechend anzupassen.</p>
  <h2>1. Verantwortlicher</h2>
