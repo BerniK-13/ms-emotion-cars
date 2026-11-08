@@ -229,3 +229,26 @@ body:has(.inventory-page) #empty-state{color:#b4b6b8}
 .contact-inquiry input,.contact-inquiry textarea{width:100%}
 .contact-inquiry .privacy-check input{width:auto}
 .contact-inquiry .form-note{line-height:1.6}
+
+/* Cinematic subpage banners, clearly shorter than the homepage hero. */
+.inner-hero{height:clamp(340px,34vw,510px);min-height:340px;position:relative;isolation:isolate;display:flex;align-items:flex-end;overflow:hidden;background:#101112;color:#fff}
+.inner-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--inner-hero-position,center);z-index:-2;filter:brightness(.68)}
+.inner-hero:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#060708f2 0%,#060708d1 30%,#06070868 60%,#06070830 100%),linear-gradient(0deg,#07080994,transparent 65%)}
+.inner-hero-content{padding-top:145px;padding-bottom:48px;position:relative}
+.inner-hero h1{font-family:'Italiana',Georgia,serif;font-weight:400;font-size:clamp(3.6rem,6vw,6.6rem);line-height:.95;letter-spacing:-.035em;margin:18px 0}
+.inner-hero h1 em{font-style:normal;color:#d2d2d3}
+.inner-hero p{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#d2d2d3;line-height:1.7;max-width:640px;margin:0}
+body:has(.inner-hero) .site-header{background:#08090a99;color:#fff;border-bottom-color:#ffffff2a}
+body:has(.inner-hero) .menu-toggle span{background:#fff}
+body:has(.inner-hero.inventory-page) .inner-hero.inventory-page{background:#101112;color:#fff;border-bottom:1px solid #ffffff16}
+body:has(.inner-hero.inventory-page) .inner-hero.inventory-page .eyebrow{color:#c7c7c7}
+body:has(.inner-hero.inventory-page) .inner-hero.inventory-page p{color:#d2d2d3}
+body:has(.inner-hero) .detail-top.real-detail{padding-top:75px}
+@media(max-width:760px){
+ .inner-hero{height:360px;min-height:360px}
+ .inner-hero-content{padding-top:115px;padding-bottom:35px}
+ .inner-hero h1{font-size:clamp(3rem,10vw,4.6rem);margin:15px 0}
+ .inner-hero p{font-size:10px;letter-spacing:.08em}
+ .inner-hero-photo{object-position:center}
+ body:has(.inner-hero) .detail-top.real-detail{padding-top:48px}
+}
