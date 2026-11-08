@@ -285,3 +285,18 @@ body:has(.inner-hero) .detail-top.real-detail{padding-top:75px}
 @media(max-width:390px){
  .footer-visual h2{font-size:clamp(1.9rem,7.7vw,2.8rem)}
 }
+
+/* Homepage-only red-accent design test; no changes to vehicle photographs or layout. */
+body:has(.hero) .hero-copy .eyebrow:after{background:#c51f2b;width:44px;height:2px}
+body:has(.hero) .hero h1 em{color:#d32b39}
+body:has(.hero) .hero-copy .button-outline{border-color:#b32a35;box-shadow:inset 0 0 0 1px rgba(197,31,43,.13)}
+body:has(.hero) .hero-copy .button-outline:hover{background:#c51f2b;border-color:#c51f2b;color:#fff}
+body:has(.hero) .hero-copy .button-outline span{color:#e44650}
+body:has(.hero) .hero-copy .button-outline:hover span{color:#fff}
+body:has(.hero) .intro-strip{border-top:1px solid rgba(197,31,43,.5)}
+body:has(.hero) .intro-strip .strip-inner>span:first-child{color:#db5b65}
+body:has(.hero) .buy-section{background:radial-gradient(ellipse at 82% 68%,rgba(125,18,31,.28),transparent 52%),radial-gradient(circle at 78% 70%,#33363a,#0d0e10 65%)}
+body:has(.hero) .buy-section .button-outline{border-color:#9e333d}
+body:has(.hero) .buy-section .button-outline:hover{background:#c51f2b;border-color:#c51f2b;color:#fff}
+body:has(.hero) .buy-section .button-outline:hover span{color:#fff}
+@media(max-width:760px){body:has(.hero) .hero h1 em{color:#e04650}}
