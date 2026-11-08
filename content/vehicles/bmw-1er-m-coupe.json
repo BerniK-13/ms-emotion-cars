@@ -1,19 +1,90 @@
 {
-  "details": [],
+  "details": [
+    {
+      "label": "Fahrzeugzustand",
+      "value": "Gebrauchtwagen"
+    },
+    {
+      "label": "Karosserie",
+      "value": "Coupé"
+    },
+    {
+      "label": "Hubraum",
+      "value": "2.979 cm³"
+    },
+    {
+      "label": "Sitzplätze",
+      "value": "4"
+    },
+    {
+      "label": "Türen",
+      "value": "2"
+    },
+    {
+      "label": "Außenfarbe",
+      "value": "Alpinweiß"
+    },
+    {
+      "label": "Abgasnorm",
+      "value": "Euro 5"
+    },
+    {
+      "label": "Servicehistorie",
+      "value": "Scheckheftgepflegt (laut Inserat)"
+    }
+  ],
   "brand": "BMW",
-  "facts": [],
-  "price": null,
+  "facts": [
+    {
+      "label": "Kilometerstand",
+      "value": "56.600 km"
+    },
+    {
+      "label": "Erstzulassung",
+      "value": "03/2012"
+    },
+    {
+      "label": "Leistung",
+      "value": "250 kW / 340 PS"
+    },
+    {
+      "label": "Getriebe",
+      "value": "6-Gang Schaltgetriebe"
+    },
+    {
+      "label": "Kraftstoff",
+      "value": "Benzin"
+    },
+    {
+      "label": "Antrieb",
+      "value": "Hinterradantrieb"
+    }
+  ],
+  "price": 67499,
   "model": "1er M Coupé",
   "slug": "bmw-1er-m-coupe",
-  "reference": "",
+  "reference": "2286788",
   "published": true,
   "status": "in_stock",
   "images": [
     "/ms-emotion-cars/images/fahrzeuge/bmw-1er-mcoupé-01-.jpg"
   ],
   "type": "Sportwagen",
-  "tag": "BILDER FOLGEN",
-  "updated": "",
+  "tag": "IM SHOWROOM",
+  "updated": "08.11.2026 (Online-Inserat; Verfügbarkeit und Preis vor Verkauf prüfen)",
   "image": "",
-  "highlights": []
+  "highlights": [
+    "Performance-Sitze (laut Händlerangebot)",
+    "Navigationssystem",
+    "Klimaautomatik",
+    "19 Zoll M Leichtmetallräder Y-Speiche 359 M",
+    "Interieurleisten Alcantara Anthrazit",
+    "Xenon-Scheinwerfer",
+    "Sitzheizung vorne",
+    "Park Distance Control hinten",
+    "Sperrdifferential",
+    "M Sportfahrwerk",
+    "HiFi-Lautsprechersystem",
+    "Geschwindigkeitsregelung"
+  ]
 }
