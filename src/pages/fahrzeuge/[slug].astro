@@ -1,12 +1,14 @@
 ---
 import {withBase} from '../../utils/paths.js';
 import Base from '../../layouts/Base.astro';
+import InnerHero from '../../components/InnerHero.astro';
 import InquiryForm from '../../components/InquiryForm.astro';
 import {cars} from '../../data/cars.js';
 export function getStaticPaths(){return cars.map(car=>({params:{slug:car.slug},props:{car}}));}
 const {car}=Astro.props;
 ---
 <Base title={`${car.brand} ${car.model}`} description={`${car.brand} ${car.model} – Bildergalerie bei MS EMotion Cars.`}>
+<InnerHero eyebrow={`${car.brand.toUpperCase()} / MS EMOTION CARS`} title={car.brand} accent={car.model} image={car.images[0] || '/images/hero-porsche.png'} position="center 57%"/>
 <section class="detail-top real-detail"><div class="shell">
   <a class="back-link" href={withBase('/fahrzeuge/')}>← ZURÜCK ZU DEN FAHRZEUGEN</a>
   <div class="detail-title"><div><span class="eyebrow eyebrow-dark">{car.brand.toUpperCase()} / THE COLLECTION</span><h1>{car.model}</h1></div><strong>Preis auf Anfrage</strong></div>
