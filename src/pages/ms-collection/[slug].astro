@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import {withBase} from '../../utils/paths.js';
+import {products} from '../../data/collection.js';
+export function getStaticPaths(){return products.map(product=>({params:{slug:product.slug},props:{product}}));}
+const {product}=Astro.props;
+const gallery=[product.image,...(product.images||[])];
+---
+<Base title={product.name+' | MS Collection'} description={product.description}>
+<section class="ms-product-detail"><div class="shell">
+  <a class="ms-detail-back" href={withBase('/ms-collection/')}>← ZUR MS COLLECTION</a>
+  <div class="ms-detail-grid">
+    <div class="ms-detail-gallery"><div class="ms-detail-main"><img src={gallery[0]} alt={product.alt} referrerpolicy="no-referrer" data-product-main/><span class="ms-product-label">KONZEPT / BEISPIELBILD</span></div>
+      {gallery.length>1&&<div class="ms-detail-thumbs">{gallery.map((img,i)=><button type="button" class:list={['ms-detail-thumb',{active:i===0}]} data-gallery-src={img} aria-label={'Produktfoto '+(i+1)+' anzeigen'} aria-pressed={i===0}><img src={img} alt="" loading="lazy" referrerpolicy="no-referrer"/></button>)}</div>}
+    </div>
+    <div class="ms-detail-description"><span class="eyebrow">MS COLLECTION / {product.category}</span><h1>{product.name}</h1><p>{product.description}</p><div class="collection-notice">KONZEPTVORSCHAU · Bild und Produktdetails sind Platzhalter. Verfügbarkeit und Ausführungen sind noch nicht bestätigt.</div>
+      <form class="ms-variant-form" data-product-options data-contact-url={withBase('/kontakt/')} data-product-name={product.name}>
+        <fieldset><legend>GRÖSSE</legend>{product.sizes.length>0?<div class="ms-variant-options">{product.sizes.map(size=><label><input type="radio" name="size" value={size}/><span>{size}</span></label>)}</div>:<p class="ms-variant-pending">Größen werden noch bekannt gegeben.</p>}</fieldset>
+        <fieldset><legend>FARBE</legend>{product.colors.length>0?<div class="ms-variant-options">{product.colors.map(color=><label><input type="radio" name="color" value={color}/><span>{color}</span></label>)}</div>:<p class="ms-variant-pending">Farben werden noch bekannt gegeben.</p>}</fieldset>
+        <div class="ms-product-facts"><h2>PRODUKTDETAILS</h2><dl><div><dt>Material</dt><dd>{product.material||'Angaben folgen'}</dd></div><div><dt>Passform</dt><dd>{product.fit||'Angaben folgen'}</dd></div><div><dt>Pflege</dt><dd>{product.care||'Angaben folgen'}</dd></div><div><dt>Verfügbarkeit</dt><dd>{product.availability||'Auf Anfrage'}</dd></div></dl></div>
+        <button type="submit" class="button button-outline">PRODUKT ANFRAGEN <span aria-hidden="true">↗</span></button>
+        <p class="ms-detail-note">Unverbindliche Anfrage über unser Kontaktformular. Keine Online-Bestellung oder Zahlung.</p>
+      </form>
+    </div>
+  </div>
+</div></section>
+</Base>
+<script>
+document.querySelectorAll('[data-product-options]').forEach(form=>form.addEventListener('submit',event=>{
+  event.preventDefault();
+  const params=new URLSearchParams({topic:'produkt',product:form.dataset.productName});
+  const size=form.querySelector('input[name="size"]:checked')?.value;
+  const color=form.querySelector('input[name="color"]:checked')?.value;
+  if(size)params.set('size',size);
+  if(color)params.set('color',color);
+  window.location.href=form.dataset.contactUrl+'?'+params.toString()+'#anfrage';
+}));
+document.querySelectorAll('[data-gallery-src]').forEach(button=>button.addEventListener('click',()=>{
+ const main=document.querySelector('[data-product-main]');
+ main.src=button.dataset.gallerySrc;
+ document.querySelectorAll('[data-gallery-src]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});
+}));
+</script>
