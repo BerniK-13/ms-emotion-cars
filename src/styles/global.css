@@ -214,3 +214,11 @@ body:has(.inventory-page) #empty-state{color:#b4b6b8}
  .hero h1{font-size:clamp(4.1rem,6vw,6.55rem);line-height:1.01;max-width:650px}
  .hero-copy{max-width:650px}
 }
+
+/* Legal review drafts: clear hierarchy and accessible reading width. */
+.legal-readable{max-width:900px}
+.legal-readable h2{font-family:'DM Sans',Arial,sans-serif;font-size:clamp(1.4rem,2.4vw,2rem);letter-spacing:-.035em;line-height:1.25;margin:42px 0 14px}
+.legal-readable p{max-width:76ch}
+.legal-readable a{text-decoration:underline;text-underline-offset:3px}
+.legal-review{padding:20px 24px;border-left:3px solid #a21d2a;background:#eae7e3;font-size:14px;line-height:1.7}
+.contact-placeholder a{color:inherit;text-decoration:underline;text-underline-offset:3px}
