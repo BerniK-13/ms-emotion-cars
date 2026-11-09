@@ -625,3 +625,6 @@ body:has(.references-hero) .ms-shop-outro h2 em{font-family:'Italiana',Georgia,s
 
 /* Hide the homepage slogan strip on smartphones only; keep tablet and desktop unchanged. */
 @media (max-width: 767px){body:has(.hero) .intro-strip{display:none!important}}
+
+/* Discreet transparency note for unverified sample references; no intrusive image badges. */
+.reference-preview-note{font-size:11px;line-height:1.6;color:#8b8d8f;margin:24px 0 0;letter-spacing:.015em}
