@@ -635,3 +635,6 @@ body:has(.references-hero) .ms-shop-outro h2 em{font-family:'Italiana',Georgia,s
 .collection-hero h1{
   text-shadow:0 3px 14px rgba(0,0,0,.38),0 1px 3px rgba(0,0,0,.22);
 }
+
+/* Slightly larger homepage carbon-strip statement on tablet and desktop. */
+@media (min-width:768px){body:has(.hero) .intro-strip .strip-inner > p{font-size:clamp(1.6rem,2.5vw,2.25rem)}}
