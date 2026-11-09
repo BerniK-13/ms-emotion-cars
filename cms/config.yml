@@ -25,8 +25,8 @@ collections:
       - {label: Marke, name: brand, widget: string}
       - {label: Modell, name: model, widget: string}
       - {label: Kategorie, name: type, widget: string, required: false}
-      - {label: Status, name: status, widget: select, options: [draft, in_stock, sold], default: draft}
-      - {label: Veröffentlicht, name: published, widget: boolean, default: false}
+      - {label: Status, name: status, widget: radio, options: [{label: 'Draft – nicht sichtbar', value: draft}, {label: 'In Stock – verfügbar', value: in_stock}, {label: 'Sold – verkauft', value: sold}], default: draft}
+      - {label: Veröffentlicht, name: published, widget: boolean, default: true}
       - {label: Kurzlabel, name: tag, widget: string, required: false}
       - {label: Hauptfoto, name: image, widget: image, required: false}
       - label: Bildergalerie
