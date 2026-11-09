@@ -37,21 +37,67 @@ collections:
       - {label: Preis in EUR, name: price, widget: number, value_type: int, required: false, hint: "Nur bei In Stock sichtbar, niemals bei Sold."}
       - {label: Interne Referenz, name: reference, widget: string, required: false}
       - {label: Datenstand, name: updated, widget: string, required: false}
-      - label: Fahrzeugdaten
-        name: facts
-        widget: list
-        required: false
+      - label: "Technische Daten – direkt bearbeiten"
+        name: specs
+        widget: object
+        collapsed: false
+        summary: "Kilometerstand, Leistung, Getriebe und weitere Angaben"
         fields:
-          - {label: Eigenschaft, name: label, widget: string}
-          - {label: Wert, name: value, widget: string}
-      - label: Weitere technische Details
+          - {label: "Kilometerstand", name: mileage, widget: string, required: false}
+          - {label: "Erstzulassung", name: registration, widget: string, required: false}
+          - {label: "Leistung", name: power, widget: string, required: false}
+          - {label: "Getriebe", name: transmission, widget: string, required: false}
+          - {label: "Kraftstoff", name: fuel, widget: string, required: false}
+          - {label: "Antrieb", name: drive, widget: string, required: false}
+          - {label: "Fahrzeugzustand", name: condition, widget: string, required: false}
+          - {label: "Karosserie", name: body, widget: string, required: false}
+          - {label: "Hubraum", name: displacement, widget: string, required: false}
+          - {label: "Sitzplätze", name: seats, widget: string, required: false}
+          - {label: "Türen", name: doors, widget: string, required: false}
+          - {label: "Außenfarbe", name: exterior, widget: string, required: false}
+          - {label: "Innenausstattung", name: interior, widget: string, required: false}
+          - {label: "Abgasnorm", name: emission, widget: string, required: false}
+          - {label: "CO₂-Ausstoß", name: co2, widget: string, required: false}
+          - {label: "0–100 km/h", name: acceleration, widget: string, required: false}
+          - {label: "Höchstgeschwindigkeit", name: top_speed, widget: string, required: false}
+          - {label: "Servicehistorie", name: service, widget: string, required: false}
+      - label: "Weitere Angaben (optional)"
         name: details
         widget: list
         required: false
+        collapsed: true
+        summary: "{{fields.label}}: {{fields.value}}"
         fields:
-          - {label: Eigenschaft, name: label, widget: string}
-          - {label: Wert, name: value, widget: string}
-      - {label: Ausstattung / Highlights, name: highlights, widget: list, required: false, field: {label: Highlight, name: highlight, widget: string}}
+          - {label: Bezeichnung, name: label, widget: string}
+          - {label: Angabe, name: value, widget: string}
+      - {label: "Ausstattung / Highlights – ein Eintrag pro Zeile", name: highlights_text, widget: text, required: false, hint: "Einfach alle Highlights untereinander eingeben. Kein einzelnes Aufklappen mehr nötig."}
+
+  - name: collection_products
+    label: "MS Collection – Produkte"
+    label_singular: Produkt
+    description: "Produkte, Fotos, Größen und Farben direkt pflegen. Änderungen erscheinen nach dem Website-Build."
+    folder: content/products
+    create: true
+    delete: false
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}} · {{category}}"
+    fields:
+      - {label: "URL-Kürzel (nach Veröffentlichung nicht ändern)", name: slug, widget: string}
+      - {label: Produktname, name: name, widget: string}
+      - {label: Kategorie, name: category, widget: string}
+      - {label: Beschreibung, name: description, widget: text}
+      - {label: Hauptbild, name: image, widget: image}
+      - {label: Bildbeschreibung, name: alt, widget: string, required: false}
+      - {label: "Weitere Produktfotos", name: images, widget: list, required: false, field: {label: Foto, name: image, widget: image}}
+      - {label: Material, name: material, widget: string, required: false}
+      - {label: Passform, name: fit, widget: string, required: false}
+      - {label: Pflege, name: care, widget: text, required: false}
+      - {label: Verfügbarkeit, name: availability, widget: string, required: false}
+      - {label: "Größen (jeweils ein Eintrag)", name: sizes, widget: list, required: false, field: {label: Größe, name: size, widget: string}}
+      - {label: "Farben (jeweils ein Eintrag)", name: colors, widget: list, required: false, field: {label: Farbe, name: color, widget: string}}
 
   - name: website_pages
     label: Website-Texte
