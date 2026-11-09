@@ -32,7 +32,8 @@ function normalize(raw) {
     highlights: typeof raw.highlights_text === 'string' ? raw.highlights_text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean) : (Array.isArray(raw.highlights) ? raw.highlights : []),
   };
 }
-export const allCars = Object.values(entries).map(normalize).filter(car => car.slug && car.brand && car.model && car.published === true && car.status !== 'draft');
+export const allCars = Object.values(entries).map(normalize).filter(car => car.slug && car.brand && car.model && car.published !== false && ['in_stock', 'sold'].includes(car.status));
 export const cars = allCars.filter(car => car.status === 'in_stock');
+export const soldCars = allCars.filter(car => car.status === 'sold');
 export const euro = n => n == null || n === '' ? 'Preis auf Anfrage' : new Intl.NumberFormat('de-AT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
 export const number = n => n == null ? 'Auf Anfrage' : new Intl.NumberFormat('de-AT').format(n);
