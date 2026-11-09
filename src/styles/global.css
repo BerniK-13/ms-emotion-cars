@@ -638,3 +638,6 @@ body:has(.references-hero) .ms-shop-outro h2 em{font-family:'Italiana',Georgia,s
 
 /* Slightly larger homepage carbon-strip statement on tablet and desktop. */
 @media (min-width:768px){body:has(.hero) .intro-strip .strip-inner > p{font-size:clamp(1.6rem,2.5vw,2.25rem)}}
+
+/* Desktop: position the existing homepage hero photo slightly farther right to clear the headline. */
+@media (min-width: 1024px){.hero-art img{object-position:35% center}}
