@@ -1,0 +1,52 @@
+<style is:global>
+/* Progressive enhancement: content remains visible if scripts are unavailable. */
+@media (prefers-reduced-motion: no-preference) {
+  .site-section-reveal-ready .site-section-reveal-item {
+    transition: opacity 780ms ease, transform 780ms cubic-bezier(.22,1,.36,1);
+  }
+  .site-section-reveal-ready .site-section-reveal-item:not(.site-section-reveal-shown) {
+    opacity: 0;
+    transform: translate3d(0,24px,0);
+  }
+  .site-section-reveal-ready .site-section-reveal-item.site-section-reveal-shown {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+</style>
+<script>
+  // Shared reveal for inner-page editorial content, not existing hero/card animations.
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduced && 'IntersectionObserver' in window) {
+    const selectors = [
+      'main .section-heading',
+      'main .philosophy-grid > div',
+      'main .split-layout > div:first-child',
+      'main .about-values > article',
+      'main .ms-shop-outro',
+      'main .contact-person',
+      'main .contact-details',
+      'main .step-list',
+      'main .inquiry-panel',
+      'main .reference-preview-note'
+    ];
+    const targets = Array.from(document.querySelectorAll(selectors.join(','))).filter(el =>
+      !el.closest('.hero, .inner-hero, .collection-hero, [data-home-reveal], [data-home-reveal-group], [data-scroll-reveal]')
+      && !el.matches('[data-home-reveal], [data-scroll-reveal-card]')
+    );
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('site-section-reveal-shown');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold: 0.06, rootMargin: '0px 0px 40px 0px' });
+    for (const target of targets) {
+      target.classList.add('site-section-reveal-item');
+      const rect = target.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) target.classList.add('site-section-reveal-shown');
+      else observer.observe(target);
+    }
+    document.body.classList.add('site-section-reveal-ready');
+  }
+</script>
