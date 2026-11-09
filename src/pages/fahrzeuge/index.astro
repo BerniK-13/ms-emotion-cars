@@ -1,5 +1,6 @@
 ---
 import InnerHero from '../../components/InnerHero.astro';
+import ScrollReveal from '../../components/ScrollReveal.astro';
 import Base from '../../layouts/Base.astro';
 import CarCard from '../../components/CarCard.astro';
 import {cars} from '../../data/cars.js';
@@ -10,9 +11,10 @@ import copy from '../../../content/pages/in-stock.json';
   <section class="section listing"><div class="shell">
     <div class="filter-bar"><div class="filter-buttons" aria-label="Fahrzeuge filtern"><button type="button" class="filter active" data-filter="Alle" aria-pressed="true">{copy.text_001}</button><button type="button" class="filter" data-filter="Porsche" aria-pressed="false">{copy.text_002}</button><button type="button" class="filter" data-filter="BMW" aria-pressed="false">{copy.text_003}</button></div></div>
     <p id="result-count" class="results" aria-live="polite">{cars.length} Fahrzeuge</p>
-    <div class="car-grid" id="inventory">{cars.map(car=><div class="inventory-item" data-brand={car.brand}><CarCard car={car}/></div>)}</div>
+    <div class="car-grid" id="inventory" data-scroll-reveal>{cars.map(car=><div class="inventory-item" data-scroll-reveal-card data-brand={car.brand}><CarCard car={car}/></div>)}</div>
     <p id="empty-state" hidden>{copy.text_004}</p>
   </div></section>
+  <ScrollReveal/>
 </Base>
 <script>
 const items=[...document.querySelectorAll('.inventory-item')];

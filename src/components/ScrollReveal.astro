@@ -1,0 +1,54 @@
+<style is:global>
+/* Scoped to vehicle and reference listing cards. Visible by default if JS is unavailable. */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal-enabled .scroll-reveal-card:not(.scroll-reveal-visible):not([hidden]) {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  .scroll-reveal-enabled .scroll-reveal-card {
+    transition: opacity 780ms ease, transform 780ms cubic-bezier(.22, 1, .36, 1);
+  }
+  .scroll-reveal-enabled .scroll-reveal-card.scroll-reveal-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+</style>
+<script>
+  const grid = document.querySelector('[data-scroll-reveal]');
+  if (grid) {
+    const cards = Array.from(grid.querySelectorAll('[data-scroll-reveal-card]'));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      cards.forEach(card => card.classList.add('scroll-reveal-visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('scroll-reveal-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px 40px 0px' });
+      cards.forEach((card, index) => {
+        card.classList.add('scroll-reveal-card');
+        // Already-visible cards should never disappear on initial page load.
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          card.classList.add('scroll-reveal-visible');
+        } else {
+          observer.observe(card);
+        }
+      });
+      grid.classList.add('scroll-reveal-enabled');
+      // Filtering changes visibility without changing the card's once-only reveal state.
+      const changes = new MutationObserver(records => {
+        records.forEach(record => {
+          const card = record.target;
+          if (!card.hidden && !card.classList.contains('scroll-reveal-visible')) observer.observe(card);
+          else if (card.hidden) observer.unobserve(card);
+        });
+      });
+      cards.forEach(card => changes.observe(card, { attributes: true, attributeFilter: ['hidden'] }));
+    }
+  }
+</script>
