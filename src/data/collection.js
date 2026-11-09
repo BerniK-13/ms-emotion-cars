@@ -1,8 +1,11 @@
-// Zentrale, austauschbare Produktdaten. Noch keine bestätigten Materialien, Größen oder Verfügbarkeiten.
-// Bilder sind reine Stilreferenzen. Keine dieser Angaben ist als Verkaufszusage zu verstehen.
-export const products = [
-  {slug:'signature-cap',name:'Signature Cap',category:'HEADWEAR',description:'Klare Linien, sportlicher Charakter und ein dezentes Markenstatement. Die Signature Cap ergänzt lässige Looks mit einem selbstbewussten Finish.',image:'/ms-emotion-cars/images/basecap.png',alt:'MS EMotion Cars Signature Cap – Produktbild',images:[],material:null,fit:null,care:null,sizes:[],colors:[],availability:null},
-  {slug:'signature-hoodie',name:'Signature Hoodie',category:'ESSENTIALS',description:'Reduziertes Design, markanter Auftritt. Der Signature Hoodie verbindet entspannten Streetwear-Stil mit der unverwechselbaren Ästhetik von MS EMotion Cars.',image:'/ms-emotion-cars/images/hoodie.png',alt:'MS EMotion Cars Signature Hoodie – Produktbild',images:[],material:null,fit:null,care:null,sizes:[],colors:[],availability:null},
-  {slug:'performance-set',name:'Performance Set',category:'SPORTSWEAR',description:'Sportlich im Schnitt, souverän im Look. Das Performance Set kombiniert Jacke und Hose zu einem abgestimmten Outfit für Alltag und Freizeit.',image:'/ms-emotion-cars/images/jogginganzug2.png',alt:'Graues Trainingsanzug-Set der MS Collection – Produktbild',images:[],material:null,fit:null,care:null,sizes:[],colors:[],availability:null},
-  {slug:'edition-jacket',name:'Edition Jacket',category:'OUTERWEAR',description:'Schlichte Silhouette, starke Wirkung. Die Edition Jacket setzt auf einen sportlich-eleganten Look und lässt sich vielseitig kombinieren.',image:'/ms-emotion-cars/images/jacke.png',alt:'MS EMotion Cars Edition Jacket – Produktbild',images:[],material:null,fit:null,care:null,sizes:[],colors:[],availability:null}
-];
+// MS Collection products are maintained through Decap CMS JSON entries.
+const entries = import.meta.glob('../../content/products/*.json', {eager:true,import:'default'});
+function assetPath(path){if(!path || typeof path !== 'string')return '';const clean=path.trim();return /^https?:\/\//i.test(clean)?clean:(clean.startsWith('/ms-emotion-cars/')?clean:'/ms-emotion-cars'+(clean.startsWith('/')?clean:'/'+clean));}
+export const products=Object.values(entries).map(raw=>({
+  ...raw,
+  image:assetPath(raw.image),
+  images:(Array.isArray(raw.images)?raw.images:[]).map(x=>assetPath(typeof x==='string'?x:x?.image)).filter(Boolean),
+  sizes:(Array.isArray(raw.sizes)?raw.sizes:[]).map(x=>typeof x==='string'?x:x?.size).filter(Boolean),
+  colors:(Array.isArray(raw.colors)?raw.colors:[]).map(x=>typeof x==='string'?x:x?.color).filter(Boolean),
+  material:raw.material||null,fit:raw.fit||null,care:raw.care||null,availability:raw.availability||null,
+})).filter(p=>p.slug&&p.name);

@@ -1,81 +1,6 @@
 {
-  "details": [
-    {
-      "label": "Fahrzeugzustand",
-      "value": "Gebrauchtwagen"
-    },
-    {
-      "label": "Hubraum",
-      "value": "2.993 cm³"
-    },
-    {
-      "label": "Karosserie",
-      "value": "Touring / Kombi"
-    },
-    {
-      "label": "Sitzplätze",
-      "value": "5"
-    },
-    {
-      "label": "Türen",
-      "value": "5"
-    },
-    {
-      "label": "Außenfarbe",
-      "value": "Saphirschwarz Metallic"
-    },
-    {
-      "label": "Innenausstattung",
-      "value": "Vollleder Merino Anthrazit"
-    },
-    {
-      "label": "Abgasnorm",
-      "value": "Euro 6"
-    },
-    {
-      "label": "CO₂-Ausstoß",
-      "value": "238 g/km"
-    },
-    {
-      "label": "0–100 km/h",
-      "value": "3,5 Sekunden"
-    },
-    {
-      "label": "Höchstgeschwindigkeit",
-      "value": "300 km/h"
-    },
-    {
-      "label": "Servicehistorie",
-      "value": "Digitales BMW Serviceheft"
-    }
-  ],
+  "details": [],
   "brand": "BMW",
-  "facts": [
-    {
-      "label": "Kilometerstand",
-      "value": "5.251 km"
-    },
-    {
-      "label": "Erstzulassung",
-      "value": "06/2025"
-    },
-    {
-      "label": "Leistung",
-      "value": "405 kW / 551 PS"
-    },
-    {
-      "label": "Getriebe",
-      "value": "8-Gang Automatik"
-    },
-    {
-      "label": "Kraftstoff",
-      "value": "Benzin"
-    },
-    {
-      "label": "Antrieb",
-      "value": "M xDrive / Allrad"
-    }
-  ],
   "price": 185999,
   "model": "M3 CS Touring ",
   "slug": "bmw-m3-cs-touring",
@@ -150,16 +75,25 @@
   "tag": "IM SHOWROOM",
   "updated": "12.10.2026",
   "image": "/images/fahrzeuge/bmw-m3-cs-touring/MSA-08715.jpg",
-  "highlights": [
-    "M Carbon-Keramik-Bremse mit roten Bremssätteln",
-    "M Driver’s Package und M Drive Professional",
-    "M Sportdifferenzial und adaptives M Fahrwerk",
-    "19/20 Zoll M Leichtmetallräder in Goldbronze",
-    "M Interieurleisten Carbon Fibre und Alcantara-Lenkrad",
-    "Harman Kardon Surround Sound System",
-    "BMW Live Cockpit Professional",
-    "Adaptive LED-Scheinwerfer und Driving Assistant",
-    "Parking Assistant und Komfortzugang",
-    "Sitzheizung und elektrische Sitze mit Memory"
-  ]
+  "specs": {
+    "mileage": "5.251 km",
+    "registration": "06/2025",
+    "power": "405 kW / 551 PS",
+    "transmission": "8-Gang Automatik",
+    "fuel": "Benzin",
+    "drive": "M xDrive / Allrad",
+    "condition": "Gebrauchtwagen",
+    "displacement": "2.993 cm³",
+    "body": "Touring / Kombi",
+    "seats": "5",
+    "doors": "5",
+    "exterior": "Saphirschwarz Metallic",
+    "interior": "Vollleder Merino Anthrazit",
+    "emission": "Euro 6",
+    "co2": "238 g/km",
+    "acceleration": "3,5 Sekunden",
+    "top_speed": "300 km/h",
+    "service": "Digitales BMW Serviceheft"
+  },
+  "highlights_text": "M Carbon-Keramik-Bremse mit roten Bremssätteln\nM Driver’s Package und M Drive Professional\nM Sportdifferenzial und adaptives M Fahrwerk\n19/20 Zoll M Leichtmetallräder in Goldbronze\nM Interieurleisten Carbon Fibre und Alcantara-Lenkrad\nHarman Kardon Surround Sound System\nBMW Live Cockpit Professional\nAdaptive LED-Scheinwerfer und Driving Assistant\nParking Assistant und Komfortzugang\nSitzheizung und elektrische Sitze mit Memory"
 }
