@@ -5,7 +5,7 @@ const {kind='contact',vehicle=''}=Astro.props;
 ---
 {kind==='contact' ? (
 <form class="inquiry-form contact-inquiry" data-contact-inquiry action="https://api.web3forms.com/submit" method="POST">
- <input type="hidden" name="access_key" value="a1936694-f089-4ee1-89ab-7f39c164bd69"/><input type="hidden" name="subject" value="MS EMotion Cars – Website-Anfrage"/><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" /><div class="form-grid">
+ <input type="hidden" name="access_key" value="a1936694-f089-4ee1-89ab-7f39c164bd69"/><input type="hidden" name="subject" value="MS EMotion Cars – Website-Anfrage"/><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" /><div class="form-grid">
   <label class="full">Name *<input name="name" autocomplete="name" required maxlength="160" placeholder="Vor- und Nachname"/></label>
   <label>E-Mail-Adresse *<input type="email" name="email" autocomplete="email" required maxlength="180" placeholder="name@beispiel.at"/></label>
   <label>Telefonnummer *<input type="tel" name="phone" autocomplete="tel" required maxlength="50" placeholder="+43 …"/></label>
