@@ -1,65 +1,6 @@
 {
-  "details": [
-    {
-      "label": "Fahrzeugzustand",
-      "value": "Gebrauchtwagen"
-    },
-    {
-      "label": "Karosserie",
-      "value": "Coupé"
-    },
-    {
-      "label": "Hubraum",
-      "value": "2.979 cm³"
-    },
-    {
-      "label": "Sitzplätze",
-      "value": "4"
-    },
-    {
-      "label": "Türen",
-      "value": "2"
-    },
-    {
-      "label": "Außenfarbe",
-      "value": "Alpinweiß"
-    },
-    {
-      "label": "Abgasnorm",
-      "value": "Euro 5"
-    },
-    {
-      "label": "Servicehistorie",
-      "value": "Scheckheftgepflegt (laut Inserat)"
-    }
-  ],
+  "details": [],
   "brand": "BMW",
-  "facts": [
-    {
-      "label": "Kilometerstand",
-      "value": "56.600 km"
-    },
-    {
-      "label": "Erstzulassung",
-      "value": "03/2012"
-    },
-    {
-      "label": "Leistung",
-      "value": "250 kW / 340 PS"
-    },
-    {
-      "label": "Getriebe",
-      "value": "6-Gang Schaltgetriebe"
-    },
-    {
-      "label": "Kraftstoff",
-      "value": "Benzin"
-    },
-    {
-      "label": "Antrieb",
-      "value": "Hinterradantrieb"
-    }
-  ],
   "price": 67499,
   "model": "1er M Coupé",
   "slug": "bmw-1er-m-coupe",
@@ -73,18 +14,21 @@
   "tag": "IM SHOWROOM",
   "updated": "08.11.2026 (Online-Inserat; Verfügbarkeit und Preis vor Verkauf prüfen)",
   "image": "",
-  "highlights": [
-    "Performance-Sitze (laut Händlerangebot)",
-    "Navigationssystem",
-    "Klimaautomatik",
-    "19 Zoll M Leichtmetallräder Y-Speiche 359 M",
-    "Interieurleisten Alcantara Anthrazit",
-    "Xenon-Scheinwerfer",
-    "Sitzheizung vorne",
-    "Park Distance Control hinten",
-    "Sperrdifferential",
-    "M Sportfahrwerk",
-    "HiFi-Lautsprechersystem",
-    "Geschwindigkeitsregelung"
-  ]
+  "specs": {
+    "mileage": "56.600 km",
+    "registration": "03/2012",
+    "power": "250 kW / 340 PS",
+    "transmission": "6-Gang Schaltgetriebe",
+    "fuel": "Benzin",
+    "drive": "Hinterradantrieb",
+    "condition": "Gebrauchtwagen",
+    "body": "Coupé",
+    "displacement": "2.979 cm³",
+    "seats": "4",
+    "doors": "2",
+    "exterior": "Alpinweiß",
+    "emission": "Euro 5",
+    "service": "Scheckheftgepflegt (laut Inserat)"
+  },
+  "highlights_text": "Performance-Sitze (laut Händlerangebot)\nNavigationssystem\nKlimaautomatik\n19 Zoll M Leichtmetallräder Y-Speiche 359 M\nInterieurleisten Alcantara Anthrazit\nXenon-Scheinwerfer\nSitzheizung vorne\nPark Distance Control hinten\nSperrdifferential\nM Sportfahrwerk\nHiFi-Lautsprechersystem\nGeschwindigkeitsregelung"
 }
