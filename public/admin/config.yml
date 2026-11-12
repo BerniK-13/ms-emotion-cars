@@ -9,6 +9,20 @@ media_folder: public/images/fahrzeuge
 public_folder: /ms-emotion-cars/images/fahrzeuge
 publish: false
 collections:
+  - name: general
+    label: "Allgemeines"
+    label_singular: "Einstellung"
+    description: "Zentrale Einstellungen für das Erscheinungsbild der Website."
+    files:
+      - label: "Design & Erscheinungsbild"
+        name: design
+        file: "content/design.json"
+        fields:
+          - {label: "Headline-Farbe (helle Seiten)", name: headline_color, widget: color, default: "#1a1b1c", allowInput: true, enableAlpha: false, hint: "Nur Überschriften auf hellen Flächen; weiße Überschriften auf dunklen Bannern bleiben erhalten."}
+          - {label: "Akzentfarbe", name: accent_color, widget: color, default: "#991B26", allowInput: true, enableAlpha: false, hint: "Rote Linien und CSS-Akzente; Bilder und Logos bleiben unverändert."}
+          - {label: "Fließtextgröße in Pixel", name: body_font_size, widget: number, value_type: int, min: 14, max: 22, step: 1, default: 16}
+          - {label: "Headline-Größe in Prozent", name: headline_scale, widget: number, value_type: int, min: 85, max: 115, step: 5, default: 100, hint: "100 % entspricht der bisherigen Gestaltung. Responsive Größen bleiben erhalten."}
+          - {label: "Schriftart für Fließtext", name: font_family, widget: select, options: [{label: "DM Sans (Standard)", value: "DM Sans"}, {label: "Arial", value: "Arial"}, {label: "Georgia", value: "Georgia"}], default: "DM Sans"}
   - name: vehicles
     label: Fahrzeuge
     label_singular: Fahrzeug
