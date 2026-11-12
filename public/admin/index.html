@@ -22,6 +22,9 @@
     [class*="ControlPane"] input:focus,[class*="ControlPane"] textarea:focus{border-color:var(--ms-red)!important;outline-color:var(--ms-red)!important}
     [class*="ControlPane"] label{font-family:"DM Sans",Arial,sans-serif!important;letter-spacing:.035em}
     [class*="Editor"] button,[class*="Collection"] button{border-radius:7px}
+    /* Compact native Decap image-widget thumbnails inside expanded gallery entries. */
+    [class*="ControlPane"] [class*="ImageControl"] img,[class*="ControlPane"] [class*="ImagePreview"] img{max-width:180px!important;max-height:115px!important;object-fit:contain!important}
+    [class*="ControlPane"] [class*="ListControl"] [class*="ImageControl"]{max-width:100%}
     @media(max-width:900px){[class*="ControlPane"]{padding:16px!important}}
   </style>
 </head>
