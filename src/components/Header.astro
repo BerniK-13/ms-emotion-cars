@@ -65,6 +65,11 @@ const nav = [
 </header>
 
 <script>
+  const header = document.querySelector('.site-header');
+  const updateScrollHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 12);
+  updateScrollHeader();
+  window.addEventListener('scroll', updateScrollHeader, { passive: true });
+  window.addEventListener('pageshow', updateScrollHeader);
   const button = document.querySelector('.menu-toggle');
   const menu = document.querySelector('#mobile-menu');
 
