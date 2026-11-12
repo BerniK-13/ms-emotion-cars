@@ -17,10 +17,10 @@ if(hero && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
  let pending=false;
  const update=()=>{
   const progress=Math.min(1,Math.max(0,window.scrollY)/Math.max(1,hero.clientHeight));
-  hero.style.setProperty('--test-art-scale',String(1+progress*.05));
-  hero.style.setProperty('--test-art-y',String(progress*26)+'px');
-  hero.style.setProperty('--test-copy-y',String(progress*58)+'px');
-  hero.style.setProperty('--test-light',String(.12+progress*.5));
+  hero.style.setProperty('--test-art-scale',String(1+progress*.18));
+  hero.style.setProperty('--test-art-y',String(progress*95)+'px');
+  hero.style.setProperty('--test-copy-y',String(progress*135)+'px');
+  hero.style.setProperty('--test-light',String(.15+progress*.85));
   pending=false;
  };
  const onScroll=()=>{if(!pending){pending=true;requestAnimationFrame(update)}};
