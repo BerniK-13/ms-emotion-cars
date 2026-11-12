@@ -3,5 +3,6 @@
   "accent_color": "#991B26",
   "body_font_size": 16,
   "headline_scale": 100,
-  "font_family": "DM Sans"
+  "font_family": "DM Sans",
+  "factory_defaults": true
 }
