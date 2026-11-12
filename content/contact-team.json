@@ -1,0 +1,26 @@
+{
+  "image": "/images/contact-team.webp",
+  "members": [
+    {
+      "first_name": "Max",
+      "last_name": "Mustermann",
+      "role": "Verkaufsleitung",
+      "mobile": "+43 000 000 000",
+      "email": "max.mustermann@beispiel.at"
+    },
+    {
+      "first_name": "Paul",
+      "last_name": "Muster",
+      "role": "Verkaufsberatung",
+      "mobile": "+43 000 000 001",
+      "email": "paul.muster@beispiel.at"
+    },
+    {
+      "first_name": "Lukas",
+      "last_name": "Beispiel",
+      "role": "Fahrzeugankauf",
+      "mobile": "+43 000 000 002",
+      "email": "lukas.beispiel@beispiel.at"
+    }
+  ]
+}
