@@ -35,10 +35,10 @@ collections:
         name: images
         widget: list
         required: false
-        collapsed: true
-        minimize_collapsed: true
+        collapsed: false
+        minimize_collapsed: false
         summary: 'Foto {{index}}'
-        hint: 'Bilder lassen sich einzeln öffnen und in der Reihenfolge verschieben. Vorhandene Fotos bleiben erhalten.'
+        hint: 'Fotoeinträge zeigen eine Bildvorschau und lassen sich verschieben. Vorhandene Fotos bleiben erhalten.'
         field: {label: Fahrzeugfoto, name: image, widget: image}
       - {label: Preis in EUR, name: price, widget: number, value_type: int, required: false, hint: "Nur bei In Stock sichtbar, niemals bei Sold."}
       - {label: Interne Referenz, name: reference, widget: string, required: false}
