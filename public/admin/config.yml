@@ -18,6 +18,7 @@ collections:
         name: design
         file: "content/design.json"
         fields:
+          - {label: "Werkseinstellungen verwenden", name: factory_defaults, widget: boolean, default: true, hint: "EIN = ursprüngliches Website-Design unverändert. AUS = eigene Designwerte verwenden. Nach dem Umschalten oben Speichern klicken."}
           - {label: "Headline-Farbe (helle Seiten)", name: headline_color, widget: color, default: "#1a1b1c", allowInput: true, enableAlpha: false, hint: "Nur Überschriften auf hellen Flächen; weiße Überschriften auf dunklen Bannern bleiben erhalten."}
           - {label: "Akzentfarbe", name: accent_color, widget: color, default: "#991B26", allowInput: true, enableAlpha: false, hint: "Rote Linien und CSS-Akzente; Bilder und Logos bleiben unverändert."}
           - {label: "Fließtextgröße in Pixel", name: body_font_size, widget: number, value_type: int, min: 14, max: 22, step: 1, default: 16}
