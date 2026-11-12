@@ -15,7 +15,7 @@ if (bodySize !== 16) overrides.push(`body{font-size:${bodySize}px}`);
 if (design.font_family && design.font_family !== 'DM Sans' && fonts[design.font_family]) overrides.push(`body{font-family:${fonts[design.font_family]}}`);
 if (headline.toLowerCase() !== '#1a1b1c') overrides.push(`.detail-body h2,.section:not(.hero) h2,.detail-title h1{color:${headline}}`);
 if (headlineScale !== 1) overrides.push(`h2{font-size:clamp(${2.7*headlineScale}rem,${5.2*headlineScale}vw,${5.8*headlineScale}rem)}`);
-const designCSS = overrides.join('\\n');
+const designCSS = design.factory_defaults !== false ? '' : overrides.join('\\n');
 import {withBase} from '../utils/paths.js';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
