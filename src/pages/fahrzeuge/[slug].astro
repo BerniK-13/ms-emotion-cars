@@ -10,12 +10,14 @@ const {car}=Astro.props;
 const specs=car.facts.length || car.details.length || car.highlights.length ? car : null;
 const isSold=car.status === 'sold';
 const price=euro(car.price);
+const additionalPrices = Array.isArray(car.additional_prices) ? car.additional_prices.filter(item => item && String(item.label || '').trim() && item.amount !== '' && item.amount != null && Number.isFinite(Number(item.amount))).slice(0,2) : [];
+const showPriceDetails = Boolean((car.price_label || '').trim() || additionalPrices.length || (car.price_note || '').trim());
 ---
 <Base title={`${car.brand} ${car.model}`} description={`${car.brand} ${car.model} – Bildergalerie bei MS EMotion Cars.`}>
 <InnerHero eyebrow={`${car.brand.toUpperCase()} / MS EMOTION CARS`} title="Never just" accent="a car." description={`${car.brand} ${car.model}`} image={car.images[0] || '/images/hero-porsche.png'} position="center 57%"/>
 <section class="detail-top real-detail"><div class="shell">
   <a class="back-link" href={withBase(isSold ? '/referenzen/' : '/fahrzeuge/')}>← ZURÜCK ZU {isSold ? 'DEN REFERENZEN' : 'DEN FAHRZEUGEN'}</a>
-  <div class="detail-title"><div><span class="eyebrow eyebrow-dark">{car.brand.toUpperCase()} / {isSold ? 'SOLD' : 'IM SHOWROOM'}</span><h1>{car.model}</h1></div>{!isSold && <strong>{price}</strong>}</div>
+  <div class="detail-title"><div><span class="eyebrow eyebrow-dark">{car.brand.toUpperCase()} / {isSold ? 'SOLD' : 'IM SHOWROOM'}</span><h1>{car.model}</h1></div>{!isSold && (showPriceDetails ? <div class="detail-prices" aria-label="Fahrzeugpreise"><div class="detail-price-row"><span>{car.price_label || "Verkaufspreis"}</span><strong>{price}</strong></div>{additionalPrices.map(item => <div class="detail-price-row"><span>{item.label}</span><strong>{euro(item.amount)}</strong></div>)}{car.price_note && <p class="detail-price-note">{car.price_note}</p>}</div> : <strong>{price}</strong>)}</div>
   {car.images.length ? <div class="vehicle-gallery" data-gallery>
     <div class="gallery-stage">
       <img class="gallery-main" src={withBase(car.images[0])} alt={`${car.brand} ${car.model}, Aufnahme 1`} width="1600" height="1067" fetchpriority="high" decoding="async"/>
@@ -38,6 +40,9 @@ const price=euro(car.price);
  {!isSold && <div class="inquiry-panel"><h3>Interesse an diesem Fahrzeug?</h3><p>Fragen zu Ausstattung, Preis oder Verfügbarkeit? Wir freuen uns auf Ihre Anfrage.</p><a class="button button-dark" href={`${withBase('/kontakt/')}?topic=verkauf&vehicle=${encodeURIComponent(car.brand+' '+car.model)}#anfrage`}>FAHRZEUG ANFRAGEN <span aria-hidden="true">↗</span></a></div>}
 </div></section>
 </Base>
+<style>
+.detail-prices{display:flex;flex-direction:column;gap:12px;text-align:right;max-width:370px;min-width:220px}.detail-price-row{display:flex;flex-direction:column;gap:3px}.detail-price-row span{font-size:11px;letter-spacing:.06em;color:#797b7c}.detail-price-row strong{font-size:clamp(1.15rem,2vw,1.65rem);font-weight:600;white-space:nowrap}.detail-price-note{font-size:11px;line-height:1.5;color:#797b7c;margin:2px 0 0}@media(max-width:700px){.detail-prices{text-align:left;min-width:0;max-width:100%;margin-top:14px}.detail-price-row strong{white-space:normal}}
+</style>
 <script>
 document.querySelectorAll('[data-gallery]').forEach(gallery=>{
  const thumbs=[...gallery.querySelectorAll('.gallery-thumb')],main=gallery.querySelector('.gallery-main'),count=gallery.querySelector('.gallery-count'),dialog=gallery.querySelector('.gallery-dialog'),modal=gallery.querySelector('.gallery-modal-image'),modalCount=gallery.querySelector('.gallery-modal-count');let index=0,touchStart=null;
