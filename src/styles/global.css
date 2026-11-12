@@ -661,3 +661,28 @@ body:has(.references-hero) .ms-shop-outro h2 em{font-family:'Italiana',Georgia,s
                linear-gradient(0deg,rgba(0,0,0,.12),transparent 23%);
   }
 }
+
+
+/* Global sticky navigation: fixed overlay preserves the existing hero and page geometry. */
+.site-header,
+body:has(.light-head) .site-header,
+body:has(.inventory-page) .site-header,
+body:has(.real-detail) .site-header,
+body:has(.inner-hero) .site-header,
+body:has(.inner-hero.inventory-page) .site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  background:rgba(9,10,12,.83);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.16);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+}
+.site-header .mobile-nav{background:rgba(9,10,12,.97);color:#fff}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
+  .site-header{background:rgba(9,10,12,.93)}
+}
+@media(prefers-reduced-transparency:reduce){.site-header{background:#101112}}
