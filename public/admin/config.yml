@@ -57,6 +57,18 @@ collections:
         hint: 'Fotoeinträge zeigen eine Bildvorschau und lassen sich verschieben. Vorhandene Fotos bleiben erhalten.'
         field: {label: Fahrzeugfoto, name: image, widget: image}
       - {label: Preis in EUR, name: price, widget: number, value_type: int, required: false, hint: "Nur bei In Stock sichtbar, niemals bei Sold."}
+      - label: "Weitere Preisangaben (nur In Stock)"
+        name: additional_prices
+        widget: list
+        required: false
+        max: 2
+        collapsed: false
+        summary: "{{fields.label}} – {{fields.amount}} EUR"
+        hint: "Zusätzlich zum bisherigen Hauptpreis bis zu zwei weitere Preise. Jeder Preis erhält eine eigene Bezeichnung, z. B. EU-Export oder Netto. Keine automatische Steuerberechnung."
+        fields:
+          - {label: "Preisbezeichnung", name: label, widget: string, hint: "z. B. EU-Exportpreis oder Nettopreis"}
+          - {label: "Betrag in EUR", name: amount, widget: number, value_type: int, min: 0}
+      - {label: "Hinweis zu den Preisen (optional)", name: price_note, widget: string, required: false, hint: "z. B. MwSt. ausweisbar. Nur bei In Stock sichtbar."}
       - {label: Interne Referenz, name: reference, widget: string, required: false}
       - {label: Datenstand, name: updated, widget: string, required: false}
       - label: "Technische Daten – direkt bearbeiten"
