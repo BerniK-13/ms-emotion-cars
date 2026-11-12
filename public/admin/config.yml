@@ -14,6 +14,24 @@ collections:
     label_singular: "Einstellung"
     description: "Zentrale Einstellungen für das Erscheinungsbild der Website."
     files:
+      - label: "Kontakt – Ansprechpartner"
+        name: contact_team
+        file: "content/contact-team.json"
+        fields:
+          - {label: "Gruppenbild (Querformat)", name: image, widget: image, hint: "Foto der drei Ansprechpartner. Bild im CMS hochladen und speichern."}
+          - label: "Ansprechpartner"
+            name: members
+            widget: list
+            min: 3
+            max: 3
+            collapsed: false
+            summary: "{{fields.first_name}} {{fields.last_name}}"
+            fields:
+              - {label: Vorname, name: first_name, widget: string}
+              - {label: Nachname, name: last_name, widget: string}
+              - {label: Funktion, name: role, widget: string}
+              - {label: Handynummer, name: mobile, widget: string}
+              - {label: E-Mail-Adresse, name: email, widget: string}
       - label: "Design & Erscheinungsbild"
         name: design
         file: "content/design.json"
