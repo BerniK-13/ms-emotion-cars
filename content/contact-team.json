@@ -2,25 +2,25 @@
   "image": "/images/contact-team.webp",
   "members": [
     {
-      "first_name": "Max",
-      "last_name": "Mustermann",
+      "first_name": "Doménic",
+      "last_name": "Pirchner",
       "role": "Verkaufsleitung",
       "mobile": "+43 000 000 000",
-      "email": "max.mustermann@beispiel.at"
+      "email": "domenic.pirchner@msdesign.at"
     },
     {
-      "first_name": "Paul",
-      "last_name": "Muster",
-      "role": "Verkaufsberatung",
+      "first_name": "Manuel ",
+      "last_name": "Santer",
+      "role": " Geschäftsführung",
       "mobile": "+43 000 000 001",
-      "email": "paul.muster@beispiel.at"
+      "email": "manuel.santer@msdesign.at"
     },
     {
-      "first_name": "Lukas",
-      "last_name": "Beispiel",
-      "role": "Fahrzeugankauf",
+      "first_name": "Manuel",
+      "last_name": "Kuen",
+      "role": "Fahrzeugverkauf",
       "mobile": "+43 000 000 002",
-      "email": "lukas.beispiel@beispiel.at"
+      "email": "manuel.kuen@ms-automobile.at"
     }
   ]
 }
