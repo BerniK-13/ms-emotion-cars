@@ -30,6 +30,7 @@ collections:
       - {label: Status, name: status, widget: radio, options: [{label: 'Draft – nicht sichtbar', value: draft}, {label: 'In Stock – verfügbar', value: in_stock}, {label: 'Sold – verkauft', value: sold}], default: draft}
       - {label: Veröffentlicht, name: published, widget: boolean, default: false, hint: 'Nur veröffentlichte Fahrzeuge erscheinen auf der Website. Nach dem Speichern dauert die Veröffentlichung einige Minuten.'}
       - {label: Kurzlabel, name: tag, widget: string, required: false}
+      - {label: 'Fahrzeugbeschreibung – Einleitung vor technischen Details', name: intro_text, widget: text, required: false, hint: 'Individueller Einleitungstext auf der Fahrzeugdetailseite; jederzeit bearbeitbar.'}
       - {label: Hauptfoto, name: image, widget: image, required: false}
       - label: 'Bildergalerie – weitere Fahrzeugfotos'
         name: images
