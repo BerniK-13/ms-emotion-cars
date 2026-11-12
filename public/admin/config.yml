@@ -20,19 +20,25 @@ collections:
     slug: "{{slug}}"
     identifier_field: model
     summary: "{{brand}} {{model}} — {{status}}"
+    editor:
+      preview: false
     fields:
       - {label: Slug, name: slug, widget: string, hint: "Stabiler URL-Name; nach Veröffentlichung nicht ändern."}
       - {label: Marke, name: brand, widget: string}
       - {label: Modell, name: model, widget: string}
       - {label: Kategorie, name: type, widget: string, required: false}
-      - {label: Status, name: status, widget: select, options: [draft, in_stock, sold], default: draft}
+      - {label: Status, name: status, widget: radio, options: [{label: 'Draft – nicht sichtbar', value: draft}, {label: 'In Stock – verfügbar', value: in_stock}, {label: 'Sold – verkauft', value: sold}], default: draft}
       - {label: Veröffentlicht, name: published, widget: boolean, default: false, hint: 'Nur veröffentlichte Fahrzeuge erscheinen auf der Website. Nach dem Speichern dauert die Veröffentlichung einige Minuten.'}
       - {label: Kurzlabel, name: tag, widget: string, required: false}
       - {label: Hauptfoto, name: image, widget: image, required: false}
-      - label: Bildergalerie
+      - label: 'Bildergalerie – weitere Fahrzeugfotos'
         name: images
         widget: list
         required: false
+        collapsed: true
+        minimize_collapsed: true
+        summary: 'Foto {{index}}'
+        hint: 'Bilder lassen sich einzeln öffnen und in der Reihenfolge verschieben. Vorhandene Fotos bleiben erhalten.'
         field: {label: Fahrzeugfoto, name: image, widget: image}
       - {label: Preis in EUR, name: price, widget: number, value_type: int, required: false, hint: "Nur bei In Stock sichtbar, niemals bei Sold."}
       - {label: Interne Referenz, name: reference, widget: string, required: false}
