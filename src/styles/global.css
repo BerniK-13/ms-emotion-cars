@@ -663,7 +663,7 @@ body:has(.references-hero) .ms-shop-outro h2 em{font-family:'Italiana',Georgia,s
 }
 
 
-/* Global sticky navigation: fixed overlay preserves the existing hero and page geometry. */
+/* Transparent navigation at page top; dark glass only after scrolling. */
 .site-header,
 body:has(.light-head) .site-header,
 body:has(.inventory-page) .site-header,
@@ -675,14 +675,27 @@ body:has(.inner-hero.inventory-page) .site-header{
   left:0;
   right:0;
   z-index:100;
-  background:rgba(9,10,12,.83);
+  background:transparent;
   color:#fff;
-  border-bottom:1px solid rgba(255,255,255,.16);
+  border:0;
+  border-bottom:0;
+  -webkit-backdrop-filter:none;
+  backdrop-filter:none;
+  transition:background-color .25s ease,backdrop-filter .25s ease;
+}
+.site-header.is-scrolled,
+body:has(.light-head) .site-header.is-scrolled,
+body:has(.inventory-page) .site-header.is-scrolled,
+body:has(.real-detail) .site-header.is-scrolled,
+body:has(.inner-hero) .site-header.is-scrolled,
+body:has(.inner-hero.inventory-page) .site-header.is-scrolled{
+  background:rgba(9,10,12,.83);
+  border:0;
   -webkit-backdrop-filter:blur(14px);
   backdrop-filter:blur(14px);
 }
 .site-header .mobile-nav{background:rgba(9,10,12,.97);color:#fff}
 @supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
-  .site-header{background:rgba(9,10,12,.93)}
+  .site-header.is-scrolled{background:rgba(9,10,12,.93)}
 }
-@media(prefers-reduced-transparency:reduce){.site-header{background:#101112}}
+@media(prefers-reduced-transparency:reduce){.site-header.is-scrolled{background:#101112}}
