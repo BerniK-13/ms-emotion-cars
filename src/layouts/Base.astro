@@ -1,5 +1,10 @@
 ---
 import '../styles/global.css';
+import design from '../../content/design.json';
+const safeHex = (value, fallback) => typeof value === 'string' && /^#[0-9a-fA-F]{6}$/.test(value) ? value : fallback;
+const safeNumber = (value, fallback, min, max) => Number.isFinite(Number(value)) ? Math.min(max, Math.max(min, Number(value))) : fallback;
+const fonts = {'DM Sans': "'DM Sans',Arial,sans-serif", Arial: 'Arial,sans-serif', Georgia: 'Georgia,serif'};
+const designCSS = `:root{--red:${safeHex(design.accent_color,'#991B26')};--ms-headline-color:${safeHex(design.headline_color,'#1a1b1c')};--ms-body-size:${safeNumber(design.body_font_size,16,14,22)}px;--ms-heading-scale:${safeNumber(design.headline_scale,100,85,115)/100};--ms-body-font:${fonts[design.font_family] || fonts['DM Sans']}}body{font-size:var(--ms-body-size);font-family:var(--ms-body-font)}.section h2,.detail-body h2,.spec-summary h2{font-size:clamp(calc(2.7rem * var(--ms-heading-scale)),calc(5.2vw * var(--ms-heading-scale)),calc(5.8rem * var(--ms-heading-scale)))}.detail-body h2,.section:not(.hero) h2,.detail-title h1{color:var(--ms-headline-color)}.eyebrow:after,.brand-stroke{background:var(--red)}.car-arrow{color:var(--red)}`;
 import {withBase} from '../utils/paths.js';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -7,4 +12,4 @@ import HeroSequence from '../components/HeroSequence.astro';
 import SiteSectionReveal from '../components/SiteSectionReveal.astro';
 const {title='Exklusive Automobile',description='MS EMotion Cars – exklusiver Fahrzeugverkauf und Ankauf. Demo-Prototyp.'} = Astro.props;
 ---
-<!doctype html><html lang="de"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><meta name="theme-color" content="#101112"/><title>{title} | MS EMotion Cars</title><link rel="icon" href={withBase("/favicon.svg")} type="image/svg+xml"/></head><body><a class="skip" href="#main">Zum Inhalt springen</a><Header/><main id="main"><slot/></main><Footer/><HeroSequence/><SiteSectionReveal/><script is:inline>document.documentElement.classList.add('js');</script></body></html>
+<!doctype html><html lang="de"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><meta name="theme-color" content="#101112"/><style is:inline set:html={designCSS}/><title>{title} | MS EMotion Cars</title><link rel="icon" href={withBase("/favicon.svg")} type="image/svg+xml"/></head><body><a class="skip" href="#main">Zum Inhalt springen</a><Header/><main id="main"><slot/></main><Footer/><HeroSequence/><SiteSectionReveal/><script is:inline>document.documentElement.classList.add('js');</script></body></html>
