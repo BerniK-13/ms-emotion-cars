@@ -10,7 +10,9 @@ const {car}=Astro.props;
 const specs=car.facts.length || car.details.length || car.highlights.length ? car : null;
 const isSold=car.status === 'sold';
 const price=euro(car.price);
-const additionalPrices = Array.isArray(car.additional_prices) ? car.additional_prices.filter(item => item && String(item.label || '').trim() && item.amount !== '' && item.amount != null && Number.isFinite(Number(item.amount))).slice(0,2) : [];
+const fixedPrices = [{ amount: car.price_2, label: car.price_2_label }, { amount: car.price_3, label: car.price_3_label }];
+const legacyPrices = Array.isArray(car.additional_prices) ? car.additional_prices : [];
+const additionalPrices = fixedPrices.map((item, index) => (item.amount !== '' && item.amount != null ? item : legacyPrices[index])).filter(item => item && item.amount !== '' && item.amount != null && Number.isFinite(Number(item.amount))).slice(0, 2);
 const showPriceDetails = Boolean((car.price_label || '').trim() || additionalPrices.length || (car.price_note || '').trim());
 ---
 <Base title={`${car.brand} ${car.model}`} description={`${car.brand} ${car.model} – Bildergalerie bei MS EMotion Cars.`}>
