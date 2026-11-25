@@ -67,13 +67,9 @@ collections:
       - {label: Hauptfoto, name: image, widget: image, required: false}
       - label: 'Bildergalerie – weitere Fahrzeugfotos'
         name: images
-        widget: list
+        widget: compact_gallery
         required: false
-        collapsed: true
-        minimize_collapsed: true
-        summary: 'Foto {{index}}'
-        hint: 'Kompakte Fotoliste: Einträge bei Bedarf öffnen, entfernen oder über die Sortiergriffe verschieben. Bestehende Bilder bleiben erhalten.'
-        field: {label: Fahrzeugfoto, name: image, widget: image}
+        hint: 'Alle Fotos als Vorschaubilder. Mit dem Griff verschieben, mit X entfernen. Die Änderung wird erst beim Speichern des Fahrzeugs übernommen.'
       - {label: "Preis 1 (EUR)", name: price, widget: number, value_type: int, min: 0, required: false, hint: "Hauptpreis. Nur bei In Stock sichtbar."}
       - {label: "Bezeichnung Preis 1", name: price_label, widget: string, required: false, hint: "z. B. Österreichpreis inkl. NoVA"}
       - {label: "Preis 2 (EUR)", name: price_2, widget: number, value_type: int, min: 0, required: false}
