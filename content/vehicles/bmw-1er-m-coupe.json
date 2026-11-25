@@ -55,12 +55,10 @@
   ],
   "price": 67499,
   "price_label": "Preis regulär",
-  "additional_prices": [
-    {
-      "label": "Preis EU-Export",
-      "amount": 100000
-    }
-  ],
+  "price_2": 99998,
+  "price_2_label": "Preis EU-Export",
+  "price_3": 99997,
+  "price_3_label": "Preis netto",
   "price_note": "MwSt. nicht ausweisbar",
   "reference": "2286788",
   "updated": "08.11.2026 (Online-Inserat; Verfügbarkeit und Preis vor Verkauf prüfen)",
@@ -81,5 +79,11 @@
     "exterior": "Alpinweiß"
   },
   "details": [],
-  "highlights_text": "Performance-Sitze (laut Händlerangebot)\nNavigationssystem\nKlimaautomatik\n19 Zoll M Leichtmetallräder Y-Speiche 359 M\nInterieurleisten Alcantara Anthrazit\nXenon-Scheinwerfer\nSitzheizung vorne\nPark Distance Control hinten\nSperrdifferential\nM Sportfahrwerk\nHiFi-Lautsprechersystem\nGeschwindigkeitsregelung"
+  "highlights_text": "Performance-Sitze (laut Händlerangebot)\nNavigationssystem\nKlimaautomatik\n19 Zoll M Leichtmetallräder Y-Speiche 359 M\nInterieurleisten Alcantara Anthrazit\nXenon-Scheinwerfer\nSitzheizung vorne\nPark Distance Control hinten\nSperrdifferential\nM Sportfahrwerk\nHiFi-Lautsprechersystem\nGeschwindigkeitsregelung",
+  "additional_prices": [
+    {
+      "label": "Preis EU-Export",
+      "amount": 100000
+    }
+  ]
 }
