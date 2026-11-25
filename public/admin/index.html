@@ -93,7 +93,7 @@
         if(!path)return '';
         if(/^(https?:|blob:|data:)/i.test(path))return path;
         if(path.charAt(0)==='/')return path;
-        return '/ms-emotion-cars/'+path.replace(/^\\/+/, '');
+        return '/ms-emotion-cars/'+path.replace(/^[/]+/, '');
       }
       var Gallery=window.createClass({
         getInitialState:function(){return {newPath:'',dragIndex:null,overIndex:null};},
