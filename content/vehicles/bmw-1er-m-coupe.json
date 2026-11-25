@@ -1,12 +1,13 @@
 {
-  "details": [],
-  "brand": "BMW",
-  "price": 67499,
-  "model": "1er M Coupé",
   "slug": "bmw-1er-m-coupe",
-  "reference": "2286788",
-  "published": true,
+  "brand": "BMW",
+  "model": "1er M Coupé",
+  "type": "Sportwagen",
   "status": "in_stock",
+  "published": true,
+  "tag": "IM SHOWROOM",
+  "intro_text": "Kompakt in den Abmessungen, kompromisslos im Charakter: Das BMW 1er M Coupé steht für eine besonders direkte Form der Fahrfreude. Sein 340 PS starker Reihensechszylinder, das manuelle Sechsganggetriebe und der Hinterradantrieb machen jede Fahrt zu einem bewussten Erlebnis. In Alpinweiß präsentiert sich dieses Coupé ebenso zurückhaltend wie selbstbewusst – ein BMW M für Menschen, die das Fahren noch selbst in die Hand nehmen möchten.",
+  "image": "/ms-emotion-cars/images/fahrzeuge/bmw-1er-m-coupe/BMW%201er%20MCoup%C3%A9%20(01).jpg",
   "images": [
     "/ms-emotion-cars/images/fahrzeuge/bmw-1er-m-coupe/BMW%201er%20MCoup%C3%A9%20(01).jpg",
     "/ms-emotion-cars/images/fahrzeuge/bmw-1er-m-coupe/BMW%201er%20MCoup%C3%A9%20(02).jpg",
@@ -52,26 +53,32 @@
     "/ms-emotion-cars/images/fahrzeuge/bmw-1er-m-coupe/BMW%201er%20MCoup%C3%A9%20(39).jpg",
     "/ms-emotion-cars/images/fahrzeuge/bmw-1er-m-coupe/BMW%201er%20MCoup%C3%A9%20(40).jpg"
   ],
-  "type": "Sportwagen",
-  "tag": "IM SHOWROOM",
+  "price": 67499,
+  "price_label": "Preis regulär",
+  "additional_prices": [
+    {
+      "label": "Preis EU-Export",
+      "amount": 100000
+    }
+  ],
+  "reference": "2286788",
   "updated": "08.11.2026 (Online-Inserat; Verfügbarkeit und Preis vor Verkauf prüfen)",
-  "image": "/ms-emotion-cars/images/fahrzeuge/bmw-1er-m-coupe/BMW%201er%20MCoup%C3%A9%20(01).jpg",
   "specs": {
-    "mileage": "56.600 km",
-    "registration": "03/2012",
-    "power": "250 kW / 340 PS",
-    "transmission": "6-Gang Schaltgetriebe",
-    "fuel": "Benzin",
-    "drive": "Hinterradantrieb",
-    "condition": "Gebrauchtwagen",
     "body": "Coupé",
-    "displacement": "2.979 cm³",
-    "seats": "4",
+    "transmission": "6-Gang Schaltgetriebe",
+    "power": "250 kW / 340 PS",
     "doors": "2",
-    "exterior": "Alpinweiß",
     "emission": "Euro 5",
-    "service": "Scheckheftgepflegt (laut Inserat)"
+    "mileage": "56.600 km",
+    "drive": "Hinterradantrieb",
+    "seats": "4",
+    "service": "Scheckheftgepflegt (laut Inserat)",
+    "fuel": "Benzin",
+    "displacement": "2.979 cm³",
+    "registration": "03/2012",
+    "condition": "Gebrauchtwagen",
+    "exterior": "Alpinweiß"
   },
-  "highlights_text": "Performance-Sitze (laut Händlerangebot)\nNavigationssystem\nKlimaautomatik\n19 Zoll M Leichtmetallräder Y-Speiche 359 M\nInterieurleisten Alcantara Anthrazit\nXenon-Scheinwerfer\nSitzheizung vorne\nPark Distance Control hinten\nSperrdifferential\nM Sportfahrwerk\nHiFi-Lautsprechersystem\nGeschwindigkeitsregelung",
-  "intro_text": "Kompakt in den Abmessungen, kompromisslos im Charakter: Das BMW 1er M Coupé steht für eine besonders direkte Form der Fahrfreude. Sein 340 PS starker Reihensechszylinder, das manuelle Sechsganggetriebe und der Hinterradantrieb machen jede Fahrt zu einem bewussten Erlebnis. In Alpinweiß präsentiert sich dieses Coupé ebenso zurückhaltend wie selbstbewusst – ein BMW M für Menschen, die das Fahren noch selbst in die Hand nehmen möchten."
+  "details": [],
+  "highlights_text": "Performance-Sitze (laut Händlerangebot)\nNavigationssystem\nKlimaautomatik\n19 Zoll M Leichtmetallräder Y-Speiche 359 M\nInterieurleisten Alcantara Anthrazit\nXenon-Scheinwerfer\nSitzheizung vorne\nPark Distance Control hinten\nSperrdifferential\nM Sportfahrwerk\nHiFi-Lautsprechersystem\nGeschwindigkeitsregelung"
 }
