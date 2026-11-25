@@ -74,19 +74,12 @@ collections:
         summary: 'Foto {{index}}'
         hint: 'Fotoeinträge zeigen eine Bildvorschau und lassen sich verschieben. Vorhandene Fotos bleiben erhalten.'
         field: {label: Fahrzeugfoto, name: image, widget: image}
-      - {label: Preis in EUR, name: price, widget: number, value_type: int, required: false, hint: "Nur bei In Stock sichtbar, niemals bei Sold."}
-      - {label: "Bezeichnung Hauptpreis (optional)", name: price_label, widget: string, required: false, hint: "z. B. Österreichpreis inkl. NoVA. Ohne Eingabe wird der bisherige Hauptpreis unverändert angezeigt."}
-      - label: "Weitere Preisangaben (nur In Stock)"
-        name: additional_prices
-        widget: list
-        required: false
-        max: 2
-        collapsed: false
-        summary: "{{fields.label}} – {{fields.amount}} EUR"
-        hint: "Zusätzlich zum bisherigen Hauptpreis bis zu zwei weitere Preise. Jeder Preis erhält eine eigene Bezeichnung, z. B. EU-Export oder Netto. Keine automatische Steuerberechnung."
-        fields:
-          - {label: "Preisbezeichnung", name: label, widget: string, hint: "z. B. EU-Exportpreis oder Nettopreis"}
-          - {label: "Betrag in EUR", name: amount, widget: number, value_type: int, min: 0}
+      - {label: "Preis 1 (EUR)", name: price, widget: number, value_type: int, min: 0, required: false, hint: "Hauptpreis. Nur bei In Stock sichtbar."}
+      - {label: "Bezeichnung Preis 1", name: price_label, widget: string, required: false, hint: "z. B. Österreichpreis inkl. NoVA"}
+      - {label: "Preis 2 (EUR)", name: price_2, widget: number, value_type: int, min: 0, required: false}
+      - {label: "Bezeichnung Preis 2", name: price_2_label, widget: string, required: false, hint: "z. B. EU-Import"}
+      - {label: "Preis 3 (EUR)", name: price_3, widget: number, value_type: int, min: 0, required: false}
+      - {label: "Bezeichnung Preis 3", name: price_3_label, widget: string, required: false, hint: "z. B. Exportpreis"}
       - {label: "Hinweis zu den Preisen (optional)", name: price_note, widget: string, required: false, hint: "z. B. MwSt. ausweisbar. Nur bei In Stock sichtbar."}
       - {label: Interne Referenz, name: reference, widget: string, required: false}
       - {label: Datenstand, name: updated, widget: string, required: false}
