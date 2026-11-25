@@ -25,6 +25,25 @@
     /* Compact native Decap image-widget thumbnails inside expanded gallery entries. */
     [class*="ControlPane"] [class*="ImageControl"] img,[class*="ControlPane"] [class*="ImagePreview"] img{max-width:180px!important;max-height:115px!important;object-fit:contain!important}
     [class*="ControlPane"] [class*="ListControl"] [class*="ImageControl"]{max-width:100%}
+
+    /* Gallery: visible, compact image thumbnails instead of tall Decap list rows. */
+    .ms-gallery{background:#fff;border:1px solid #d9dce1;border-radius:10px;padding:14px;margin-top:8px}
+    .ms-gallery-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+    .ms-gallery-count{font-size:13px;font-weight:700;color:#252930}
+    .ms-gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:10px}
+    .ms-gallery-tile{position:relative;background:#f0f1f3;border:1px solid #d9dce1;border-radius:8px;overflow:hidden;min-width:0}
+    .ms-gallery-tile[draggable=true]{cursor:grab}
+    .ms-gallery-tile.ms-dragging{opacity:.45}
+    .ms-gallery-tile.ms-drop{outline:3px solid #991b26;outline-offset:1px}
+    .ms-gallery-thumb{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#e2e4e7}
+    .ms-gallery-foot{display:flex;align-items:center;justify-content:space-between;padding:5px 7px;font-size:11px;color:#616771}
+    .ms-gallery-remove{position:absolute;right:5px;top:5px;border:0;background:#fff;color:#222;font-size:17px;line-height:1;width:25px;height:25px;border-radius:5px;cursor:pointer;box-shadow:0 1px 5px #0004}
+    .ms-gallery-remove:hover{background:#991b26;color:#fff}
+    .ms-gallery-handle{font-weight:700;font-size:14px;letter-spacing:1px}
+    .ms-gallery-add{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+    .ms-gallery-add input{flex:1;min-width:190px;padding:9px;border:1px solid #d9dce1;border-radius:6px;font-size:12px}
+    .ms-gallery-add button{padding:9px 13px;background:#17191d;color:#fff;border:0;border-radius:6px;cursor:pointer;font-weight:600}
+    .ms-gallery-help{font-size:12px;color:#6b717a;margin-top:10px;line-height:1.5}
     @media(max-width:900px){[class*="ControlPane"]{padding:16px!important}}
   </style>
 </head>
@@ -56,6 +75,80 @@
         td,th{padding:12px;border-bottom:1px solid #34363a;text-align:left}
         @media(max-width:650px){body{padding:24px 16px 60px!important}}
       `, {raw:true});
+    })();
+  </script>
+
+  <script>
+    /* Uses the React instance bundled with Decap via its documented h/createClass globals. */
+    (function(){
+      if(!window.CMS || !window.h || !window.createClass) return;
+      var h=window.h;
+      function list(value){
+        if(!value)return [];
+        var a=typeof value.toJS==='function'?value.toJS():value;
+        if(!Array.isArray(a))return [];
+        return a.map(function(item){return typeof item==='string'?item:(item&&item.image)||'';}).filter(Boolean);
+      }
+      function imageURL(path){
+        if(!path)return '';
+        if(/^(https?:|blob:|data:)/i.test(path))return path;
+        if(path.charAt(0)==='/')return path;
+        return '/ms-emotion-cars/'+path.replace(/^\\/+/, '');
+      }
+      var Gallery=window.createClass({
+        getInitialState:function(){return {newPath:'',dragIndex:null,overIndex:null};},
+        update:function(next){this.props.onChange(next);},
+        remove:function(index){
+          var a=list(this.props.value);
+          if(!window.confirm('Dieses Foto aus der Fahrzeuggalerie entfernen?'))return;
+          a.splice(index,1);this.update(a);
+        },
+        move:function(from,to){
+          if(from===null||to===null||from===to)return;
+          var a=list(this.props.value);
+          if(from<0||to<0||from>=a.length||to>=a.length)return;
+          var moved=a.splice(from,1)[0];a.splice(to,0,moved);
+          this.update(a);
+        },
+        add:function(e){
+          if(e&&e.preventDefault)e.preventDefault();
+          var path=this.state.newPath.trim();
+          if(!path)return;
+          var a=list(this.props.value);a.push(path);this.update(a);
+          this.setState({newPath:''});
+        },
+        render:function(){
+          var self=this,a=list(this.props.value);
+          return h('div',{className:'ms-gallery'},
+            h('div',{className:'ms-gallery-head'},
+              h('span',{className:'ms-gallery-count'},a.length+' Fahrzeugfotos'),
+              h('span',{style:{fontSize:'12px',color:'#727780'}},'Fotos ziehen, um sie zu sortieren')
+            ),
+            h('div',{className:'ms-gallery-grid'},
+              a.map(function(path,i){
+                return h('div',{
+                  key:path+'-'+i,className:'ms-gallery-tile'+(self.state.dragIndex===i?' ms-dragging':'')+(self.state.overIndex===i?' ms-drop':''),
+                  draggable:true,
+                  onDragStart:function(e){e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',String(i));self.setState({dragIndex:i});},
+                  onDragOver:function(e){e.preventDefault();e.dataTransfer.dropEffect='move';if(self.state.overIndex!==i)self.setState({overIndex:i});},
+                  onDrop:function(e){e.preventDefault();var from=Number(e.dataTransfer.getData('text/plain'));self.move(from,i);self.setState({dragIndex:null,overIndex:null});},
+                  onDragEnd:function(){self.setState({dragIndex:null,overIndex:null});}
+                },
+                  h('img',{src:imageURL(path),className:'ms-gallery-thumb',alt:'Fahrzeugfoto '+(i+1),loading:'lazy'}),
+                  h('button',{type:'button',className:'ms-gallery-remove',title:'Foto entfernen', 'aria-label':'Foto '+(i+1)+' entfernen',onClick:function(){self.remove(i);}},'×'),
+                  h('div',{className:'ms-gallery-foot'},h('span',null,'Foto '+(i+1)),h('span',{className:'ms-gallery-handle',title:'Ziehen zum Sortieren'},'☰'))
+                );
+              })
+            ),
+            h('form',{className:'ms-gallery-add',onSubmit:this.add},
+              h('input',{type:'text',value:this.state.newPath,placeholder:'Bildpfad aus der Medienbibliothek einfügen',onChange:function(e){self.setState({newPath:e.target.value});}}),
+              h('button',{type:'submit'},'+ Bild hinzufügen')
+            ),
+            h('div',{className:'ms-gallery-help'},'Neue Fotos zuerst über „Medien“ im CMS hochladen und anschließend den Bildpfad hier einfügen. Änderungen an Reihenfolge und Fotos werden erst mit „Speichern“ übernommen.')
+          );
+        }
+      });
+      window.CMS.registerWidget('compact_gallery',Gallery);
     })();
   </script>
 </body>
